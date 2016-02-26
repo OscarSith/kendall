@@ -27,6 +27,12 @@ Route::get('paquetes', 'HomeController@paquetes');
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
+Route::group(['middleware' => ['web']], function ($route) {
+    $route->get('/login', 'Auth\AuthController@showLoginForm');
+    $route->post('login', 'Auth\AuthController@login');
+});
+
+Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'admin'], function ($route) {
+    $route->get('/', 'AdminController@index');
+    $route->get('logout', 'Auth\AuthController@logout')->name('salir');
 });

@@ -187,10 +187,10 @@
                 </div>
             </div>
         </div>
-        </div>
-        </div>
-        <div id="main-wrapper" class="main-wrapper" role="main">
-        <div id="parallax_one_wrapper" class="parallax_one_wrapper img-bg parallax-box image-parallax-box">
+    </div>
+</div>
+<div id="main-wrapper" class="main-wrapper" role="main">
+    <div id="parallax_one_wrapper" class="parallax_one_wrapper img-bg parallax-box image-parallax-box">
         <div class="container-12">
             <div class="grid-12">
                 <div class="region region-parallax-one">
@@ -205,8 +205,8 @@
             </div>
         </div>
         <div class="parallax-bg" data-parallax-type="image" data-img-url="{{ asset('img/parallax/parallax-one.jpg') }}" data-speed="0.5" data-invert="false"></div>
-        </div>
-        <div class="container-12">
+    </div>
+    <div class="container-12">
         <div class="grid-12">
             <div id="main" class="main clearfix">
                 <div id="content" class="content content-main ">
@@ -272,8 +272,8 @@
                 </div>
             </div>
         </div>
-        </div>
-        <div id="video_wrapper" class="video_wrapper video-bg">
+    </div>
+    <div id="video_wrapper" class="video_wrapper video-bg">
         <a class="tm_video_bg" data-property="{videoURL:'http://youtu.be/0PVwJx5tv38', containment:'#video_wrapper',autoPlay:true, showControls:false, mute:true, startAt:0, opacity:1}">youtube</a>
         <div class="container-12">
             <div class="grid-12">

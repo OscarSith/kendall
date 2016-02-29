@@ -5,11 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
-
-    <!-- Fonts -->
+    <title>Kendall Perú Travel - Administrador</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}">
-    <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
@@ -20,6 +17,16 @@
         .navbar-brand {
             padding-top: 0;
             padding-bottom: 0;
+        }
+        .mt0 {
+            margin-top: 0
+        }
+        .content-buttons .btn-block{
+            margin-top: 10px;
+        }
+        .inactivo {
+            border-color: #F00 !important;
+            opacity: 0.7;
         }
     </style>
 </head>
@@ -36,14 +43,15 @@
                 </button>
 
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{ asset('img/logo.png') }}" class="img-responsive" style="height:50px">
+                    <img src="{{ asset('img/logo.png') }}" class="img-responsive" title="Ir a la página web" style="height:50px">
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/') }}" title="Kendall Perú Travel">Página Web</a></li>
+                    <li><a href="{{ route('dashboard') }}">Paquetes</a></li>
+                    <li><a href="{{ route('categoria') }}">Categoria</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -58,7 +66,7 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ route('salir') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                <li><a href="{{ route('salir') }}"><i class="fa fa-btn fa-sign-out"></i>Cerrar Sesión</a></li>
                             </ul>
                         </li>
                     @endif
@@ -67,11 +75,8 @@
         </div>
     </nav>
 
-    @yield('content')
-
-    <!-- JavaScripts -->
     <script type="text/javascript" src="{{ asset('js/jquery.2.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    @yield('content')
 </body>
 </html>

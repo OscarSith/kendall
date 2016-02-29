@@ -33,6 +33,15 @@ Route::group(['middleware' => ['web']], function ($route) {
 });
 
 Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'admin'], function ($route) {
-    $route->get('/', 'AdminController@index');
+    $route->get('/', 'AdminController@index')->name('dashboard');
+
+    $route->get('/paquete', 'AdminController@showPaquete')->name('formPaquete');
+    $route->post('/paquete', 'AdminController@storePaquete')->name('addPaquete');
+    $route->get('/editar-paquete/{id}', 'AdminController@edit')->name('formEditPaquete');
+    $route->put('/{id}/editar', 'AdminController@update')->name('editPaquete');
+    $route->put('/cambiar-estado-paquete/{id}', 'AdminController@update')->name('changeStatusPaquete');
+
+    $route->get('categoria', 'CategoriaController@index')->name('categoria');
+
     $route->get('logout', 'Auth\AuthController@logout')->name('salir');
 });

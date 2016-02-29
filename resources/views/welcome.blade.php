@@ -9,7 +9,7 @@
                 <div class="region region-header">
                     <div id="block-views-slider-block" class="block-views-slider-block block block-views block-even">
                         <div class="content block-content">
-                            <div class="view view-slider view-id-slider view-display-id-block view-dom-id-46cd3128795e8e5c8e31b7f6fc897930">
+                            <div class="view view-slider view-id-slider view-display-id-block">
                                 <div class="view-content">
                                     <div id="flexslider-1" class="flexslider">
                                         <ul class="slides">
@@ -133,19 +133,35 @@
                     <div class="content block-content">
                         <div class="view view-welcome view-id-welcome view-display-id-block mobile-two-column">
                             <div class="view-content">
-                                <div class="grid-3 views-row first alpha odd">
-                                    <div class="views-field views-field-field-image">
-                                        <div class="field-content">
-                                            <img src="{{ asset('img/paquetes/img-1.jpg') }}" width="242" height="204"/>
+                                @foreach($nacionales as $n => $paquete)
+                                <?php
+                                $class = '';
+                                switch ($n) {
+                                    case 0: $class = 'first alpha odd';
+                                        break;
+                                    case 1: $class = 'even';
+                                        break;
+                                    case 2: $class = 'odd';
+                                        break;
+                                    default: $class = 'last omega even';
+                                        break;
+                                } ?>
+                                <div class="grid-3 views-row {{ $class }}">
+                                    <a href="#" data-id="{{ $paquete->id }}">
+                                        <div class="views-field views-field-field-image">
+                                            <div class="field-content">
+                                                <img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" width="242" height="204"/>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="views-field views-field-nothing welcome-body">
-                                        <span class="field-content">
-                                            <h4>Miuasa Dekoias</h4>
-                                        </span>
-                                    </div>
+                                        <div class="views-field views-field-nothing welcome-body">
+                                            <span class="field-content">
+                                                <h4>{{ $paquete->paq_nombre }}</h4>
+                                            </span>
+                                        </div>
+                                    </a>
                                 </div>
-                                <div class="grid-3 views-row even">
+                                @endforeach
+<!--                                 <div class="grid-3 views-row even">
                                     <div class="views-field views-field-field-image">
                                         <div class="field-content">
                                             <img src="{{ asset('img/paquetes/img-2.jpg') }}" width="242" height="204"/>
@@ -180,7 +196,7 @@
                                             <h4>Ferode Vertyasa</h4>
                                         </span>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

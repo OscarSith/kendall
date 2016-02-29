@@ -42,9 +42,9 @@
 						</div>
 						@if ($accion == 'nuevo')
 						<div class="form-group">
-							{!! Form::label('pag_imagen_principal', 'Imagen', ['class' => 'control-label col-sm-2']) !!}
+							{!! Form::label('paq_imagen_principal', 'Imagen', ['class' => 'control-label col-sm-2']) !!}
 							<div class="col-sm-10">
-								{!! Form::file('pag_imagen_principal', ['class' => 'form-control']) !!}
+								{!! Form::file('paq_imagen_principal', ['class' => 'form-control']) !!}
 							</div>
 						</div>
 						@endif
@@ -54,7 +54,7 @@
 								{!! Form::textarea('paq_descripcion', null, ['class' => 'form-control', 'required']) !!}
 							</div>
 						</div>
-						<div class="form-group col-sm-offset-2">
+						<div class="col-sm-10 col-sm-offset-2">
 							<button class="btn btn-primary">Agregar</button>
 						</div>
 					{!! Form::close() !!}

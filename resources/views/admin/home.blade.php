@@ -16,7 +16,7 @@
                     @foreach($paquetes as $paquete)
                         <div class="col-sm-4 col-md-3">
                             <div class="thumbnail {{ !$paquete->paq_estado ? 'inactivo' : '' }}">
-                              <img src="{{ asset('img/paquetes/'.$paquete->pag_imagen_principal) }}" alt="{{ $paquete->pag_titulo }}">
+                              <img src="{{ asset('img/paquetes/'.$paquete->paq_imagen_principal) }}" alt="{{ $paquete->pag_titulo }}">
                               <div class="caption">
                                 <h4>{{ $paquete->paq_nombre }}</h4>
                                 <p>{{ $paquete->paq_titulo }}</p>
@@ -33,7 +33,7 @@
                                         @endif
                                     {{ Form::close() }}
                                     <div class="clearfix"></div>
-                                    <a href="#" class="btn btn-block btn-default">Ver Imagenes</a>
+                                    <a href="{{ route('showImages', $paquete->id) }}" class="btn btn-block btn-default">Ver Imagenes</a>
                                 </div>
                               </div>
                             </div>

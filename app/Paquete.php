@@ -14,7 +14,7 @@ class Paquete extends Model
     	'paq_precio',
     	'paq_descripcion',
     	'paq_categoria',
-    	'pag_imagen_principal',
+    	'paq_imagen_principal',
     	'paq_estado',
     ];
 }

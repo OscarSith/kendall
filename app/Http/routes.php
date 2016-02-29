@@ -41,6 +41,12 @@ Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'admin'], function ($
     $route->put('/{id}/editar', 'AdminController@update')->name('editPaquete');
     $route->put('/cambiar-estado-paquete/{id}', 'AdminController@update')->name('changeStatusPaquete');
 
+    // Imagen
+    $route->get('imagenes/{id}', 'ImagenController@show')->name('showImages');
+    $route->post('insertar-imagen', 'ImagenController@store')->name('addImagen');
+    $route->put('/cambiar-estado-imagen/{id}', 'ImagenController@update')->name('changeStatusImagen');
+    $route->delete('/eliminar-imagen/{id}', 'ImagenController@destroy')->name('deleteImagen');
+
     $route->get('categoria', 'CategoriaController@index')->name('categoria');
 
     $route->get('logout', 'Auth\AuthController@logout')->name('salir');

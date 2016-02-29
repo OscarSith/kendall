@@ -11,6 +11,7 @@ class PaqueteImagen extends Model
 	protected $fillable = [
 		'paquete_id',
 		'imagen',
-		'imagen_chica'
+		'imagen_chica',
+		'estado'
 	];
 }

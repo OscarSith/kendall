@@ -18,7 +18,7 @@ class CreatePaquetesTable extends Migration
             $table->string('paq_titulo');
             $table->decimal('paq_precio', 10, 2);
             $table->text('paq_descripcion');
-            $table->string('pag_imagen_principal');
+            $table->string('paq_imagen_principal');
             $table->tinyInteger('paq_estado')->default(1);
             $table->integer('paq_categoria')->unsigned();
             $table->timestamps();

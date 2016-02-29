@@ -17,6 +17,7 @@ class CreatePaqueteImagensTable extends Migration
             $table->integer('paquete_id')->unsigned();
             $table->string('imagen');
             $table->string('imagen_chica');
+            $table->char('seleccionado', 1)->default('N');
             $table->tinyInteger('estado')->default(1);
             $table->timestamps();
         });

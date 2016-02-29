@@ -17,7 +17,7 @@ class AdminController extends Controller
 
     public function index()
     {
-    	$paquetes = Paquete::latest()->get(['id', 'paq_nombre', 'paq_titulo', 'pag_imagen_principal', 'paq_estado', 'paq_categoria']);
+    	$paquetes = Paquete::latest()->get(['id', 'paq_nombre', 'paq_titulo', 'paq_imagen_principal', 'paq_estado', 'paq_categoria']);
     	return view('admin.home', compact('paquetes'));
     }
 
@@ -50,15 +50,16 @@ class AdminController extends Controller
     		return redirect()->back()->with('error_message', 'Ups... no se puede procesar el archivo subido, intentelo de nuevo, si persiste contacte con el programador');
     	}
 
-    	$params['pag_imagen_principal'] = $imageName;
+        $params['paq_imagen_principal'] = $imageName;
     	\DB::transaction(function() use ($params, $thumb_imageName) {
 
 			$paquete = Paquete::create($params);
 
 			$imageParams = [
 				'paquete_id' => $paquete->getKey(),
-				'imagen' => $params['pag_imagen_principal'],
-				'imagen_chica' => $thumb_imageName
+				'imagen' => $params['paq_imagen_principal'],
+				'imagen_chica' => $thumb_imageName,
+                'seleccionado' => 'S'
 			];
 			PaqueteImagen::create($imageParams);
 		});

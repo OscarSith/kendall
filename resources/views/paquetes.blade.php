@@ -15,7 +15,7 @@
 						<div class="grid-3 views-row first alpha odd">
 							<div class="views-field views-field-field-image">
 								<div class="field-content">
-									<img src="http://localhost:8000/img/paquetes/img-1.jpg" width="242" height="204">
+									<img src="{{ asset('img/paquetes/img-1.jpg') }}" width="242" height="204">
 								</div>
 							</div>
 							<div class="views-field views-field-nothing welcome-body">
@@ -27,7 +27,7 @@
 						<div class="grid-3 views-row even">
 							<div class="views-field views-field-field-image">
 								<div class="field-content">
-									<img src="http://localhost:8000/img/paquetes/img-2.jpg" width="242" height="204">
+									<img src="{{ asset('img/paquetes/img-2.jpg') }}" width="242" height="204">
 								</div>
 							</div>
 							<div class="views-field views-field-nothing welcome-body">
@@ -39,7 +39,7 @@
 						<div class="grid-3 views-row odd">
 							<div class="views-field views-field-field-image">
 								<div class="field-content">
-									<img src="http://localhost:8000/img/paquetes/img-3.jpg" width="242" height="204">
+									<img src="{{ asset('img/paquetes/img-3.jpg') }}" width="242" height="204">
 								</div>
 							</div>
 							<div class="views-field views-field-nothing welcome-body">
@@ -51,7 +51,7 @@
 						<div class="grid-3 views-row last omega even">
 							<div class="views-field views-field-field-image">
 								<div class="field-content">
-									<img src="http://localhost:8000/img/paquetes/img-4.jpg" width="242" height="204">
+									<img src="{{ asset('img/paquetes/img-4.jpg') }}" width="242" height="204">
 								</div>
 							</div>
 							<div class="views-field views-field-nothing welcome-body">
@@ -65,7 +65,7 @@
 						<div class="grid-3 views-row first alpha odd">
 							<div class="views-field views-field-field-image">
 								<div class="field-content">
-									<img src="http://localhost:8000/img/paquetes/img-1.jpg" width="242" height="204">
+									<img src="{{ asset('img/paquetes/img-1.jpg') }}" width="242" height="204">
 								</div>
 							</div>
 							<div class="views-field views-field-nothing welcome-body">
@@ -77,7 +77,7 @@
 						<div class="grid-3 views-row even">
 							<div class="views-field views-field-field-image">
 								<div class="field-content">
-									<img src="http://localhost:8000/img/paquetes/img-2.jpg" width="242" height="204">
+									<img src="{{ asset('img/paquetes/img-2.jpg') }}" width="242" height="204">
 								</div>
 							</div>
 							<div class="views-field views-field-nothing welcome-body">
@@ -89,7 +89,7 @@
 						<div class="grid-3 views-row odd">
 							<div class="views-field views-field-field-image">
 								<div class="field-content">
-									<img src="http://localhost:8000/img/paquetes/img-3.jpg" width="242" height="204">
+									<img src="{{ asset('img/paquetes/img-3.jpg') }}" width="242" height="204">
 								</div>
 							</div>
 							<div class="views-field views-field-nothing welcome-body">
@@ -101,7 +101,7 @@
 						<div class="grid-3 views-row last omega even">
 							<div class="views-field views-field-field-image">
 								<div class="field-content">
-									<img src="http://localhost:8000/img/paquetes/img-4.jpg" width="242" height="204">
+									<img src="{{ asset('img/paquetes/img-4.jpg') }}" width="242" height="204">
 								</div>
 							</div>
 							<div class="views-field views-field-nothing welcome-body">

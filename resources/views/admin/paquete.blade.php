@@ -64,3 +64,18 @@
 	</div>
 </div>
 @endsection
+
+@section('textarea')
+<script src="{{ asset('js/wysihtml5x-toolbar.min.js') }}"></script>
+<script src="{{ asset('js/handlebars.runtime.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap3-wysihtml5.min.js') }}"></script>
+<script type="text/javascript">
+	var options = {
+		toolbar: {
+			"fa": true,
+			"image": false
+		}
+	};
+	$('#paq_descripcion').wysihtml5(options);
+</script>
+@endsection

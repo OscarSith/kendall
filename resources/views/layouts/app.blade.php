@@ -8,6 +8,7 @@
     <title>Kendall Perú Travel - Administrador</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap3-wysihtml5.min.css') }}">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
     <style>
@@ -75,8 +76,9 @@
         </div>
     </nav>
 
+    @yield('content')
     <script type="text/javascript" src="{{ asset('js/jquery.2.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
-    @yield('content')
+    @yield('textarea')
 </body>
 </html>

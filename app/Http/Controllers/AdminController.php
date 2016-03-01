@@ -30,7 +30,7 @@ class AdminController extends Controller
 
     public function storePaquete(Request $request)
     {
-    	$file = $request->file('pag_imagen_principal');
+    	$file = $request->file('paq_imagen_principal');
     	$file_path = $file->path();
     	$params = $request->except(['_token']);
 

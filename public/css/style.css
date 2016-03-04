@@ -92,7 +92,6 @@ a:hover { text-decoration:underline; }
 	outline:none;
 	padding:11px 22px 11px;
 	text-decoration:none;
-	text-transform:lowercase;
 }
 .btn a:hover, .more-link a:hover, input[type="submit"]:hover, input[type="reset"]:hover, ul.links li a:hover, .view-portfolio .views-field-view-node a:hover, #block-poll-recent ul.links li a:hover, #filters li a:hover, #filters li a.selected, .content ul.pager li a:hover, .content ul.pager li.pager-current, .view .date-nav-wrapper .date-prev a:hover, .view .date-nav-wrapper .date-next a:hover, .form-submit:hover {
 	background:#90B75E;
@@ -1673,3 +1672,13 @@ table .mini-day-on a:hover { text-decoration:underline; }
 	text-decoration:none;
 }
 .region-page-bottom pre { padding:0 !important; }
+.img-mini {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50%;
+    height: 210px;
+}
+.img-mini:hover {
+	background-size: 125%;
+	transition: .6s ease;
+}

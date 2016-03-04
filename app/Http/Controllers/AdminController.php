@@ -50,7 +50,7 @@ class AdminController extends Controller
     		return redirect()->back()->with('error_message', 'Ups... no se puede procesar el archivo subido, intentelo de nuevo, si persiste contacte con el programador');
     	}
 
-        $params['paq_imagen_principal'] = $imageName;
+        $params['paq_imagen_principal'] = $thumb_imageName;
     	\DB::transaction(function() use ($params, $thumb_imageName) {
 
 			$paquete = Paquete::create($params);

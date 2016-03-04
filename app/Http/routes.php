@@ -15,6 +15,7 @@ Route::get('/', 'HomeController@index');
 Route::get('contacto', 'HomeController@contacto');
 Route::get('nosotros', 'HomeController@nosotros');
 Route::get('paquetes', 'HomeController@paquetes');
+Route::post('enviar-mensaje', 'HomeController@sendMessage')->name('send-message');
 
 /*
 |--------------------------------------------------------------------------

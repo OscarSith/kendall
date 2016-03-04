@@ -78,28 +78,30 @@
 						  								</div>
 														<div class="panel-separator"></div>
 														<div class="panel-pane pane-contact col-2-3 col-last">
+															@include('partials.display_messages')
 						        							<h2 class="pane-title">Formulario de contacto</h2>
 															<div class="pane-content">
-																<form class="user-info-from-cookie contact-form" action="#" method="post" id="contact-site-form" accept-charset="UTF-8">
+																<form class="user-info-from-cookie contact-form" action="{{ route('send-message') }}" method="post" id="contact-site-form" accept-charset="UTF-8">
 																	<div class="form-item form-type-textfield form-item-name">
-														  				<label class="element-invisible" for="edit-name">Your name <span class="form-required" title="This field is required.">*</span></label>
-														 				<input placeholder="Name" type="text" id="edit-name" name="name" value="" size="60" maxlength="255" class="form-text required" />
+														  				<label class="element-invisible" for="edit-name">Nombre <span class="form-required" title="This field is required.">*</span></label>
+														 				<input placeholder="Nombre" type="text" id="edit-name" name="nombre" class="form-text required" />
 																	</div>
 																	<div class="form-item form-type-textfield form-item-mail">
-																		<label class="element-invisible" for="edit-mail">Your e-mail address <span class="form-required" title="This field is required.">*</span></label>
-																 		<input placeholder="E-mail" type="text" id="edit-mail" name="mail" value="" size="60" maxlength="255" class="form-text required" />
+																		<label class="element-invisible" for="edit-mail">Correo electrónico <span class="form-required" title="This field is required.">*</span></label>
+																 		<input placeholder="Correo electrónico" type="text" id="edit-mail" name="correo" class="form-text required" />
 																	</div>
 																	<div class="form-item form-type-textfield form-item-subject">
-																		<label class="element-invisible" for="edit-subject">Subject <span class="form-required" title="This field is required.">*</span></label>
-																		<input placeholder="Subject" type="text" id="edit-subject" name="subject" value="" size="60" maxlength="255" class="form-text required" />
+																		<label class="element-invisible" for="edit-subject">Titulo<span class="form-required" title="This field is required.">*</span></label>
+																		<input placeholder="Titulo" type="text" id="edit-subject" name="titulo" class="form-text required" />
 																	</div>
 																	<div class="form-item form-type-textarea form-item-message">
-																		<label class="element-invisible" for="edit-message">Message <span class="form-required" title="This field is required.">*</span></label>
-														 				<textarea placeholder="Message" id="edit-message" name="message" cols="60" rows="5" class="form-textarea required"></textarea>
+																		<label class="element-invisible" for="edit-message">Mensaje<span class="form-required" title="This field is required.">*</span></label>
+														 				<textarea placeholder="Escriba aquí su mensaje..." id="edit-message" name="mensaje" class="form-textarea required"></textarea>
 																	</div>
-																	<input class="form-button" type="reset" value="Clear">
 																	<div class="form-actions form-wrapper" id="edit-actions">
-																		<input type="submit" id="edit-submit" name="op" value="Send message" class="form-submit" />
+																		<button id="edit-submit" class="form-submit">
+																			<i class="fa fa-send-o"></i> Enviar Mensaje
+																		</button>
 																	</div>
 																</form>
 															</div>

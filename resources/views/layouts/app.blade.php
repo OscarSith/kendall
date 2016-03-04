@@ -29,6 +29,11 @@
             border-color: #F00 !important;
             opacity: 0.7;
         }
+        .img-mini {
+            background-repeat: no-repeat;
+            background-size: 100%;
+            height: 210px;
+        }
     </style>
 </head>
 <body id="app-layout">

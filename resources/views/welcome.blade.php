@@ -150,7 +150,7 @@
                                     <a href="#" data-id="{{ $paquete->id }}">
                                         <div class="views-field views-field-field-image">
                                             <div class="field-content">
-                                                <img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" width="242" height="204"/>
+                                                <div class="img-mini" style="background-image: url('{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}')"></div>
                                             </div>
                                         </div>
                                         <div class="views-field views-field-nothing welcome-body">

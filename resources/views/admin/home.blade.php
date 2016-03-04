@@ -16,10 +16,10 @@
                     @foreach($paquetes as $paquete)
                         <div class="col-sm-4 col-md-3">
                             <div class="thumbnail {{ !$paquete->paq_estado ? 'inactivo' : '' }}">
-                              <img src="{{ asset('img/paquetes/'.$paquete->paq_imagen_principal) }}" alt="{{ $paquete->pag_titulo }}">
+                                <div class="img-mini" style="background-image: url('{{ asset('img/paquetes/'.$paquete->paq_imagen_principal) }}')"></div>
                               <div class="caption">
                                 <h4>{{ $paquete->paq_nombre }}</h4>
-                                <p>{{ $paquete->paq_titulo }}</p>
+                                <p>{{ str_limit($paquete->paq_titulo, 26) }}</p>
                                 <hr>
                                 <div class="content-buttons">
                                     <a href="{{ route('formEditPaquete', $paquete->id) }}" class="btn btn-primary pull-left" role="button">Editar</a>

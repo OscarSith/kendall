@@ -7,7 +7,7 @@
 <body>
 	<div style="width: 85%;margin:15px auto;padding: 20px;border: 1px solid #dddddd">
 		<h2>{{ $nombre }}</h2>
-		<ul>
+		<ul style="list-style-type: none;padding-left:0">
 			<li>{{ $correo }}</li>
 			<li>
 				<blockquote>{{ $mensaje }}</blockquote>

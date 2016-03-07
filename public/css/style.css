@@ -1624,7 +1624,7 @@ table .mini-day-on a:hover { text-decoration:underline; }
 	background-color: #B61B79
 }
 .front #footer { border:none; }
-.footer-wrapper { padding:85px 0 70px;color: #fff }
+.footer-wrapper { padding:50px 0 30px;color: #fff }
 .footer-wrapper h2 {
 	font-size:30px;
 	line-height:36px;
@@ -1681,4 +1681,16 @@ table .mini-day-on a:hover { text-decoration:underline; }
 .img-mini:hover {
 	background-size: 125%;
 	transition: .6s ease;
+}
+blockquote{padding:10px 20px;margin:0 0 20px;border-left:5px solid #eee}
+blockquote p:last-child,blockquote ul:last-child{margin-bottom:0}
+blockquote .small,blockquote footer,blockquote small{display:block;font-size:80%;line-height:1.42857143;color:#777}
+blockquote .small:before,blockquote footer:before,blockquote small:before{content:'\2014 \00A0'}
+
+#enviar-cotizacion {
+	margin-top: 98px;
+}
+#enviar-cotizacion input {
+	margin-bottom: 12px;
+	width: 100%;
 }

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Paquete;
+use App\PaqueteImagen;
 use Mail;
 
 class HomeController extends Controller
@@ -29,7 +30,20 @@ class HomeController extends Controller
 
     public function paquetes()
     {
-    	return view('paquetes');
+        $paquetes = Paquete::where('paq_estado', 1)->get([
+            'id',
+            'paq_nombre',
+            'paq_imagen_principal',
+            'paq_precio',
+        ]);
+    	return view('paquetes', compact('paquetes'));
+    }
+
+    public function detallePaquete(Request $request, $id)
+    {
+        $paquete = Paquete::find($id, ['id', 'paq_nombre', 'paq_titulo', 'paq_descripcion', 'paq_imagen_principal']);
+        $imagenes = PaqueteImagen::where('paquete_id', $id)->where('estado', 1)->get(['imagen', 'imagen_chica', 'seleccionado']);
+        return view('detalle-paquete', compact('paquete', 'imagenes'));
     }
 
     public function sendMessage(Request $request)
@@ -38,6 +52,6 @@ class HomeController extends Controller
             $message->to(env('TO_ADDRESS'), env('TO_NAME'))->subject($request->input('titulo'));
             // root@kendallperutravel.com Joaquin
         });
-        return redirect()->back()->with('success_message', 'Mensaje enviado con exito.');
+        return redirect()->back()->with('success_message', 'Su mensaje ha sido enviado con exito.');
     }
 }

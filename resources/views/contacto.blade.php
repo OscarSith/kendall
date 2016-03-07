@@ -78,8 +78,8 @@
 						  								</div>
 														<div class="panel-separator"></div>
 														<div class="panel-pane pane-contact col-2-3 col-last">
-															@include('partials.display_messages')
 						        							<h2 class="pane-title">Formulario de contacto</h2>
+															@include('partials.display_messages')
 															<div class="pane-content">
 																<form class="user-info-from-cookie contact-form" action="{{ route('send-message') }}" method="post" id="contact-site-form" accept-charset="UTF-8">
 																	<div class="form-item form-type-textfield form-item-name">

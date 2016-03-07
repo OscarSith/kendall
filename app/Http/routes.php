@@ -15,6 +15,8 @@ Route::get('/', 'HomeController@index');
 Route::get('contacto', 'HomeController@contacto');
 Route::get('nosotros', 'HomeController@nosotros');
 Route::get('paquetes', 'HomeController@paquetes');
+Route::get('detalle-paquete-{id}', 'HomeController@detallePaquete')->name('detallePaquete');
+Route::post('cotizar-paquete-{id}', 'HomeController@detallePaquete')->name('sendNotification');
 Route::post('enviar-mensaje', 'HomeController@sendMessage')->name('send-message');
 
 /*
@@ -50,5 +52,5 @@ Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'admin'], function ($
 
     $route->get('categoria', 'CategoriaController@index')->name('categoria');
 
-    $route->get('logout', 'Auth\AuthController@logout')->name('salir');
+    $route->get('logout', 'Auth\AuthController@getLogout')->name('salir');
 });

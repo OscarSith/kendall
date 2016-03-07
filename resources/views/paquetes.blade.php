@@ -11,106 +11,40 @@
 			<div class="region region-header-bottom">
 				<h2 id="page-title" class="title page-title">Paquetes</h2>
 				<div class="view view-welcome view-id-welcome view-display-id-block mobile-two-column">
-					<div class="view-content">
-						<div class="grid-3 views-row first alpha odd">
-							<div class="views-field views-field-field-image">
-								<div class="field-content">
-									<img src="{{ asset('img/paquetes/img-1.jpg') }}" width="242" height="204">
+					<?php $n = -1; ?>
+					@foreach($paquetes as $paquete)
+						<?php $n++;
+						switch ($n) {
+							case 0: $class = 'first alpha odd'; break;
+							case 1: $class = 'even'; break;
+							case 2: $class = 'odd'; break;
+							case 3:
+								$class = 'last omega even';
+								$n = -1;
+							break;
+						}
+						?>
+						@if ($n == 0)
+							<div class="view-content">
+						@endif
+							<div class="grid-3 views-row {{ $class }}">
+								<div class="views-field views-field-field-image">
+									<div class="field-content">
+										<a href="{{ route('detallePaquete', $paquete->id) }}">
+											<div class="img-mini" style="background-image: url('{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}')"></div>
+										</a>
+									</div>
+								</div>
+								<div class="views-field views-field-nothing welcome-body">
+									<span class="field-content">
+										<h4><a href="{{ route('detallePaquete', $paquete->id) }}">{{ $paquete->paq_nombre }}</a></h4>
+									</span>
 								</div>
 							</div>
-							<div class="views-field views-field-nothing welcome-body">
-								<span class="field-content">
-									<h4>Miuasa Dekoias</h4>
-								</span>
+						@if ($n == -1)
 							</div>
-						</div>
-						<div class="grid-3 views-row even">
-							<div class="views-field views-field-field-image">
-								<div class="field-content">
-									<img src="{{ asset('img/paquetes/img-2.jpg') }}" width="242" height="204">
-								</div>
-							</div>
-							<div class="views-field views-field-nothing welcome-body">
-								<span class="field-content">
-								<h4>Ferode Vertyasa</h4>
-								</span>
-							</div>
-						</div>
-						<div class="grid-3 views-row odd">
-							<div class="views-field views-field-field-image">
-								<div class="field-content">
-									<img src="{{ asset('img/paquetes/img-3.jpg') }}" width="242" height="204">
-								</div>
-							</div>
-							<div class="views-field views-field-nothing welcome-body">
-								<span class="field-content">
-									<h4>Lertasa Certyas</h4>
-								</span>
-							</div>
-						</div>
-						<div class="grid-3 views-row last omega even">
-							<div class="views-field views-field-field-image">
-								<div class="field-content">
-									<img src="{{ asset('img/paquetes/img-4.jpg') }}" width="242" height="204">
-								</div>
-							</div>
-							<div class="views-field views-field-nothing welcome-body">
-								<span class="field-content">
-									<h4>Ferode Vertyasa</h4>
-								</span>
-							</div>
-						</div>
-					</div>
-					<div class="view-content">
-						<div class="grid-3 views-row first alpha odd">
-							<div class="views-field views-field-field-image">
-								<div class="field-content">
-									<img src="{{ asset('img/paquetes/img-1.jpg') }}" width="242" height="204">
-								</div>
-							</div>
-							<div class="views-field views-field-nothing welcome-body">
-								<span class="field-content">
-									<h4>Miuasa Dekoias</h4>
-								</span>
-							</div>
-						</div>
-						<div class="grid-3 views-row even">
-							<div class="views-field views-field-field-image">
-								<div class="field-content">
-									<img src="{{ asset('img/paquetes/img-2.jpg') }}" width="242" height="204">
-								</div>
-							</div>
-							<div class="views-field views-field-nothing welcome-body">
-								<span class="field-content">
-								<h4>Ferode Vertyasa</h4>
-								</span>
-							</div>
-						</div>
-						<div class="grid-3 views-row odd">
-							<div class="views-field views-field-field-image">
-								<div class="field-content">
-									<img src="{{ asset('img/paquetes/img-3.jpg') }}" width="242" height="204">
-								</div>
-							</div>
-							<div class="views-field views-field-nothing welcome-body">
-								<span class="field-content">
-									<h4>Lertasa Certyas</h4>
-								</span>
-							</div>
-						</div>
-						<div class="grid-3 views-row last omega even">
-							<div class="views-field views-field-field-image">
-								<div class="field-content">
-									<img src="{{ asset('img/paquetes/img-4.jpg') }}" width="242" height="204">
-								</div>
-							</div>
-							<div class="views-field views-field-nothing welcome-body">
-								<span class="field-content">
-									<h4>Ferode Vertyasa</h4>
-								</span>
-							</div>
-						</div>
-					</div>
+						@endif
+					@endforeach
 				</div>
 			</div>
 		</div>

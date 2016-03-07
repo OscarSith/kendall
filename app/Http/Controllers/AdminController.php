@@ -51,14 +51,14 @@ class AdminController extends Controller
     	}
 
         $params['paq_imagen_principal'] = $thumb_imageName;
-    	\DB::transaction(function() use ($params, $thumb_imageName) {
+    	\DB::transaction(function() use ($params, $imageName) {
 
 			$paquete = Paquete::create($params);
 
 			$imageParams = [
 				'paquete_id' => $paquete->getKey(),
-				'imagen' => $params['paq_imagen_principal'],
-				'imagen_chica' => $thumb_imageName,
+				'imagen' => $imageName,
+				'imagen_chica' => $params['paq_imagen_principal'],
                 'seleccionado' => 'S'
 			];
 			PaqueteImagen::create($imageParams);

@@ -41,6 +41,8 @@ class HomeController extends Controller
 
     public function detallePaquete(Request $request, $id)
     {
+        // http://openweathermap.org/weather-data#current
+        // http://api.openweathermap.org/data/2.5/weather?q=Lima,PE
         $paquete = Paquete::find($id, ['id', 'paq_nombre', 'paq_titulo', 'paq_descripcion', 'paq_imagen_principal']);
         $imagenes = PaqueteImagen::where('paquete_id', $id)->where('estado', 1)->get(['imagen', 'imagen_chica', 'seleccionado']);
         return view('detalle-paquete', compact('paquete', 'imagenes'));

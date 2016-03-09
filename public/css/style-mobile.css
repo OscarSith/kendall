@@ -1,6 +1,5 @@
 .switcher { display:none; }
 @media (max-width: 1250px) {
-	body { min-width:320px; }
 	.switcher { display:inline-block; }
 	.header-section-2 .grid-12 { padding:0 30px 25px; }
 	#superfish-1 > li {

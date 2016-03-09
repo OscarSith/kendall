@@ -9,43 +9,50 @@ use App\Http\Controllers\Controller;
 use App\Paquete;
 use App\PaqueteImagen;
 use Mail;
+use Route;
 
 class HomeController extends Controller
 {
     public function index()
     {
         $nacionales = Paquete::where('paq_estado', 1)->latest()->take(4)->get(['id', 'paq_nombre', 'paq_titulo', 'paq_imagen_principal']);
-    	return view('welcome', compact('nacionales'));
+        $currentUri = $this->getCurrentUri();
+    	return view('welcome', compact('nacionales', 'currentUri'));
     }
 
     public function contacto()
     {
-    	return view('contacto');
+        $currentUri = $this->getCurrentUri();
+    	return view('contacto', compact('currentUri'));
     }
 
     public function nosotros()
     {
-    	return view('nosotros');
+        $currentUri = $this->getCurrentUri();
+    	return view('nosotros', compact('currentUri'));
     }
 
     public function paquetes()
     {
+        $currentUri = $this->getCurrentUri();
         $paquetes = Paquete::where('paq_estado', 1)->get([
             'id',
             'paq_nombre',
             'paq_imagen_principal',
             'paq_precio',
         ]);
-    	return view('paquetes', compact('paquetes'));
+    	return view('paquetes', compact('paquetes', 'currentUri'));
     }
 
     public function detallePaquete(Request $request, $id)
     {
         // http://openweathermap.org/weather-data#current
         // http://api.openweathermap.org/data/2.5/weather?q=Lima,PE
+        $currentUri = $this->getCurrentUri();
         $paquete = Paquete::find($id, ['id', 'paq_nombre', 'paq_titulo', 'paq_descripcion', 'paq_imagen_principal']);
         $imagenes = PaqueteImagen::where('paquete_id', $id)->where('estado', 1)->get(['imagen', 'imagen_chica', 'seleccionado']);
-        return view('detalle-paquete', compact('paquete', 'imagenes'));
+
+        return view('detalle-paquete', compact('paquete', 'imagenes', 'currentUri'));
     }
 
     public function sendMessage(Request $request)
@@ -55,5 +62,10 @@ class HomeController extends Controller
             // root@kendallperutravel.com Joaquin
         });
         return redirect()->back()->with('success_message', 'Su mensaje ha sido enviado con exito.');
+    }
+
+    private function getCurrentUri()
+    {
+        return Route::current()->uri();
     }
 }

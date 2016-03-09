@@ -330,65 +330,65 @@ Drupal.encodePath = function (item, uri) {
 /**
  * Get the text selection in a textarea.
  */
-Drupal.getSelection = function (element) {
-  if (typeof element.selectionStart != 'number' && document.selection) {
-    // The current selection.
-    var range1 = document.selection.createRange();
-    var range2 = range1.duplicate();
-    // Select all text.
-    range2.moveToElementText(element);
-    // Now move 'dummy' end point to end point of original range.
-    range2.setEndPoint('EndToEnd', range1);
-    // Now we can calculate start and end points.
-    var start = range2.text.length - range1.text.length;
-    var end = start + range1.text.length;
-    return { 'start': start, 'end': end };
-  }
-  return { 'start': element.selectionStart, 'end': element.selectionEnd };
-};
+// Drupal.getSelection = function (element) {
+//   if (typeof element.selectionStart != 'number' && document.selection) {
+//     // The current selection.
+//     var range1 = document.selection.createRange();
+//     var range2 = range1.duplicate();
+//     // Select all text.
+//     range2.moveToElementText(element);
+//     // Now move 'dummy' end point to end point of original range.
+//     range2.setEndPoint('EndToEnd', range1);
+//     // Now we can calculate start and end points.
+//     var start = range2.text.length - range1.text.length;
+//     var end = start + range1.text.length;
+//     return { 'start': start, 'end': end };
+//   }
+//   return { 'start': element.selectionStart, 'end': element.selectionEnd };
+// };
 
 /**
  * Build an error message from an Ajax response.
  */
-Drupal.ajaxError = function (xmlhttp, uri) {
-  var statusCode, statusText, pathText, responseText, readyStateText, message;
-  if (xmlhttp.status) {
-    statusCode = "\n" + Drupal.t("An AJAX HTTP error occurred.") +  "\n" + Drupal.t("HTTP Result Code: !status", {'!status': xmlhttp.status});
-  }
-  else {
-    statusCode = "\n" + Drupal.t("An AJAX HTTP request terminated abnormally.");
-  }
-  statusCode += "\n" + Drupal.t("Debugging information follows.");
-  pathText = "\n" + Drupal.t("Path: !uri", {'!uri': uri} );
-  statusText = '';
-  // In some cases, when statusCode == 0, xmlhttp.statusText may not be defined.
-  // Unfortunately, testing for it with typeof, etc, doesn't seem to catch that
-  // and the test causes an exception. So we need to catch the exception here.
-  try {
-    statusText = "\n" + Drupal.t("StatusText: !statusText", {'!statusText': $.trim(xmlhttp.statusText)});
-  }
-  catch (e) {}
+// Drupal.ajaxError = function (xmlhttp, uri) {
+//   var statusCode, statusText, pathText, responseText, readyStateText, message;
+//   if (xmlhttp.status) {
+//     statusCode = "\n" + Drupal.t("An AJAX HTTP error occurred.") +  "\n" + Drupal.t("HTTP Result Code: !status", {'!status': xmlhttp.status});
+//   }
+//   else {
+//     statusCode = "\n" + Drupal.t("An AJAX HTTP request terminated abnormally.");
+//   }
+//   statusCode += "\n" + Drupal.t("Debugging information follows.");
+//   pathText = "\n" + Drupal.t("Path: !uri", {'!uri': uri} );
+//   statusText = '';
+//   // In some cases, when statusCode == 0, xmlhttp.statusText may not be defined.
+//   // Unfortunately, testing for it with typeof, etc, doesn't seem to catch that
+//   // and the test causes an exception. So we need to catch the exception here.
+//   try {
+//     statusText = "\n" + Drupal.t("StatusText: !statusText", {'!statusText': $.trim(xmlhttp.statusText)});
+//   }
+//   catch (e) {}
 
-  responseText = '';
-  // Again, we don't have a way to know for sure whether accessing
-  // xmlhttp.responseText is going to throw an exception. So we'll catch it.
-  try {
-    responseText = "\n" + Drupal.t("ResponseText: !responseText", {'!responseText': $.trim(xmlhttp.responseText) } );
-  } catch (e) {}
+//   responseText = '';
+//   // Again, we don't have a way to know for sure whether accessing
+//   // xmlhttp.responseText is going to throw an exception. So we'll catch it.
+//   try {
+//     responseText = "\n" + Drupal.t("ResponseText: !responseText", {'!responseText': $.trim(xmlhttp.responseText) } );
+//   } catch (e) {}
 
-  // Make the responseText more readable by stripping HTML tags and newlines.
-  responseText = responseText.replace(/<("[^"]*"|'[^']*'|[^'">])*>/gi,"");
-  responseText = responseText.replace(/[\n]+\s+/g,"\n");
+//   // Make the responseText more readable by stripping HTML tags and newlines.
+//   responseText = responseText.replace(/<("[^"]*"|'[^']*'|[^'">])*>/gi,"");
+//   responseText = responseText.replace(/[\n]+\s+/g,"\n");
 
-  // We don't need readyState except for status == 0.
-  readyStateText = xmlhttp.status == 0 ? ("\n" + Drupal.t("ReadyState: !readyState", {'!readyState': xmlhttp.readyState})) : "";
+//   // We don't need readyState except for status == 0.
+//   readyStateText = xmlhttp.status == 0 ? ("\n" + Drupal.t("ReadyState: !readyState", {'!readyState': xmlhttp.readyState})) : "";
 
-  message = statusCode + pathText + statusText + responseText + readyStateText;
-  return message;
-};
+//   message = statusCode + pathText + statusText + responseText + readyStateText;
+//   return message;
+// };
 
 // Class indicating that JS is enabled; used for styling purpose.
-$('html').addClass('js');
+// $('html').addClass('js');
 
 // 'js enabled' cookie.
 document.cookie = 'has_js=1; path=/';

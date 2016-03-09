@@ -499,14 +499,14 @@ a.align-center {
 2. COLUMNS
 ===========================================================================*/
 
-*[class|="col"],
+/**[class|="col"],
 [class*=" col-"] {
   float: left;
   margin-bottom: 2em;
   margin-right: 4%;
-}
+}*/
 
-@media (max-width: 767px) {
+/*@media (max-width: 767px) {
   *[class|="col"],
   [class*=" col-"] {
     float: none !important;
@@ -514,13 +514,13 @@ a.align-center {
     margin-right: 0;
     width: auto !important;
   }
-}
+}*/
 
-*[class|="col"].float-right {
+/**[class|="col"].float-right {
   float: right;
   margin-left: 4%;
   margin-right: 0;
-}
+}*/
 
 
 .col-1-2 {width: 48%;}

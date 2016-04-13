@@ -218,3 +218,23 @@ if ($piegraph.length) {
 		}
 	});
 }
+
+var $prize = jQuery('#prize-open-rate'),
+    ratesCache = sessionStorage.rate;
+
+if ($prize.length) {
+  function getPrize($prize, typeChange) {
+    var total = parseFloat($prize.data('prize'));
+    jQuery('#prize-sol').text(' - S/. ' + (total * typeChange).toFixed(2));
+  }
+  if (ratesCache != undefined) {
+    console.info('cache');
+    getPrize($prize, JSON.parse(ratesCache).rates.PEN);
+  } else {
+    jQuery.get('https://openexchangerates.org/api/latest.json?app_id=8ccdd6dcb0834e9e83c57fd938ef2194&prettyprint=0', function(rec) {
+      sessionStorage.setItem('rate', JSON.stringify(rec));
+      getPrize($prize, rec.rates.PEN);
+      console.info('api');
+    });
+  }
+}

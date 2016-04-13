@@ -7,7 +7,12 @@
 <div id="wrapper_detail_paquete" class="row">
 	<div class="container">
 		<div class="col-sm-8">
-			<h3 class="page-header text-left">{{ $paquete->paq_nombre}}</h3>
+			<h3 class="page-header text-left">
+				{{ $paquete->paq_nombre}}
+				<span class="pull-right small" id="prize-open-rate" data-prize="{{ $paquete->paq_precio }}">
+					$. {{ $paquete->paq_precio }} <span id="prize-sol"></span>
+				</span>
+			</h3>
 			<h4>{{ $paquete->paq_titulo }}</h4>
 			<div class="field-items">
 				<img src="{{ asset('img/paquetes/' . $imagenes[0]->imagen) }}" style="box-shadow: 1px 1px 6px #000" class="img-responsive center-block">

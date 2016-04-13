@@ -17,4 +17,9 @@ class Paquete extends Model
     	'paq_imagen_principal',
     	'paq_estado',
     ];
+
+    public function scopeActives($q)
+    {
+        return $q->where('paq_estado', 1);
+    }
 }

@@ -13,6 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/animate.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/superfish.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/flexslider.css') }}">
+	@yield('slick-css')
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 	@section('contact')
 	@show
@@ -136,23 +137,23 @@
 		</script>
 		<noscript><a href="https://www.olark.com/site/7830-582-10-3714/contact.html" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com/index40be.html?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
 	</div>
-	<script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/jquery.once.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/drupal.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/jquery.appear.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/wow.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/jquery.flexslider-min.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/jquery.mb.YTPlayer.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/superfish.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/jquery.easing.js') }}"></script>
-	<!-- <script type="text/javascript" src="{{ asset('js/jquery.lazyloader.js') }}"></script> -->
-	<script type="text/javascript" src="{{ asset('js/device.min.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/jquery.mobilemenu.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/tm-parallax.js') }}"></script>
+	<script src="{{ asset('js/jquery.min.js') }}"></script>
+	<script src="{{ asset('js/jquery.once.js') }}"></script>
+	<script src="{{ asset('js/drupal.js') }}"></script>
+	<script src="{{ asset('js/jquery.appear.js') }}"></script>
+	<script src="{{ asset('js/wow.js') }}"></script>
+	<script src="{{ asset('js/jquery.flexslider-min.js') }}"></script>
+	<script src="{{ asset('js/jquery.mb.YTPlayer.js') }}"></script>
+	<script src="{{ asset('js/superfish.js') }}"></script>
+	<script src="{{ asset('js/jquery.easing.js') }}"></script>
+	<script src="{{ asset('js/device.min.js') }}"></script>
+	<script src="{{ asset('js/jquery.mobilemenu.js') }}"></script>
+	<script src="{{ asset('js/tm-parallax.js') }}"></script>
+	@yield('slick')
 	<!--[if LT IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	<script type="text/javascript">
+	<script>
 		jQuery.extend(Drupal.settings, {
 			// "tipsy":{
 			// 	"custom_selectors":[{
@@ -258,8 +259,8 @@
 			}
 		});
 	</script>
-	<script type="text/javascript" src="{{ asset('js/jquery.loader.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+	<script src="{{ asset('js/jquery.loader.js') }}"></script>
+	<script src="{{ asset('js/main.js') }}"></script>
 	@yield('script-contact')
 </body>
 </html>

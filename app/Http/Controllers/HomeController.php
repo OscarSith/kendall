@@ -15,9 +15,11 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $nacionales = Paquete::where('paq_estado', 1)->latest()->take(4)->get(['id', 'paq_nombre', 'paq_titulo', 'paq_imagen_principal']);
+        $fields = ['id', 'paq_nombre', 'paq_titulo', 'paq_imagen_principal'];
+        $nacionales = Paquete::actives()->where('paq_categoria', 1)->latest()->take(7)->get($fields);
+        $internacionales = Paquete::actives()->where('paq_categoria', 2)->latest()->take(7)->get($fields);
         $currentUri = $this->getCurrentUri();
-    	return view('welcome', compact('nacionales', 'currentUri'));
+    	return view('welcome', compact('nacionales', 'internacionales', 'currentUri'));
     }
 
     public function contacto()
@@ -35,13 +37,16 @@ class HomeController extends Controller
     public function paquetes()
     {
         $currentUri = $this->getCurrentUri();
-        $paquetes = Paquete::where('paq_estado', 1)->get([
+        $fields = [
             'id',
             'paq_nombre',
             'paq_imagen_principal',
             'paq_precio',
-        ]);
-    	return view('paquetes', compact('paquetes', 'currentUri'));
+        ];
+        $nacionales = Paquete::actives()->where('paq_categoria', 1)->get($fields);
+        $internacionales = Paquete::actives()->where('paq_categoria', 2)->get($fields);
+
+    	return view('paquetes', compact('nacionales', 'internacionales', 'currentUri'));
     }
 
     public function detallePaquete(Request $request, $id)
@@ -49,7 +54,7 @@ class HomeController extends Controller
         // http://openweathermap.org/weather-data#current
         // http://api.openweathermap.org/data/2.5/weather?q=Lima,PE
         $currentUri = $this->getCurrentUri();
-        $paquete = Paquete::find($id, ['id', 'paq_nombre', 'paq_titulo', 'paq_descripcion', 'paq_imagen_principal']);
+        $paquete = Paquete::find($id, ['id', 'paq_nombre', 'paq_titulo', 'paq_descripcion', 'paq_imagen_principal', 'paq_precio']);
         $imagenes = PaqueteImagen::where('paquete_id', $id)->where('estado', 1)->get(['imagen', 'imagen_chica', 'seleccionado']);
 
         return view('detalle-paquete', compact('paquete', 'imagenes', 'currentUri'));

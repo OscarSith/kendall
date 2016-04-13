@@ -2,6 +2,11 @@
 
 @section('front', 'front')
 
+@section('slick-css')
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/slick-theme.css') }}">
+@endsection
+
 @section('flexslider')
 <div id="header_wrapper" class="container">
     <div class="row">
@@ -54,42 +59,22 @@
 <div id="header_bottom_wrapper" class="container">
     <div class="row">
         <h2 class="page-header">Paquetes Internacionales</h2>
-        <div class="row">
+        <div class="row" id="paquete-internacionales">
+            @foreach($internacionales as $paquete)
             <div class="col-sm-6 col-md-3">
                 <div class="thumbnail">
-                    <img src="{{ asset('img/paquetes/img-1.jpg') }}" width="242" height="204"/>
-                    <div class="text-center">
-                        <h4>Miuasa Dekoias</h4>
-                    </div>
+                    <a href="{{ route('detallePaquete', $paquete->id) }}">
+                        <img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" width="242" height="204"/>
+                        <div class="views-field">
+                            <h4>{{ $paquete->paq_nombre }}</h4>
+                        </div>
+                    </a>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="thumbnail">
-                    <img src="{{ asset('img/paquetes/img-2.jpg') }}" width="242" height="204"/>
-                    <div class="text-center">
-                        <h4>Ferode Vertyasa</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="thumbnail">
-                    <img src="{{ asset('img/paquetes/img-3.jpg') }}" width="242" height="204"/>
-                    <div class="text-center">
-                        <h4>Lertasa Certyas</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="thumbnail">
-                    <img src="{{ asset('img/paquetes/img-4.jpg') }}" width="242" height="204"/>
-                    <div class="text-center">
-                        <h4>Ferode Vertyasa</h4>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
         <h2 class="page-header">Paquetes Nacionales</h2>
-        <div class="row">
+        <div class="row" id="paquete-nacionales">
             @foreach($nacionales as $paquete)
             <div class="col-sm-6 col-md-3">
                 <div class="thumbnail">
@@ -168,12 +153,29 @@
 </div>
 <div id="video_wrapper" class="video_wrapper video-bg row">
     <a class="tm_video_bg" data-property="{videoURL:'http://youtu.be/0PVwJx5tv38', containment:'#video_wrapper',autoPlay:true, showControls:false, mute:true, startAt:0, opacity:1}">youtube</a>
-    <div class="container-12">
-        <div class="grid-12">
-            <div class="region region-video">
-                <div id="block-block-14" class="block-block-14 block block-block block-odd"></div>
-            </div>
+    <div class="container">
+        <div class="region">
+            <div id="block-block-14"></div>
         </div>
     </div>
 </div>
+@endsection
+
+@section('slick')
+<script src="{{ asset('js/slick.min.js') }}"></script>
+<script>
+var params = {
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2200,
+    pauseOnHover: false,
+    prevArrow: '<i class="fa fa-arrow-circle-left fa-2x slick-prev-custom"></i>',
+    nextArrow: '<i class="fa fa-arrow-circle-right fa-2x slick-next-custom"></i>',
+};
+jQuery('#paquete-internacionales').slick(params);
+jQuery('#paquete-nacionales').slick(params);
+
+</script>
 @endsection

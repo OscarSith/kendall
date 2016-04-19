@@ -1,44 +1,38 @@
 @extends('layouts.master')
 
-@section('class_page', 'portfolio')
-
-@section('class_section', 'section-portfolio')
-
 @section('content')
-<div id="wrapper_paquetes" class="row">
+<div id="wrapper_paquetes" class="recent-works">
 	<div class="container">
 		<div class="row">
-			<div class="row">
-				<div class="col-sm-12">
-					<h3 class="page-header">NACIONALES</h3>
-				</div>
+			<div class="col-sm-12">
+				<h2 class="heading-center">NACIONALES</h2>
+			</div>
+			<div class="portfolio-container">
 				@foreach($nacionales as $paquete)
-				<div class="col-sm-4 col-md-3">
-					<div class="thumbnail">
-						<a href="{{ route('detallePaquete', $paquete->id) }}">
-							<div class="img-mini" style="background-image: url('{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}')"></div>
-						</a>
-						<div class="views-field">
-							<h4><a href="{{ route('detallePaquete', $paquete->id) }}">{{ $paquete->paq_nombre }}</a></h4>
-						</div>
-					</div>
+				<div class="portfolio-item col-sm-3">
+                    <div class="content-img">
+                    	<a href="{{ route('detallePaquete', $paquete->id) }}">
+                        	<img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" alt="Item Thumbnail" class="img-responsive center-block">
+                    	</a>
+                    </div>
+                    <h4>{{ $paquete->paq_nombre }}</h4>
 				</div>
 				@endforeach
 			</div>
-			<div class="row">
-				<div class="col-sm-12">
-					<h3 class="page-header">INTERNACIONALES</h3>
-				</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<h2 class="heading-center">INTERNACIONALES</h2>
+			</div>
+			<div class="portfolio-container">
 				@foreach($internacionales as $paquete)
-				<div class="col-sm-4 col-md-3">
-					<div class="thumbnail">
-						<a href="{{ route('detallePaquete', $paquete->id) }}">
-							<div class="img-mini" style="background-image: url('{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}')"></div>
-						</a>
-						<div class="views-field">
-							<h4><a href="{{ route('detallePaquete', $paquete->id) }}">{{ $paquete->paq_nombre }}</a></h4>
-						</div>
-					</div>
+				<div class="portfolio-item col-sm-3">
+                    <div class="content-img">
+                    	<a href="{{ route('detallePaquete', $paquete->id) }}">
+                        	<img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" alt="Item Thumbnail" class="img-responsive center-block">
+                    	</a>
+                    </div>
+                    <h4>{{ $paquete->paq_nombre }}</h4>
 				</div>
 				@endforeach
 			</div>

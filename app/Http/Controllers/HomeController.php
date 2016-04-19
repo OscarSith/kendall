@@ -15,11 +15,13 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $fields = ['id', 'paq_nombre', 'paq_titulo', 'paq_imagen_principal'];
+        $fields = ['id', 'paq_nombre', 'paq_titulo', 'paq_precio', 'paq_imagen_principal'];
+        $ofertas = Paquete::actives()->latest()->take(8)->get($fields);
         $nacionales = Paquete::actives()->where('paq_categoria', 1)->latest()->take(7)->get($fields);
         $internacionales = Paquete::actives()->where('paq_categoria', 2)->latest()->take(7)->get($fields);
         $currentUri = $this->getCurrentUri();
-    	return view('welcome', compact('nacionales', 'internacionales', 'currentUri'));
+
+    	return view('welcome', compact('ofertas', 'nacionales', 'internacionales', 'currentUri'));
     }
 
     public function contacto()

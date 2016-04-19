@@ -1,13 +1,5 @@
 @extends('layouts.master')
 
-@section('class_page', 'contacts')
-
-@section('class_section', 'section-contacts')
-
-@section('contact')
-<script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
-@endsection
-
 @section('content')
 <div id="main-wrapper" class="row" role="main">
 	<div class="container">
@@ -32,7 +24,7 @@
 							Teléfono: (51-1) 469-3815<br />
 							Celular: 975451600<br />
 							RPM.: *268353<br>
-							E-mail: <a href="#">administrador@kendallperutravel.com</a>
+							E-mail: <a href="#" class="kendall-color">administrador@kendallperutravel.com</a>
 						</p>
 					</address>
 				</div>
@@ -70,6 +62,7 @@
 @endsection
 
 @section('script-contact')
+	<script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
 	<script>
 		google_api_map_init();
 		function google_api_map_init(){

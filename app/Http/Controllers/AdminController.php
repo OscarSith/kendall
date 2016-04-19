@@ -40,7 +40,7 @@ class AdminController extends Controller
 
     	try {
 	    	// Reajusta el tamaño de la imagen
-	    	Image::make($file_path)->resize(260, null, function($contraint) {
+	    	Image::make($file_path)->resize(280, null, function($contraint) {
 	    		$contraint->aspectRatio();
 	    	})->save( $this->path_paquetes . $thumb_imageName);
 
@@ -64,7 +64,7 @@ class AdminController extends Controller
 			PaqueteImagen::create($imageParams);
 		});
 
-    	return redirect()->back()->with('success_message', 'Imagen guardad con exito');
+    	return redirect()->back()->with('success_message', 'Imagen guardada con exito');
     }
 
     public function edit($id)

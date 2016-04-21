@@ -1,1 +1,58 @@
-/* your custom styles here */
+#main-nav .nav > li {
+  border-bottom: 3px solid transparent;
+}
+#main-nav .nav > li.active {
+  border-bottom-color: #92b85b
+}
+#wrapper_detail_paquete, #wrapper_paquetes, #nosotros_wrapper, .mt30 {
+  padding-top: 30px
+}
+.google-map-api {
+  background: #fff;
+  height: 400px;
+  position: relative;
+  top: 0;
+  width: 100%;
+}
+.google-map-api .gmap {
+  height: 100%;
+  width: 100%;
+}
+#form-contact address img {
+  border: 2px solid #b61a79;
+  height: 100px;
+  margin-bottom: 30px;
+  padding: 2px;
+}
+.kendall-color {
+  color: #b61a79
+}
+.media-wrapper img, .product-item img {
+  border: 3px solid #A5A5A5;
+  border-radius: 8px
+}
+.product-item:hover .fa-plane {
+  color: #b61a79;
+}
+.fa-certificate {
+  color: #92B85B
+}
+.sub-title-detail {
+  margin-bottom: 28px;
+}
+#prize-open-rate {
+  margin-top: 10px;
+}
+#nosotros_wrapper {
+  background-color: #fff;
+  padding-bottom: 30px
+}
+.color-white {
+  color: #fff
+}
+.lead {
+  font-size: 17px;
+}
+.fa-star-half-o {
+  font-size: .9em;
+}

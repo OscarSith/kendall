@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<h2 class="heading-center">NACIONALES</h2>
+				<h2 class="heading-center"><i class="fa fa-location-arrow"></i> NACIONALES</h2>
 			</div>
 			<div class="portfolio-container">
 				@foreach($nacionales as $paquete)
@@ -22,7 +22,7 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<h2 class="heading-center">INTERNACIONALES</h2>
+				<h2 class="heading-center"><i class="fa fa-globe"></i> INTERNACIONALES</h2>
 			</div>
 			<div class="portfolio-container">
 				@foreach($internacionales as $paquete)

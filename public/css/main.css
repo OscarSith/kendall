@@ -92,15 +92,12 @@ hr {
   background-color: #dd4b39;
 }
 
-.rss-bg {
-  background-color: #ff6600;
-}
-
 /* page header */
 .page-header {
   padding: 5px 0;
   margin: 0;
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid #808080;
+  margin-bottom: 20px;
 }
 .page-header .container {
   position: relative;
@@ -3113,6 +3110,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   background-color: #fff;
   border-bottom: 2px solid #e7e7e7;
   border-top: none;
+  height: 94px;
 }
 .navbar-default .navbar-toggle {
   border: none;
@@ -4692,7 +4690,7 @@ div[class*="col-"] > .form-group {
 
 .testimonial-with-bg {
   padding: 120px 0;
-  background-image: url('../img/testimonial-bg5f8b.png?1424866387');
+  background-image: url('../img/parallax/parallax-one.jpg');
   background-attachment: fixed;
   background-position: center center;
   color: #fff;
@@ -6100,7 +6098,7 @@ ul.sidebar-nav ul.submenu li:first-child a {
   font-weight: 400;
   line-height: 21px;
   text-align: center;
-  background-color: #fff;
+  background-color: #B61A79;
   color: #FFF;
 }
 .dropcap.dropcap-big {
@@ -6328,43 +6326,4 @@ ul.sidebar-nav ul.submenu li:first-child a {
 }
 .product-item .price {
     font-size: 18px;
-}
-#wrapper_detail_paquete, #wrapper_paquetes, #nosotros_wrapper, .mt30 {
-  margin-top: 30px
-}
-.google-map-api {
-  background: #fff;
-  height: 400px;
-  position: relative;
-  top: 0;
-  width: 100%;
-}
-.google-map-api .gmap {
-  height: 100%;
-  width: 100%;
-}
-#form-contact address img {
-  border: 2px solid #b61a79;
-  height: 100px;
-  margin-bottom: 30px;
-  padding: 2px;
-}
-.kendall-color {
-  color: #b61a79
-}
-.media-wrapper img, .product-item img {
-  border: 3px solid #A5A5A5;
-  border-radius: 8px
-}
-.product-item:hover .fa-plane {
-  color: #b61a79;
-}
-.fa-certificate {
-  color: #92B85B
-}
-.sub-title-detail {
-  margin-bottom: 28px;
-}
-#prize-open-rate {
-  margin-top: 10px;
 }

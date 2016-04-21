@@ -31,7 +31,11 @@
 
 @section('content')
 <section class="container product-grid">
-    <h2 class="heading-center">PROMOCIONES DE LA SEMANA</h2>
+    <h2 class="heading-center">
+        <i class="fa fa-star-half-o kendall-color"></i>
+        PROMOCIONES DE LA SEMANA
+        <i class="fa fa-star-half-o fa-flip-horizontal kendall-color"></i>
+    </h2>
     <div class="row">
         @foreach($ofertas as $paquete)
         <div class="col-md-3 col-sm-4">
@@ -52,7 +56,7 @@
 <!-- CAROUSEL -->
 <section class="recent-works slick-carousel">
     <div class="container">
-        <h2 class="section-heading">Paquetes Internacionales</h2>
+        <h2 class="section-heading"><i class="fa fa-globe"></i> PAQUETES INTERNACIONALES</h2>
         <div class="row">
             <div class="portfolio-container">
                 @foreach($internacionales as $paquete)
@@ -73,7 +77,7 @@
 </section>
 <section class="recent-works slick-carousel">
     <div class="container">
-        <h2 class="section-heading">Paquetes Nacionales</h2>
+        <h2 class="section-heading"><i class="fa fa-location-arrow"></i> PAQUETES NACIONALES</h2>
         <div class="row">
             <div class="portfolio-container">
                 @foreach($nacionales as $paquete)

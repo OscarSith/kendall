@@ -6,10 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Responsive Multipurpose Bootstrap Theme">
 	<meta name="author" content="The Develovers">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/my-custom-styles.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/main.min.css') }}">
 	<!-- IE 9 Fallback-->
 	<!--[if IE 9]>
 		<link href="assets/css/ie.css" rel="stylesheet">
@@ -35,7 +32,7 @@
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
-	<div class="wrapper" style="padding-top: 92px;">
+	<div class="wrapper" style="padding-top: 93px;">
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="top:0;">
 			<div class="container">
 				<div class="navbar-header">
@@ -56,7 +53,7 @@
 						<li class="{{ $currentUri == 'paquetes' ? 'active' : '' }}">
 							<a href="{{ url('paquetes') }}">PAQUETES</a>
 						</li>
-						<li {{ $currentUri == 'nosotros' ? 'active' : '' }}>
+						<li class="{{ $currentUri == 'nosotros' ? 'active' : '' }}">
 							<a href="{{ url('nosotros') }}">NOSOTROS</a>
 						</li>
 						<li class="{{ $currentUri == 'contacto' ? 'active' : '' }}">
@@ -70,7 +67,7 @@
 		@yield('hero_unit')
 		@section('content')
 		@show
-		<footer class="mt30">
+		<footer>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-5">
@@ -110,6 +107,7 @@
 	</div>
 	<script src="{{ asset('js/jquery.2.min.js') }}"></script>
 	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
 	<script src="{{ asset('js/slick.min.js') }}"></script>
 	<script src="{{ asset('js/repute-scripts.js') }}"></script>
 	@yield('script-contact')

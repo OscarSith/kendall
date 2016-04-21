@@ -7,14 +7,13 @@
             <div class="item active">
                 <img src="{{ asset('img/sliders/slide-1.jpg') }}" class="img-responsive" alt="Slider Image">
                 <div class="carousel-caption">
-                    <h2 class="hero-heading">CLEAN &amp; ELEGANT DESIGN</h2>
-                    <p class="lead">Giving valuable reputation and credibility to your business</p>
+                    <h3 class="hero-heading">CLEAN &amp; ELEGANT DESIGN</h3>
                 </div>
             </div>
             <div class="item">
                 <img src="{{ asset('img/sliders/slide-2.jpg') }}" class="img-responsive" alt="Slider Image">
                 <div class="carousel-caption">
-                    <h2 class="hero-heading">ULTRA RESPONSIVE</h2>
+                    <h3 class="hero-heading">ULTRA RESPONSIVE</h3>
                     <p class="lead">Leave it to the theme, it knows how to deal with screen sizes</p>
                     <a href="#" class="btn btn-lg hero-button">LEARN MORE</a>
                 </div>
@@ -22,8 +21,7 @@
             <div class="item">
                 <img src="{{ asset('img/sliders/slide-3.jpg') }}" class="img-responsive" alt="Slider Image">
                 <div class="carousel-caption">
-                    <h2 class="hero-heading">EASY TO CUSTOMIZE</h2>
-                    <p class="lead">Readable code, well documented and FREE support</p>
+                    <h3 class="hero-heading">EASY TO CUSTOMIZE</h3>
                 </div>
             </div>
         </div>
@@ -33,14 +31,18 @@
 
 @section('content')
 <section class="container product-grid">
+    <h2 class="heading-center">PROMOCIONES DE LA SEMANA</h2>
     <div class="row">
         @foreach($ofertas as $paquete)
         <div class="col-md-3 col-sm-4">
-            <div class="product-item thumbnail">
-                <a href="{{ route('detallePaquete', $paquete->id) }}" title="{{ $paquete->paq_nombre }}"><img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" class="img-responsive center-block" alt="Product Item"></a>
+            <div class="product-item">
+                <a href="{{ route('detallePaquete', [$paquete->id, str_slug($paquete->paq_nombre)]) }}" title="{{ $paquete->paq_nombre }}"><img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" class="img-responsive center-block" alt="Product Item"></a>
                 <div class="info">
-                    <h3 class="title">{{ $paquete->paq_nombre }}</h3>
-                    <div class="price"><strong>$. {{ $paquete->paq_precio }}</strong></div>
+                    <h3 class="title">
+                        <i class="fa fa-plane fa-lg"></i>
+                        {{ $paquete->paq_nombre }}
+                    </h3>
+                    <div class="price"><strong><i class="fa fa-dollar"></i> {{ $paquete->paq_precio }}</strong></div>
                 </div>
             </div>
         </div>
@@ -58,7 +60,7 @@
                     <div class="overlay"></div>
                     <div class="info">
                         <h4 class="title">{{ $paquete->paq_nombre }}</h4>
-                        <a href="{{ route('detallePaquete', $paquete->id) }}" class="btn">Ver Detalle</a>
+                        <a href="{{ route('detallePaquete', [$paquete->id, str_slug($paquete->paq_nombre)]) }}" class="btn">Ver Detalle</a>
                     </div>
                     <div class="media-wrapper">
                         <img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" alt="Item Thumbnail" class="img-responsive center-block" />
@@ -79,10 +81,10 @@
                     <div class="overlay"></div>
                     <div class="info">
                         <h4 class="title">{{ $paquete->paq_nombre }}</h4>
-                        <a href="{{ route('detallePaquete', $paquete->id) }}" class="btn">Ver Detalle</a>
+                        <a href="{{ route('detallePaquete', [$paquete->id, str_slug($paquete->paq_nombre)]) }}" class="btn">Ver Detalle</a>
                     </div>
                     <div class="media-wrapper">
-                        <img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" alt="Item Thumbnail" />
+                        <img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" alt="Item Thumbnail" class="img-responsive center-block" />
                     </div>
                 </div>
                 @endforeach

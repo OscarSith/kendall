@@ -5,12 +5,12 @@
 	<div class="row">
 		<div class="col-sm-8">
 			<h2 class="page-header text-left">
-				{{ $paquete->paq_nombre}}
+				<i class="fa fa-certificate"></i> {{ $paquete->paq_nombre}}
 				<span class="pull-right small" id="prize-open-rate" data-prize="{{ $paquete->paq_precio }}">
-					$. {{ $paquete->paq_precio }} <span id="prize-sol"></span>
+					<i class="fa fa-dollar"></i> {{ $paquete->paq_precio }} <span id="prize-sol"></span>
 				</span>
 			</h2>
-			<h4>{{ $paquete->paq_titulo }}</h4>
+			<h4 class="sub-title-detail">{{ $paquete->paq_titulo }}</h4>
 			<div class="field-items">
 				<img src="{{ asset('img/paquetes/' . $imagenes[0]->imagen) }}" style="box-shadow: 1px 1px 6px #000" class="img-responsive center-block">
 			</div>
@@ -29,7 +29,7 @@
 		</div>
 		<aside class="col-sm-4">
 			{!! Form::open(['route' => ['sendNotification', $paquete->id], 'method' => 'post', 'id' => 'enviar-cotizacion']) !!}
-				<h3 class="page-header">Cotizar</h3>
+				<h2 class="page-header">Cotizar</h2>
 				@include('partials.display_messages')
 				<p>Envíenos un mensaje y le cotizaremos a la brevedad posible.</p>
 				<div class="form-group">
@@ -44,9 +44,28 @@
 				<div class="form-group">
 					{!! Form::textarea('mensaje', null, ['placeholder' => 'Mensaje...', 'id' => 'edit-message', 'class' => 'form-control']) !!}
 				</div>
-				<button type="button" class="btn btn-block btn-lg btn-success">Enviar</button>
+				<button type="button" class="btn btn-block btn-lg btn-success"><i class="fa fa-envelope"></i> Enviar</button>
 			{!! Form::close() !!}
 		</aside>
+	</div>
+	<div class="row">
+		@if (!$othersPaquetes->isEmpty())
+		<h3 class="text-center mt30">Otros paquetes que le pueden interesar</h3>
+		<hr>
+		<div class="portfolio-container">
+			@foreach ($othersPaquetes as $paquete)
+			<div class="portfolio-item col-sm-3">
+				<div class="content-img">
+					<a href="{{ route('detallePaquete', [$paquete->id, str_slug($paquete->paq_nombre)]) }}">
+						<img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" alt="Item Thumbnail" class="img-responsive center-block">
+					</a>
+				</div>
+				<h4><i class="fa fa-plane kendall-color"></i> {{ $paquete->paq_nombre }}</h4>
+			</div>
+			@endforeach
+		</div>
+		<br><br>
+		@endif
 	</div>
 </div>
 @endsection

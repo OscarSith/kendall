@@ -15,7 +15,7 @@ Route::get('/', 'HomeController@index');
 Route::get('contacto', 'HomeController@contacto');
 Route::get('nosotros', 'HomeController@nosotros');
 Route::get('paquetes', 'HomeController@paquetes');
-Route::get('detalle-paquete-{id}', 'HomeController@detallePaquete')->name('detallePaquete');
+Route::get('detalle-paquete/{id}-{paq_nombre}', 'HomeController@detallePaquete')->name('detallePaquete');
 Route::post('cotizar-paquete-{id}', 'HomeController@detallePaquete')->name('sendNotification');
 Route::post('enviar-mensaje', 'HomeController@sendMessage')->name('send-message');
 

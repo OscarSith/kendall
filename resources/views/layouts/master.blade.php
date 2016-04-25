@@ -32,8 +32,16 @@
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
-	<div class="wrapper" style="padding-top: 93px;">
+	<div class="wrapper" style="padding-top: 162px;">
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="top:0;">
+			<div class="topbar">
+				<div class="container">
+					<ul class="list-inline top-nav">
+						<li><span><i class="fa fa-phone-square"></i> 975451600 / (51-1) 469-3815 / RPM: *268353</span></li>
+						<li><i class="fa fa-envelope"></i> <a href=":mailito">administrador@kendallperutravel.com</a></li>
+					</ul>
+				</div>
+			</div>
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">

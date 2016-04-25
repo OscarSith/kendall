@@ -261,7 +261,7 @@ hr {
 
 /* footer */
 footer {
-  background-color: #49494b;
+  background-color: #B61B79;
   font-weight: 300;
   color: #eaeaea;
 }
@@ -3083,7 +3083,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .navbar-brand {
-  padding: 4px 15px;
+  padding: 20px 15px;
   height: initial;
 }
 .navbar-brand > img {
@@ -3107,10 +3107,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .navbar-default {
-  background-color: #fff;
-  border-bottom: 2px solid #e7e7e7;
-  border-top: none;
-  height: 94px;
+  background: url('../img/bg_body_nav.jpg') no-repeat 50% 50%;
+  border: none;
 }
 .navbar-default .navbar-toggle {
   border: none;
@@ -3134,15 +3132,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   margin-right: -25px;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #656565;
+  color: #fff;
   font-size: 1.2em;
   font-weight: 600;
-  padding-bottom: 24px;
+  padding-bottom: 21px;
   padding-top: 24px;
 }
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+/*.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: #355987;
-}
+}*/
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
@@ -3158,6 +3156,40 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .navbar-default .navbar-nav .dropdown-toggle i {
   margin-left: 3px;
   color: #b8b8b8;
+}
+
+.topbar {
+  background-color: #92B85C;
+  border-bottom: 1px solid #CCC;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  text-align: right;
+}
+.topbar .top-nav {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+}
+.topbar .top-nav {
+  margin-bottom: 0;
+  color: #fff;
+}
+.topbar a:hover, .topbar a:focus {
+  color: #333;
+}
+.topbar .btn-link:hover, .topbar .btn-link:focus {
+  text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+  .topbar {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .topbar .searchbox {
+    display: none;
+  }
 }
 
 /* navigation bar, dark theme */
@@ -3284,8 +3316,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   width: 90px;
 }
 .navbar-fixed-top .navbar-nav {
+  background-color: #588A58;
+  border-radius: 6px 6px 0 0;
   margin-right: -10px;
-  margin-top: 24px;
+  margin-top: 71px;
 }
 
 .fullscreen-slider .navbar-fixed-top {

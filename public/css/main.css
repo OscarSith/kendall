@@ -3087,7 +3087,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   height: initial;
 }
 .navbar-brand > img {
-  width: 196px;
+  width: 245px;
 }
 .navbar-brand.navbar-logo-bigger {
   padding: 0 0 0 10px;
@@ -3107,7 +3107,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .navbar-default {
-  background: url('../img/bg_body_nav.jpg') no-repeat 50% 50%;
+  background: url('../img/bg_body.jpg') no-repeat 50% 50%;
   border: none;
 }
 .navbar-default .navbar-toggle {
@@ -3135,8 +3135,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   color: #fff;
   font-size: 1.2em;
   font-weight: 600;
-  padding-bottom: 21px;
-  padding-top: 24px;
+  padding-bottom: 13px;
+  padding-top: 15px;
 }
 /*.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: #355987;
@@ -3159,8 +3159,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .topbar {
-  background-color: #92B85C;
-  border-bottom: 1px solid #CCC;
+  background-color: #31944B;
   padding-bottom: 8px;
   padding-top: 8px;
   text-align: right;
@@ -3316,10 +3315,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   width: 90px;
 }
 .navbar-fixed-top .navbar-nav {
-  background-color: #588A58;
   border-radius: 6px 6px 0 0;
   margin-right: -10px;
-  margin-top: 71px;
+  margin-top: 95px;
 }
 
 .fullscreen-slider .navbar-fixed-top {

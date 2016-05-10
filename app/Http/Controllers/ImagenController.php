@@ -76,7 +76,8 @@ class ImagenController extends Controller
     public function show($id)
     {
         $imagenes = PaqueteImagen::where('paquete_id', $id)->get();
-        $paq_nombre = Paquete::find($id)->value('paq_nombre');
+        $paquete = Paquete::find($id);
+        $paq_nombre = $paquete->paq_nombre;
         return view('admin.imagenes', compact('imagenes', 'paq_nombre', 'id'));
     }
 

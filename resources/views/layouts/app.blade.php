@@ -34,6 +34,17 @@
             background-size: 100%;
             height: 210px;
         }
+        .info-cat {
+            color: #fff;
+            margin-top: 0;
+            padding: 6px 0;
+        }
+        .inter {
+            background-color: #7BBA4E;
+        }
+        .locales {
+            background-color: #2EAAE2;
+        }
     </style>
 </head>
 <body id="app-layout">

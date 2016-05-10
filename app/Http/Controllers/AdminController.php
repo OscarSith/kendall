@@ -10,6 +10,7 @@ use App\Categoria;
 use App\Paquete;
 use App\PaqueteImagen;
 use Image;
+use File;
 
 class AdminController extends Controller
 {
@@ -17,8 +18,9 @@ class AdminController extends Controller
 
     public function index()
     {
-    	$paquetes = Paquete::latest()->get(['id', 'paq_nombre', 'paq_titulo', 'paq_imagen_principal', 'paq_estado', 'paq_categoria']);
-    	return view('admin.home', compact('paquetes'));
+        $paquetes = Paquete::latest()->get(['id', 'paq_nombre', 'paq_titulo', 'paq_imagen_principal', 'paq_estado', 'paq_categoria']);
+        $categorias = Categoria::get();
+    	return view('admin.home', compact('paquetes', 'categorias'));
     }
 
     public function showPaquete()
@@ -31,16 +33,14 @@ class AdminController extends Controller
     public function storePaquete(Request $request)
     {
     	$file = $request->file('paq_imagen_principal');
-    	$file_path = $file->path();
     	$params = $request->except(['_token']);
 
-    	$originalName = str_replace([' ', '-'], '_', $file->getClientOriginalName());
-    	$imageName = strtolower(str_random(4)) . '_' . $originalName;
+    	$imageName = strtolower(str_random(4)) . '_' . str_replace([' ', '-'], '_', $file->getClientOriginalName());
     	$thumb_imageName = 'thumb_' . $imageName;
 
     	try {
 	    	// Reajusta el tamaño de la imagen
-	    	Image::make($file_path)->resize(280, null, function($contraint) {
+	    	Image::make($file->path())->resize(280, null, function($contraint) {
 	    		$contraint->aspectRatio();
 	    	})->save( $this->path_paquetes . $thumb_imageName);
 
@@ -78,11 +78,44 @@ class AdminController extends Controller
 
     public function update(Request $request, $id)
     {
-    	$paquete = Paquete::find($id);
-    	$paquete->fill($request->except('_token'));
-    	$paquete->save();
+        $imageEdited = false;
+        if ($request->hasFile('paq_imagen_principal')) {
+            $params = $request->except(['_token']);
+            $file = $request->file('paq_imagen_principal');
+            $imageName = strtolower(str_random(4)) . '_' . str_replace([' ', '-'], '_', $file->getClientOriginalName());
+            $thumb_imageName = 'thumb_' . $imageName;
 
-    	return redirect()->route('dashboard')->with('success_message', 'Paquete ' . $request->input('paq_nombre') . ' actualizado con exito.');
+            try {
+                // Reajusta el tamaño de la imagen
+                Image::make($file->path())->resize(280, null, function($contraint) {
+                    $contraint->aspectRatio();
+                })->save( $this->path_paquetes . $thumb_imageName, 98);
+
+                // Guarda la imagen con las dimensiones originalaes
+                $file->move($this->path_paquetes, $imageName);
+
+                $params['paq_imagen_principal'] = $thumb_imageName;
+                $imageEdited = true;
+            } catch (Exception $ex) {
+                return redirect()->back()->with('error_message', 'Ups... no se puede procesar el archivo subido, intentelo de nuevo, si persiste contacte con el programador');
+            }
+        } else {
+            $params = $request->except(['_token', 'paq_imagen_principal']);
+        }
+
+    	$paquete = Paquete::find($id);
+
+        if ($imageEdited) {
+            File::delete($this->path_paquetes . $paquete->paq_imagen_principal);
+            File::delete($this->path_paquetes . substr($paquete->paq_imagen_principal, 6));
+            $imagen_id = PaqueteImagen::where('paquete_id', $id)->pluck('id')->first();
+            PaqueteImagen::find($imagen_id)->update(['imagen' => $imageName, 'imagen_chica' => $thumb_imageName]);
+        }
+
+        $paquete->fill($params);
+        $paquete->save();
+
+    	return redirect()->route('dashboard')->with('success_message', 'Paquete ' . $params['paq_nombre'] . ' actualizado con exito.');
     }
 
     private function categorias()

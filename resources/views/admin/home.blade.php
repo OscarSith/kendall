@@ -17,6 +17,12 @@
                         <div class="col-sm-4 col-md-3">
                             <div class="thumbnail {{ !$paquete->paq_estado ? 'inactivo' : '' }}">
                                 <div class="img-mini" style="background-image: url('{{ asset('img/paquetes/'.$paquete->paq_imagen_principal) }}')"></div>
+                                @foreach($categorias as $categoria)
+                                    @if ($categoria->id == $paquete->paq_categoria)
+                                    <h4 class="text-center info-cat {{ $categoria->id == 1 ? 'locales' : 'inter' }}">{{ $categoria->nombre }}</h4 class="text-center info-cat">
+                                    <?php break; ?>
+                                    @endif
+                                @endforeach
                               <div class="caption">
                                 <h4>{{ $paquete->paq_nombre }}</h4>
                                 <p>{{ str_limit($paquete->paq_titulo, 26) }}</p>

@@ -13,7 +13,7 @@
 					@if ($accion == 'nuevo')
 					{!! Form::open(array('route' => 'addPaquete', 'method' => 'post', 'class' => 'form-horizontal', 'files' => true)) !!}
 					@else
-					{!! Form::model($paquete, array('route' => ['editPaquete', $paquete->id], 'method' => 'put', 'class' => 'form-horizontal')) !!}
+					{!! Form::model($paquete, array('route' => ['editPaquete', $paquete->id], 'method' => 'put', 'class' => 'form-horizontal', 'files' => true)) !!}
 					@endif
 						@include('partials.display_messages')
 						<div class="form-group">
@@ -36,18 +36,29 @@
 						</div>
 						<div class="form-group">
 							{!! Form::label('paq_precio', 'Precio', ['class' => 'control-label col-sm-2']) !!}
-							<div class="col-sm-4">
+							<div class="col-md-2 col-sm-3">
 								{!! Form::text('paq_precio', null, ['class' => 'form-control', 'placeholder' => '120.00']) !!}
 							</div>
 						</div>
-						@if ($accion == 'nuevo')
 						<div class="form-group">
 							{!! Form::label('paq_imagen_principal', 'Imagen', ['class' => 'control-label col-sm-2']) !!}
 							<div class="col-sm-10">
-								{!! Form::file('paq_imagen_principal', ['class' => 'form-control']) !!}
+								<div class="row">
+								@if ($accion == 'editar')
+									<div class="col-sm-4">
+										<img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" class="img-responsive">
+									</div>
+									<div class="col-sm-8">
+										{!! Form::file('paq_imagen_principal', ['class' => 'form-control']) !!}
+									</div>
+								@else
+									<div class="col-sm-5">
+										{!! Form::file('paq_imagen_principal', ['class' => 'form-control']) !!}
+									</div>
+								@endif
+								</div>
 							</div>
 						</div>
-						@endif
 						<div class="form-group">
 							{!! Form::label('paq_descripcion', 'Descripción', ['class' => 'control-label col-sm-2']) !!}
 							<div class="col-sm-10">

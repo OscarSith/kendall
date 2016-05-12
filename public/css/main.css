@@ -3138,9 +3138,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   padding-bottom: 13px;
   padding-top: 15px;
 }
-/*.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #355987;
-}*/
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #31944B;
+}
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
@@ -3555,9 +3555,26 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   .navbar-brand {
     margin-top: 0;
   }
+  .navbar-header {
+    border-bottom: 1px solid #ccc;
+  }
+  .navbar-default .navbar-toggle {
+    background-color: #b61a79
+  }
+  .navbar-default {
+    background: #f8f8f8;
+  }
+  .navbar-default .navbar-nav>li>a {
+    color: #333;
+  }
+  #main-nav .nav>li.active a{
+    background-color: #31944B;
+    color: #fff
+  }
 
   .navbar-default .navbar-nav {
     margin-left: 0;
+    margin-top: 0;
   }
   .navbar-default .navbar-nav .dropdown-menu .dropdown a {
     background-color: inherit;
@@ -5558,8 +5575,8 @@ ul.sidebar-nav ul.submenu li:first-child a {
 /* general portfolio item with hovered caption */
 .portfolio-container .content-img {
   border-radius: 8px;
-  border: 4px solid #999;
-  height: 200px;
+  border: 3px solid #B1B1B1;
+  height: 194px;
   overflow: hidden;
 }
 .portfolio-item {

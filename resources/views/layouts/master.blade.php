@@ -18,7 +18,7 @@
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('img/ico/repute114x114.png') }}">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('img/ico/repute72x72.png') }}">
 	<link rel="apple-touch-icon-precomposed" href="{{ asset('assets/ico/repute57x57.png') }}">
-	<link rel="shortcut icon" href="favicon.png">
+	<link rel="shortcut icon" href="{{ asset('favicon.png') }}">
 </head>
 
 <body>

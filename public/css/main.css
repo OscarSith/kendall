@@ -3931,10 +3931,6 @@ html.fullscreen .wrapper {
   .hero-unit-fullscreen .left {
     top: 10em;
   }
-  .navbar-header {
-    box-shadow: 0px 1px 2px #ccc;
-    position: relative;
-  }
 }
 @media screen and (min-width: 1200px) {
   .hero-unit-fullscreen {
@@ -4059,6 +4055,10 @@ body.fullscreen-slider .navbar {
   .hero-unit-fullscreen-slider .slide-content {
     padding-left: 70px;
     padding-right: 70px;
+  }
+  .navbar-header {
+    box-shadow: 0px 1px 2px #ccc;
+    position: relative;
   }
 }
 @media screen and (max-width: 768px) {

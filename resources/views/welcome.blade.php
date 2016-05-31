@@ -31,11 +31,7 @@
 
 @section('content')
 <section class="container product-grid">
-    <h2 class="heading-center">
-        <i class="fa fa-star-half-o kendall-color"></i>
-        PROMOCIONES DE LA SEMANA
-        <i class="fa fa-star-half-o fa-flip-horizontal kendall-color"></i>
-    </h2>
+    <h2 class="heading-center">PROMOCIONES DE LA SEMANA</h2>
     <div class="row">
         @foreach($ofertas as $paquete)
         <div class="col-md-3 col-sm-4">

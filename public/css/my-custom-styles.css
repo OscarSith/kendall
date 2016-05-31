@@ -2,10 +2,10 @@
   border-bottom: 3px solid transparent;
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover {
-  color: #fff;
+  color: #31944B;
 }
 #main-nav .nav > li.active {
-  border-bottom-color: #fff
+  border-bottom-color: #31944B
 }
 #wrapper_detail_paquete, #wrapper_paquetes, #nosotros_wrapper, .mt30 {
   padding-top: 30px

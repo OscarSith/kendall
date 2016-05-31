@@ -53,7 +53,7 @@ hr {
 
 /* wrapper */
 .wrapper {
-  background: #C4E3FF;
+  background: #F0F0F0;
 }
 
 .full-width-section {
@@ -261,7 +261,7 @@ hr {
 
 /* footer */
 footer {
-  background-color: #B61B79;
+  background-color: #68A4C4;
   font-weight: 300;
   color: #eaeaea;
 }
@@ -3107,7 +3107,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .navbar-default {
-  background: url('../img/bg_body.jpg') no-repeat 50% 50%;
+  background-color: #D8EDF3;
   border: none;
 }
 .navbar-default .navbar-toggle {
@@ -3132,7 +3132,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   margin-right: -25px;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #fff;
+  color: #333;
   font-size: 1.2em;
   font-weight: 600;
   padding-bottom: 13px;
@@ -3159,7 +3159,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .topbar {
-  background-color: #31944B;
+  background-color: #66C77F;
   padding-bottom: 8px;
   padding-top: 8px;
   text-align: right;
@@ -3175,9 +3175,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   margin-bottom: 0;
   color: #fff;
 }
-.topbar a:hover, .topbar a:focus {
+/*.topbar a:hover, .topbar a:focus {
   color: #333;
-}
+}*/
 .topbar .btn-link:hover, .topbar .btn-link:focus {
   text-decoration: none;
 }
@@ -3247,7 +3247,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   background-color: #444446;
 }
 .navbar-default.navbar-dark .mega-menu-content .list-menu > li.active > a {
-  color: #fff;
+  color: #31944B;
 }
 
 .navbar-default.navbar-transparent {
@@ -3519,25 +3519,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   .navbar-default .navbar-nav .open .dropdown-menu > li.active > a {
     color: inherit;
     background-color: #E7E7E7;
-  }
-
-  .navbar-default.navbar-dark .navbar-nav > .open > a,
-  .navbar-default.navbar-dark .navbar-nav > .open > a:hover,
-  .navbar-default.navbar-dark .navbar-nav > .open > a:focus {
-    color: #fff;
-  }
-  .navbar-default.navbar-dark .navbar-nav > .active > a, .navbar-default.navbar-dark .navbar-nav > .active > a:hover, .navbar-default.navbar-dark .navbar-nav > .active > a:focus,
-  .navbar-default.navbar-dark .navbar-nav > .active.open > a, .navbar-default.navbar-dark .navbar-nav > .active.open > a:hover, .navbar-default.navbar-dark .navbar-nav > .active.open > a:focus {
-    color: #fff;
-  }
-  .navbar-default.navbar-dark .navbar-nav .open .dropdown-menu > li.active > a {
-    color: #fff;
-    background-color: #444446;
-  }
-  .navbar-default.navbar-dark .navbar-nav > .active > a, .navbar-default.navbar-dark .navbar-nav > .active > a:hover, .navbar-default.navbar-dark .navbar-nav > .active > a:focus,
-  .navbar-default.navbar-dark .navbar-nav > .active.open > a, .navbar-default.navbar-dark .navbar-nav > .active.open > a:hover, .navbar-default.navbar-dark .navbar-nav > .active.open > a:focus {
-    background-color: #444446;
-    color: #fff;
   }
 
   .navbar-default.navbar-transparent .navbar-nav {
@@ -4843,38 +4824,33 @@ div[class*="col-"] > .form-group {
 }
 
 /* social connect icons */
-ul.social-icons li a {
+.social-icons a {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  display: block;
-  width: 50px;
-  height: 50px;
-  font-size: 24px;
+  padding: 3px 8px;
+  font-size: 18px;
   color: #fff;
-  text-align: center;
+  display: inline-block;
 }
-ul.social-icons li a.facebook-bg:hover, ul.social-icons li a.facebook-bg:focus {
+.social-icons a.facebook-bg:hover, .social-icons a.facebook-bg:focus {
   background-color: #344f98;
 }
-ul.social-icons li a.twitter-bg:hover, ul.social-icons li a.twitter-bg:focus {
+.social-icons a.twitter-bg:hover, .social-icons a.twitter-bg:focus {
   background-color: #138bee;
 }
-ul.social-icons li a.googleplus-bg:hover, ul.social-icons li a.googleplus-bg:focus {
+.social-icons a.googleplus-bg:hover, .social-icons a.googleplus-bg:focus {
   background-color: #d73925;
 }
-ul.social-icons li a.rss-bg:hover, ul.social-icons li a.rss-bg:focus {
+.social-icons a.rss-bg:hover, .social-icons a.rss-bg:focus {
   background-color: #e65c00;
 }
-ul.social-icons li a i {
+/*.social-icons li a i {
   position: relative;
   top: 8px;
-}
+}*/
 
 /* newsletter form */
-.newsletter-form {
-  margin-top: 20px;
-}
 .newsletter-form .form-control {
   font-size: 14px;
 }

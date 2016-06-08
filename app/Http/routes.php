@@ -15,6 +15,7 @@ Route::get('/', 'HomeController@index');
 Route::get('contacto', 'HomeController@contacto');
 Route::get('nosotros', 'HomeController@nosotros');
 Route::get('{country}', 'HomeController@paquetesByCountry')->name('paquetesByCountry');
+Route::get('paises/{categoria}', 'HomeController@countriesByCategoria')->name('countriesByCategoria');
 Route::get('detalle-paquete/{id}-{paq_nombre}', 'HomeController@detallePaquete')->name('detallePaquete');
 Route::post('cotizar-paquete-{id}', 'HomeController@detallePaquete')->name('sendNotification');
 Route::post('enviar-mensaje', 'HomeController@sendMessage')->name('send-message');

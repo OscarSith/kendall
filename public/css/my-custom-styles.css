@@ -76,3 +76,8 @@
   width: 136px;
   padding-left: 20px;
 }
+.list-country {
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 180px
+}

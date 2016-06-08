@@ -73,6 +73,7 @@
 									<li><a href="{{ route('paquetesByCountry', str_slug('Chiclayo') ) }}">Chiclayo</a></li>
 									<li><a href="{{ route('paquetesByCountry', str_slug('Cusco') ) }}">Cusco</a></li>
 									<li><a href="{{ route('paquetesByCountry', str_slug('Huaraz') ) }}">Huaraz</a></li>
+									<li><a href="{{ route('countriesByCategoria', 'nacionales') }}">Ver mas</a></li>
 								</ul>
 								<ul class="pull-right list-unstyled nav-internacional">
 									<li class="title-package-nav">Internacional<i class="fa fa-angle-double-right fa-fw"></i></li>
@@ -82,6 +83,7 @@
 									<li><a href="{{ route('paquetesByCountry', str_slug('Brasil') ) }}">Brasil</a></li>
 									<li><a href="{{ route('paquetesByCountry', str_slug('Chile') ) }}">Chile</a></li>
 									<li><a href="{{ route('paquetesByCountry', str_slug('Colombia') ) }}">Colombia</a></li>
+									<li><a href="{{ route('countriesByCategoria', 'internacionales') }}">Ver mas</a></li>
 								</ul>
 							</div>
 						</li>

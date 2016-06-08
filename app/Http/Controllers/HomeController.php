@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\PaqueteImagen;
 use App\Paquete;
 use App\Country;
+use App\Categoria;
 use Mail;
 use Route;
 
@@ -46,12 +47,6 @@ class HomeController extends Controller
     public function countries()
     {
         $currentUri = $this->getCurrentUri();
-        // $fields = [
-        //     'id',
-        //     'paq_nombre',
-        //     'paq_imagen_principal',
-        //     'paq_precio',
-        // ];
         $nacionales = Paquete::actives()->where('paq_categoria', 1)->get($this->fields);
         $nacionales = $nacionales->sortBy($this->fields[1]);
 
@@ -99,6 +94,16 @@ class HomeController extends Controller
         $currentUri = $this->getCurrentUri();
 
         return view('paquetesByCountry', compact('paquetes', 'name', 'currentUri'));
+    }
+
+    public function countriesByCategoria($categoria)
+    {
+        $categoriaID = Categoria::where('nombre', strtolower($categoria))->pluck('id')->first();
+        $countries = Country::where('co_categoria', $categoriaID)->get(['id', 'co_nombre', 'co_imagen', 'co_nombre_slug']);
+
+        $currentUri = $this->getCurrentUri();
+
+        return view('countries', compact('countries', 'currentUri'));
     }
 
     private function getCurrentUri()

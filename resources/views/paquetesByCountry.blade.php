@@ -2,11 +2,11 @@
 
 @section('content')
 <section class="container">
-    <h2 class="heading-center">PAQUETES TURÍSTICOS DE {{ $name }}</h2>
-    <div class="row">
+	<h2 class="heading-center">PAQUETES TURÍSTICOS DE {{ $name }}</h2>
+	<div class="row">
 		@foreach($paquetes as $paquete)
 			@include('partials.list-paquete')
 		@endforeach
-    </div>
+	</div>
 </section>
 @stop

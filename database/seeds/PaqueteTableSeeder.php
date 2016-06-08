@@ -12,6 +12,6 @@ class PaqueteTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Paquete::class, 50)->create()->make();
+        factory(App\Paquete::class, 100)->create()->make();
     }
 }

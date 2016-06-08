@@ -62,8 +62,28 @@
 						<li class="{{ $currentUri == '/' ? 'active' : '' }}">
 							<a href="{{ url('/') }}">INICIO</a>
 						</li>
-						<li class="{{ $currentUri == 'paquetes' ? 'active' : '' }}">
-							<a href="{{ url('paquetes') }}">PAQUETES</a>
+						<li class="{{ $currentUri == 'paquetes' ? 'active' : '' }} dropdown">
+							<a href="{{ url('paquetes') }}" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PAQUETES</a>
+							<div class="dropdown-menu menu-list-paquetes">
+								<ul class="pull-left list-unstyled mav-nacional">
+									<li class="title-package-nav">Nacional<i class="fa fa-angle-double-right fa-fw"></i></li>
+									<li><a href="{{ route('paquetesByCountry', str_slug('Arequipa') ) }}">Arequipa</a></li>
+									<li><a href="{{ route('paquetesByCountry', str_slug('Ayacucho') ) }}">Ayacucho</a></li>
+									<li><a href="{{ route('paquetesByCountry', str_slug('Cajamarca') ) }}">Cajamarca</a></li>
+									<li><a href="{{ route('paquetesByCountry', str_slug('Chiclayo') ) }}">Chiclayo</a></li>
+									<li><a href="{{ route('paquetesByCountry', str_slug('Cusco') ) }}">Cusco</a></li>
+									<li><a href="{{ route('paquetesByCountry', str_slug('Huaraz') ) }}">Huaraz</a></li>
+								</ul>
+								<ul class="pull-right list-unstyled nav-internacional">
+									<li class="title-package-nav">Internacional<i class="fa fa-angle-double-right fa-fw"></i></li>
+									<li><a href="{{ route('paquetesByCountry', str_slug('Argentina') ) }}">Argentina</a></li>
+									<li><a href="{{ route('paquetesByCountry', str_slug('Aruba') ) }}">Aruba</a></li>
+									<li><a href="{{ route('paquetesByCountry', str_slug('Bolivia') ) }}">Bolivia</a></li>
+									<li><a href="{{ route('paquetesByCountry', str_slug('Brasil') ) }}">Brasil</a></li>
+									<li><a href="{{ route('paquetesByCountry', str_slug('Chile') ) }}">Chile</a></li>
+									<li><a href="{{ route('paquetesByCountry', str_slug('Colombia') ) }}">Colombia</a></li>
+								</ul>
+							</div>
 						</li>
 						<li class="{{ $currentUri == 'nosotros' ? 'active' : '' }}">
 							<a href="{{ url('nosotros') }}">NOSOTROS</a>

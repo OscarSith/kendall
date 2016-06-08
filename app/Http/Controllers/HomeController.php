@@ -6,24 +6,26 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Paquete;
 use App\PaqueteImagen;
+use App\Paquete;
+use App\Country;
 use Mail;
 use Route;
 
 class HomeController extends Controller
 {
+    private $fields = ['paquetes.id', 'paq_nombre', 'paq_titulo', 'paq_descripcion', 'paq_precio', 'paq_imagen_principal', 'paq_pais'];
+
     public function index()
     {
-        $fields = ['id', 'paq_nombre', 'paq_titulo', 'paq_precio', 'paq_imagen_principal'];
-        $ofertas = Paquete::actives()->latest()->take(8)->get($fields);
-        $ofertas = $ofertas->sortBy($fields[1]);
+        $ofertas = Paquete::actives()->latest()->take(8)->get($this->fields);
+        $ofertas = $ofertas->sortBy($this->fields[1]);
 
-        $nacionales = Paquete::actives()->where('paq_categoria', 1)->latest()->take(7)->get($fields);
-        $nacionales = $nacionales->sortBy($fields[1]);
+        $nacionales = Paquete::actives()->getByCategoria(2, $this->fields);
+        $nacionales = $nacionales->sortBy($this->fields[1]);
 
-        $internacionales = Paquete::actives()->where('paq_categoria', 2)->latest()->take(7)->get($fields);
-        $internacionales = $internacionales->sortBy($fields[1]);
+        $internacionales = Paquete::actives()->getByCategoria(1, $this->fields);
+        $internacionales = $internacionales->sortBy($this->fields[1]);
         $currentUri = $this->getCurrentUri();
 
     	return view('welcome', compact('ofertas', 'nacionales', 'internacionales', 'currentUri'));
@@ -41,20 +43,20 @@ class HomeController extends Controller
     	return view('nosotros', compact('currentUri'));
     }
 
-    public function paquetes()
+    public function countries()
     {
         $currentUri = $this->getCurrentUri();
-        $fields = [
-            'id',
-            'paq_nombre',
-            'paq_imagen_principal',
-            'paq_precio',
-        ];
-        $nacionales = Paquete::actives()->where('paq_categoria', 1)->get($fields);
-        $nacionales = $nacionales->sortBy($fields[1]);
+        // $fields = [
+        //     'id',
+        //     'paq_nombre',
+        //     'paq_imagen_principal',
+        //     'paq_precio',
+        // ];
+        $nacionales = Paquete::actives()->where('paq_categoria', 1)->get($this->fields);
+        $nacionales = $nacionales->sortBy($this->fields[1]);
 
-        $internacionales = Paquete::actives()->where('paq_categoria', 2)->get($fields);
-        $internacionales = $internacionales->sortBy($fields[1]);
+        $internacionales = Paquete::actives()->where('paq_categoria', 2)->get($this->fields);
+        $internacionales = $internacionales->sortBy($this->fields[1]);
 
     	return view('paquetes', compact('nacionales', 'internacionales', 'currentUri'));
     }
@@ -62,15 +64,20 @@ class HomeController extends Controller
     public function detallePaquete(Request $request, $id, $paq_nombre)
     {
         $currentUri = $this->getCurrentUri();
-        $paquete = Paquete::find($id, ['id', 'paq_nombre', 'paq_titulo', 'paq_descripcion', 'paq_imagen_principal', 'paq_precio', 'paq_categoria']);
+        $paquete = Paquete::find($id, $this->fields);
         $imagenes = PaqueteImagen::where('paquete_id', $id)->where('estado', 1)->get(['imagen', 'imagen_chica', 'seleccionado']);
 
-        $othersPaquetes = Paquete::where('paq_categoria', $paquete->paq_categoria)->orderBy('id', 'DESC')->take(8)->get(['id', 'paq_nombre', 'paq_titulo', 'paq_descripcion', 'paq_imagen_principal']);
+        $othersPaquetes = Paquete::where('paq_pais', $paquete->paq_pais)->take(8)->get($this->fields);
 
-        $othersPaquetes = $othersPaquetes->filter(function($val, $key) use ($id) {
-            return $val->id != $id;
-        });
-        $othersPaquetes = $othersPaquetes->random(4);
+        if (!$othersPaquetes->isEmpty()) {
+            $othersPaquetes = $othersPaquetes->filter(function($val, $key) use ($id) {
+                return $val->id != $id;
+            });
+            $totalPaquetes = $othersPaquetes->count();
+            if ($totalPaquetes > 1) {
+                $othersPaquetes = $othersPaquetes->random($totalPaquetes > 4 ? 4 : $totalPaquetes);
+            }
+        }
 
         return view('detalle-paquete', compact('paquete', 'imagenes', 'currentUri', 'othersPaquetes'));
     }
@@ -82,6 +89,16 @@ class HomeController extends Controller
             // root@kendallperutravel.com Joaquin
         });
         return redirect()->back()->with('success_message', 'Su mensaje ha sido enviado con exito.');
+    }
+
+    public function paquetesByCountry($country)
+    {
+        $country = Country::where('co_nombre_slug', $country)->first(['id', 'co_nombre']);
+        $paquetes = Paquete::actives()->where('paq_pais', $country->id)->get($this->fields);
+        $name = $country->co_nombre;
+        $currentUri = $this->getCurrentUri();
+
+        return view('paquetesByCountry', compact('paquetes', 'name', 'currentUri'));
     }
 
     private function getCurrentUri()

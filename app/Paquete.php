@@ -22,4 +22,13 @@ class Paquete extends Model
     {
         return $q->where('paq_estado', 1);
     }
+
+    public function scopeGetByCategoria($q, $categoria_id, $fields)
+    {
+        return $q->join('countries', 'paquetes.paq_pais', '=', 'countries.id')
+                 ->join('categorias', 'countries.co_categoria', '=', 'categorias.id')
+                 ->where('categorias.id', $categoria_id)
+                 ->take(8)
+                 ->get($fields);
+    }
 }

@@ -12,7 +12,7 @@
 			</h2>
 			<h4 class="sub-title-detail">{{ $paquete->paq_titulo }}</h4>
 			<div class="field-items">
-				<img src="{{ asset('img/paquetes/' . $imagenes[0]->imagen) }}" style="box-shadow: 1px 1px 6px #000" class="img-responsive center-block">
+				<img src="{{ $paquete->paq_imagen_principal }}" style="box-shadow: 1px 1px 6px #000" class="img-responsive center-block">
 			</div>
 			<div class="default-tabs">
 				<ul class="nav nav-tabs" role="tablist">
@@ -54,14 +54,7 @@
 		<hr>
 		<div class="portfolio-container">
 			@foreach ($othersPaquetes as $paquete)
-			<div class="portfolio-item col-sm-3">
-				<div class="content-img">
-					<a href="{{ route('detallePaquete', [$paquete->id, str_slug($paquete->paq_nombre)]) }}">
-						<img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" alt="Item Thumbnail" class="img-responsive center-block">
-					</a>
-				</div>
-				<h4><i class="fa fa-plane kendall-color"></i> {{ $paquete->paq_nombre }}</h4>
-			</div>
+				@include('partials.list-paquete')
 			@endforeach
 		</div>
 		<br><br>

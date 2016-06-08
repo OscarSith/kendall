@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Paquete;
 
 class PaqueteTableSeeder extends Seeder
 {
@@ -11,6 +12,6 @@ class PaqueteTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\Paquete::class, 50)->create()->make();
     }
 }

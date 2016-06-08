@@ -59,3 +59,20 @@
 .fa-star-half-o {
   font-size: .9em;
 }
+.menu-list-paquetes a {
+  color: #333
+}
+.title-package-nav {
+  border-bottom: 2px solid #b61a79;
+  font-weight: bold;
+  margin-bottom: 8px;
+  padding: 2px 0 4px;
+  color: #333;
+}
+.nav-nacional {
+  width: 126px;
+}
+.nav-internacional {
+  width: 136px;
+  padding-left: 20px;
+}

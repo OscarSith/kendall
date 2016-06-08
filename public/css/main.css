@@ -3070,6 +3070,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 @media screen and (min-width: 992px) {
   .navbar .dropdown:hover > .dropdown-menu {
     display: block;
+    padding: 15px;
+    width: 280px;
   }
   .navbar .dropdown-menu > .dropdown:hover > .dropdown-menu {
     display: block;

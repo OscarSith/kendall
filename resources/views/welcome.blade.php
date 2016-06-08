@@ -36,7 +36,7 @@
         @foreach($ofertas as $paquete)
         <div class="col-md-3 col-sm-4">
             <div class="product-item">
-                <a href="{{ route('detallePaquete', [$paquete->id, str_slug($paquete->paq_nombre)]) }}" title="{{ $paquete->paq_nombre }}"><img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" class="img-responsive center-block" alt="Product Item"></a>
+                <a href="{{ route('detallePaquete', [$paquete->id, str_slug($paquete->paq_nombre)]) }}" title="{{ $paquete->paq_nombre }}"><img src="{{ $paquete->paq_imagen_principal }}" class="img-responsive center-block" alt="Product Item"></a>
                 <div class="info">
                     <h3 class="title">
                         <i class="fa fa-plane fa-lg"></i>
@@ -56,16 +56,7 @@
         <div class="row">
             <div class="portfolio-container">
                 @foreach($internacionales as $paquete)
-                <div class="portfolio-item">
-                    <div class="overlay"></div>
-                    <div class="info">
-                        <h4 class="title">{{ $paquete->paq_nombre }}</h4>
-                        <a href="{{ route('detallePaquete', [$paquete->id, str_slug($paquete->paq_nombre)]) }}" class="btn">Ver Detalle</a>
-                    </div>
-                    <div class="media-wrapper">
-                        <img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" alt="Item Thumbnail" class="img-responsive center-block" />
-                    </div>
-                </div>
+                    @include('partials.list-paquete')
                 @endforeach
             </div>
         </div>
@@ -77,16 +68,7 @@
         <div class="row">
             <div class="portfolio-container">
                 @foreach($nacionales as $paquete)
-                <div class="portfolio-item">
-                    <div class="overlay"></div>
-                    <div class="info">
-                        <h4 class="title">{{ $paquete->paq_nombre }}</h4>
-                        <a href="{{ route('detallePaquete', [$paquete->id, str_slug($paquete->paq_nombre)]) }}" class="btn">Ver Detalle</a>
-                    </div>
-                    <div class="media-wrapper">
-                        <img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" alt="Item Thumbnail" class="img-responsive center-block" />
-                    </div>
-                </div>
+                    @include('partials.list-paquete')
                 @endforeach
             </div>
         </div>

@@ -9,25 +9,28 @@ use App\Http\Controllers\Controller;
 use App\Categoria;
 use App\Paquete;
 use App\PaqueteImagen;
-use Image;
-use File;
+use App\Country;
 
 class AdminController extends Controller
 {
 	private $path_paquetes = 'img/paquetes/';
 
-    public function index()
+    public function index(Request $request)
     {
-        $paquetes = Paquete::latest()->get(['id', 'paq_nombre', 'paq_titulo', 'paq_imagen_principal', 'paq_estado', 'paq_categoria']);
-        $categorias = Categoria::get();
-    	return view('admin.home', compact('paquetes', 'categorias'));
+        $catId = 1;
+        if ($request->has('cat')) {
+            $catId = $request->input('cat');
+        }
+
+        $countries = Country::where('co_categoria', $catId)->get(['id', 'co_nombre', 'co_imagen', 'co_nombre_slug']);
+        $categorias = Categoria::all(['id', 'nombre']);
+    	return view('admin.home', compact('countries', 'categorias', 'catId'));
     }
 
-    public function showPaquete()
+    public function showPaquete($country, $country_id)
     {
-    	$categorias = $this->categorias();
     	$accion = 'Nuevo';
-    	return view('admin.paquete', compact('categorias', 'accion'));
+    	return view('admin.paquete', compact('categorias', 'accion', 'country', 'country_id'));
     }
 
     public function storePaquete(Request $request)
@@ -35,20 +38,7 @@ class AdminController extends Controller
     	$file = $request->file('paq_imagen_principal');
     	$params = $request->except(['_token']);
 
-    	$imageName = strtolower(str_random(4)) . '_' . str_replace([' ', '-'], '_', $file->getClientOriginalName());
-    	$thumb_imageName = 'thumb_' . $imageName;
-
-    	try {
-	    	// Reajusta el tamaño de la imagen
-	    	Image::make($file->path())->resize(280, null, function($contraint) {
-	    		$contraint->aspectRatio();
-	    	})->save( $this->path_paquetes . $thumb_imageName);
-
-	    	// Guarda la imagen con las dimensiones originalaes
-	    	$file->move($this->path_paquetes, $imageName);
-    	} catch (Exception $ex) {
-    		return redirect()->back()->with('error_message', 'Ups... no se puede procesar el archivo subido, intentelo de nuevo, si persiste contacte con el programador');
-    	}
+        list($imageName, $thumb_imageName) = $this->rezizeImg($file, $this->path_paquetes);
 
         $params['paq_imagen_principal'] = $thumb_imageName;
     	\DB::transaction(function() use ($params, $imageName) {
@@ -64,16 +54,15 @@ class AdminController extends Controller
 			PaqueteImagen::create($imageParams);
 		});
 
-    	return redirect()->back()->with('success_message', 'Imagen guardada con exito');
+    	return redirect()->route('getCountries', [$params['country_slug']])->with('success_message', 'Paquete agregado');
     }
 
     public function edit($id)
     {
     	$paquete = Paquete::find($id);
-    	$categorias = $this->categorias();
     	$accion = 'Editar';
 
-    	return view('admin.paquete', compact('paquete', 'categorias', 'accion'));
+    	return view('admin.paquete', compact('paquete', 'accion'));
     }
 
     public function update(Request $request, $id)

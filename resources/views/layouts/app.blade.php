@@ -45,6 +45,11 @@
         .locales {
             background-color: #2EAAE2;
         }
+        .list-country {
+          background-size: cover;
+          background-position: 50% 50%;
+          height: 180px
+        }
     </style>
 </head>
 <body id="app-layout">
@@ -67,7 +72,7 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ route('dashboard') }}">Paquetes</a></li>
+                    <li><a href="{{ route('dashboard') }}">Inicio</a></li>
                     <li><a href="{{ route('categoria') }}">Categoria</a></li>
                 </ul>
 

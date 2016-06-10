@@ -81,3 +81,11 @@
   background-position: 50% 50%;
   height: 180px
 }
+.ver-mas {
+  text-decoration: underline;
+  text-align: center;
+  margin-top: 10px;
+}
+.ver-mas a {
+  color: #b61a79;
+}

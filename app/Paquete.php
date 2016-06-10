@@ -13,7 +13,7 @@ class Paquete extends Model
     	'paq_titulo',
     	'paq_precio',
     	'paq_descripcion',
-    	'paq_categoria',
+    	'paq_pais',
     	'paq_imagen_principal',
     	'paq_estado',
     ];

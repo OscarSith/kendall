@@ -12,14 +12,16 @@
 					<?php $accion = strtolower($accion) ?>
 					@if ($accion == 'nuevo')
 					{!! Form::open(array('route' => 'addPaquete', 'method' => 'post', 'class' => 'form-horizontal', 'files' => true)) !!}
+						{!! Form::hidden('paq_pais', $country_id) !!}
 					@else
 					{!! Form::model($paquete, array('route' => ['editPaquete', $paquete->id], 'method' => 'put', 'class' => 'form-horizontal', 'files' => true)) !!}
+						{!! Form::hidden('paq_pais') !!}
 					@endif
 						@include('partials.display_messages')
 						<div class="form-group">
-							{!! Form::label('paq_categoria', 'Categoria', ['class' => 'control-label col-sm-2']) !!}
+							<label class="control-label col-sm-2">País</label>
 							<div class="col-sm-4">
-								{!! Form::select('paq_categoria', $categorias, null, ['class' => 'form-control']) !!}
+								<input type="text" name="country_slug" value="{{ $country }}" class="form-control" readonly>
 							</div>
 						</div>
 						<div class="form-group">

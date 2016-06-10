@@ -6,49 +6,80 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="pull-left mt0">Paquetes</h3> &nbsp;
-                    <a href="{{ route('formPaquete') }}" class="btn btn-sm btn-primary">Nuevo Paquete</a>
-                    <div class="clearfix"></div>
+                    <form class="form-inline">
+                        <label class="control-label">PAISES</label>
+                        &nbsp;
+                        <select class="form-control" id="country">
+                            @foreach($categorias as $categoria)
+                            <option value="{{ $categoria->id }}" {{ $categoria->id == $catId ? 'selected' : ''}}>{{ $categoria->nombre }}</option>
+                            @endforeach
+                        </select>
+                        &nbsp; | &nbsp;
+                        <a href="#modal-country" data-toggle="modal" class="btn btn-sm btn-primary">Nuevo País</a>
+                        <div class="clearfix"></div>
+                    </form>
                 </div>
                 <div class="panel-body">
-                    <div class="row">
-                    @include('partials.display_messages')
-                    @foreach($paquetes as $paquete)
-                        <div class="col-sm-4 col-md-3">
-                            <div class="thumbnail {{ !$paquete->paq_estado ? 'inactivo' : '' }}">
-                                <div class="img-mini" style="background-image: url('{{ asset('img/paquetes/'.$paquete->paq_imagen_principal) }}')"></div>
-                                @foreach($categorias as $categoria)
-                                    @if ($categoria->id == $paquete->paq_categoria)
-                                    <h4 class="text-center info-cat {{ $categoria->id == 1 ? 'locales' : 'inter' }}">{{ $categoria->nombre }}</h4 class="text-center info-cat">
-                                    <?php break; ?>
-                                    @endif
-                                @endforeach
-                              <div class="caption">
-                                <h4>{{ $paquete->paq_nombre }}</h4>
-                                <p>{{ str_limit($paquete->paq_titulo, 26) }}</p>
-                                <hr>
-                                <div class="content-buttons">
-                                    <a href="{{ route('formEditPaquete', $paquete->id) }}" class="btn btn-primary pull-left" role="button">Editar</a>
-                                    {{ Form::open(['route' => ['changeStatusPaquete', $paquete->id], 'method' => 'put', 'class' => 'pull-right']) }}
-                                        @if ($paquete->paq_estado)
-                                            {{ Form::hidden('paq_estado', 0) }}
-                                            <button class="btn btn-warning" role="button">Inactivar</button>
-                                        @else
-                                            {{ Form::hidden('paq_estado', 1) }}
-                                            <button class="btn btn-success" role="button">Activar</button>
-                                        @endif
-                                    {{ Form::close() }}
-                                    <div class="clearfix"></div>
-                                    <a href="{{ route('showImages', $paquete->id) }}" class="btn btn-block btn-default">Ver Imagenes</a>
-                                </div>
-                              </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            @include('partials.display_messages')
+                            @foreach($countries as $country)
+                            <div class="col-sm-4 col-md-3">
+                                <a class="thumbnail" href="{{ route('getCountries', $country->co_nombre_slug ) }}">
+                                    <div class="list-country" style="background-image: url('{{ asset('img/paises/' . $country->co_imagen) }}')"></div>
+                                    <div class="caption">
+                                        <h4 class="text-center">{{ $country->co_nombre }}</h4>
+                                    </div>
+                                </a>
                             </div>
+                            @endforeach
                         </div>
-                    @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div class="modal fade" id="modal-country" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Nuevo Pais</h4>
+            </div>
+            {!! Form::open(['route' => 'country', 'files' => true]) !!}
+            <input type="hidden" name="co_categoria" value="{{ $catId }}">
+            <div class="modal-body">
+                <div class="form-group">
+                    {!! Form::text('co_nombre', null, ['class' => 'form-control', 'placeholder' => 'Nombre del País', 'required']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::file('co_imagen', ['class' => 'form-control']) !!}
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Agregar</button>
+            </div>
+            {!! Form::close() !!}
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('textarea')
+<script type="text/javascript">
+    $('#country').on('change', function(e) {
+        var url = '{{ route('dashboard') }}',
+            value = $(this).val();
+
+        if (value > 1) {
+            location.href = url + '?cat=' + value;
+        } else {
+            location.href = url;
+        }
+    });
+</script>
 @endsection

@@ -2,26 +2,6 @@
 
 /*
 |--------------------------------------------------------------------------
-| Routes File
-|--------------------------------------------------------------------------
-|
-| Here is where you will register all of the routes in an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
-Route::get('/', 'HomeController@index');
-Route::get('contacto', 'HomeController@contacto');
-Route::get('nosotros', 'HomeController@nosotros');
-Route::get('{country}', 'HomeController@paquetesByCountry')->name('paquetesByCountry');
-Route::get('paises/{categoria}', 'HomeController@countriesByCategoria')->name('countriesByCategoria');
-Route::get('detalle-paquete/{id}-{paq_nombre}', 'HomeController@detallePaquete')->name('detallePaquete');
-Route::post('cotizar-paquete-{id}', 'HomeController@detallePaquete')->name('sendNotification');
-Route::post('enviar-mensaje', 'HomeController@sendMessage')->name('send-message');
-
-/*
-|--------------------------------------------------------------------------
 | Application Routes
 |--------------------------------------------------------------------------
 |
@@ -39,11 +19,15 @@ Route::group(['middleware' => ['web']], function ($route) {
 Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'admin'], function ($route) {
     $route->get('/', 'AdminController@index')->name('dashboard');
 
-    $route->get('/paquete', 'AdminController@showPaquete')->name('formPaquete');
-    $route->post('/paquete', 'AdminController@storePaquete')->name('addPaquete');
+    $route->get('/pais/{country}-{country_id}/paquete', 'AdminController@showPaquete')->name('formPaquete');
+    $route->post('/pais/add-paquete', 'AdminController@storePaquete')->name('addPaquete');
     $route->get('/editar-paquete/{id}', 'AdminController@edit')->name('formEditPaquete');
     $route->put('/{id}/editar', 'AdminController@update')->name('editPaquete');
-    $route->put('/cambiar-estado-paquete/{id}', 'AdminController@update')->name('changeStatusPaquete');
+    $route->put('/cambiar-estado-paquete/{id}', 'AdminController@changeState')->name('changeStatusPaquete');
+
+    // Country
+    $route->post('/add-country', 'CountryController@store')->name('country');
+    $route->get('/pais/{country}', 'CountryController@index')->name('getCountries');
 
     // Imagen
     $route->get('imagenes/{id}', 'ImagenController@show')->name('showImages');
@@ -55,3 +39,13 @@ Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'admin'], function ($
 
     $route->get('logout', 'Auth\AuthController@getLogout')->name('salir');
 });
+
+
+Route::get('/', 'HomeController@index');
+Route::get('contacto', 'HomeController@contacto');
+Route::get('nosotros', 'HomeController@nosotros');
+Route::get('{country}', 'HomeController@paquetesByCountry')->name('paquetesByCountry');
+Route::get('paises/{categoria}', 'HomeController@countriesByCategoria')->name('countriesByCategoria');
+Route::get('detalle-paquete/{id}-{paq_nombre}', 'HomeController@detallePaquete')->name('detallePaquete');
+Route::post('cotizar-paquete-{id}', 'HomeController@detallePaquete')->name('sendNotification');
+Route::post('enviar-mensaje', 'HomeController@sendMessage')->name('send-message');

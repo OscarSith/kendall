@@ -12,7 +12,7 @@
 			</h2>
 			<h4 class="sub-title-detail">{{ $paquete->paq_titulo }}</h4>
 			<div class="field-items">
-				<img src="{{ $paquete->paq_imagen_principal }}" style="box-shadow: 1px 1px 6px #000" class="img-responsive center-block">
+				<img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" style="box-shadow: 1px 1px 6px #000" class="img-responsive center-block">
 			</div>
 			<div class="default-tabs">
 				<ul class="nav nav-tabs" role="tablist">

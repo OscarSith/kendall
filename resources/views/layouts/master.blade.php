@@ -118,7 +118,7 @@
 					<div class="col-md-7">
 						<div class="newsletter">
 							<h3 class="footer-heading">BOLETÍN DE NOVEDADES</h3>
-							<p>Get the latest update from us by subscribing to our newsletter.</p>
+							<p>Suscribase y le enviaremos las ultimas promociones agregadas</p>
 							<form class="newsletter-form" method="POST">
 								<div class="input-group input-group-lg">
 									<input type="email" class="form-control" name="email">

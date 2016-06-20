@@ -12,7 +12,29 @@
 			</h2>
 			<h4 class="sub-title-detail">{{ $paquete->paq_titulo }}</h4>
 			<div class="field-items">
-				<img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" style="box-shadow: 1px 1px 6px #000" class="img-responsive center-block">
+				@if (!$imagenes->isEmpty())
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+					<div class="carousel-inner" role="listbox">
+					@foreach($imagenes as $n => $image)
+						<div class="item {{$n == 0 ? 'active' : ''}}">
+							<img src="{{ asset('img/paquetes/' . $image->imagen) }}" class="img-responsive center-block">
+						</div>
+					@endforeach
+					</div>
+					@if ($imagenes->count() > 1)
+					<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+						<span class="fa fa-chevron-left fa-lg" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+						<span class="fa fa-chevron-right fa-lg" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+					@endif
+				</div>
+				@else
+					<div class="alert alert-info">No hay imagenes que mostrar para este paquete</div>
+				@endif
 			</div>
 			<div class="default-tabs">
 				<ul class="nav nav-tabs" role="tablist">

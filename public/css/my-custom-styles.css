@@ -22,10 +22,9 @@
   width: 100%;
 }
 #form-contact address img {
-  border: 2px solid #b61a79;
   height: 100px;
   margin-bottom: 30px;
-  padding: 2px;
+  margin-left: -2px;
 }
 .kendall-color {
   color: #b61a79

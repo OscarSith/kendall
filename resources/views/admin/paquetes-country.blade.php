@@ -17,7 +17,7 @@
 						<strong>Desde <i class="fa fa-dollar fa-fw"></i> {{ $paquete->paq_precio }}</strong>
 					</p>
 					<div>
-						<a href="{{ route('formEditPaquete', [$paquete->id]) }}" class="btn btn-primary" role="button">Editar</a>
+						<a href="{{ route('formEditPaquete', [str_slug($name), $country_id, $paquete->id]) }}" class="btn btn-primary" role="button">Editar</a>
 						{{ Form::open(['route' => ['changeStatusPaquete', $paquete->id], 'method' => 'put', 'class' => 'pull-right']) }}
 							@if (!$paquete->paq_estado)
 								{{ Form::hidden('paq_estado', 0) }}

@@ -21,7 +21,7 @@ Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'admin'], function ($
 
     $route->get('/pais/{country}-{country_id}/paquete', 'AdminController@showPaquete')->name('formPaquete');
     $route->post('/pais/add-paquete', 'AdminController@storePaquete')->name('addPaquete');
-    $route->get('/editar-paquete/{id}', 'AdminController@edit')->name('formEditPaquete');
+    $route->get('/pais/{country}-{country_id}/editar-paquete/{id}', 'AdminController@edit')->name('formEditPaquete');
     $route->put('/{id}/editar', 'AdminController@update')->name('editPaquete');
     $route->put('/cambiar-estado-paquete/{id}', 'AdminController@changeState')->name('changeStatusPaquete');
 

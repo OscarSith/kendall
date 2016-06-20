@@ -32,7 +32,7 @@
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
-	<div class="wrapper" style="padding-top: 184px;">
+	<div class="wrapper" style="padding-top: 214px;">
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="top:0;">
 			<div class="topbar">
 				<div class="container">
@@ -91,9 +91,9 @@
 								</ul>
 							</div>
 						</li>
-						<li class="{{ $currentUri == 'nosotros' ? 'active' : '' }}">
+						<!-- <li class="{{ $currentUri == 'nosotros' ? 'active' : '' }}">
 							<a href="{{ url('nosotros') }}">NOSOTROS</a>
-						</li>
+						</li> -->
 						<li class="{{ $currentUri == 'contacto' ? 'active' : '' }}">
 							<a href="{{ url('contacto') }}">CONTACTO</a>
 						</li>

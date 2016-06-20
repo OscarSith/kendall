@@ -15,7 +15,6 @@
 				<div class="col-sm-5">
 					<h3>Información</h3>
 					<address>
-						<img src="img/logo.png" class="img-responsive">
 						<p>
 							<strong>
 								Calle Fortaleza 120, Coop. Chancas de Andahuaylas<br/>Santa Anita - Lima 43

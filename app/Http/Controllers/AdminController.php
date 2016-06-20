@@ -30,6 +30,7 @@ class AdminController extends Controller
     public function showPaquete($country, $country_id)
     {
     	$accion = 'Nuevo';
+
     	return view('admin.paquete', compact('categorias', 'accion', 'country', 'country_id'));
     }
 
@@ -57,12 +58,12 @@ class AdminController extends Controller
     	return redirect()->route('getCountries', [$params['country_slug']])->with('success_message', 'Paquete agregado');
     }
 
-    public function edit($id)
+    public function edit($country, $country_id, $id)
     {
     	$paquete = Paquete::find($id);
     	$accion = 'Editar';
 
-    	return view('admin.paquete', compact('paquete', 'accion'));
+    	return view('admin.paquete', compact('paquete', 'accion', 'country', 'country_id'));
     }
 
     public function update(Request $request, $id)
@@ -104,7 +105,7 @@ class AdminController extends Controller
         $paquete->fill($params);
         $paquete->save();
 
-    	return redirect()->route('dashboard')->with('success_message', 'Paquete ' . $params['paq_nombre'] . ' actualizado con exito.');
+    	return redirect()->route('getCountries', [$params['country_slug']])->with('success_message', 'Paquete ' . $params['paq_nombre'] . ' actualizado con exito.');
     }
 
     private function categorias()

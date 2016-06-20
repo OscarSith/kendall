@@ -88,3 +88,6 @@
 .ver-mas a {
   color: #b61a79;
 }
+#chapter1 table td {
+  vertical-align: middle;
+}

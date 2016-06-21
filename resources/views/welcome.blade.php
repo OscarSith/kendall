@@ -48,7 +48,7 @@
     <div class="container">
         <h2 class="section-heading"><i class="fa fa-globe"></i> PAQUETES INTERNACIONALES</h2>
         <div class="row">
-        @if ($internacionales->isEmpty())
+        @if (!$internacionales->isEmpty())
             <div class="portfolio-container">
                 @foreach($internacionales as $paquete)
                     @include('partials.list-paquete')
@@ -64,11 +64,15 @@
     <div class="container">
         <h2 class="section-heading"><i class="fa fa-location-arrow"></i> PAQUETES NACIONALES</h2>
         <div class="row">
+        @if (!$nacionales->isEmpty())
             <div class="portfolio-container">
                 @foreach($nacionales as $paquete)
                     @include('partials.list-paquete')
                 @endforeach
             </div>
+        @else
+        <div class="alert text-center"><i class="fa fa-warning fa-lg"></i> No hay Paquetes disponibles por el momento</div>
+        @endif
         </div>
     </div>
 </section>

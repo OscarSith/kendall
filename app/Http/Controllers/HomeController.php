@@ -22,10 +22,10 @@ class HomeController extends Controller
         $ofertas = Paquete::actives()->latest()->take(8)->get($this->fields);
         $ofertas = $ofertas->sortBy($this->fields[1]);
 
-        $nacionales = Paquete::actives()->getByCategoria(2, $this->fields);
+        $nacionales = Paquete::actives()->getByCategoria(1, $this->fields);
         $nacionales = $nacionales->sortBy($this->fields[1]);
 
-        $internacionales = Paquete::actives()->getByCategoria(1, $this->fields);
+        $internacionales = Paquete::actives()->getByCategoria(2, $this->fields);
         $internacionales = $internacionales->sortBy($this->fields[1]);
         $currentUri = $this->getCurrentUri();
 

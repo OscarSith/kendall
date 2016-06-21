@@ -12,17 +12,9 @@
             </div>
             <div class="item">
                 <img src="{{ asset('img/sliders/slide-2.jpg') }}" class="img-responsive" alt="Slider Image">
-                <div class="carousel-caption">
-                    <h3 class="hero-heading">ULTRA RESPONSIVE</h3>
-                    <p class="lead">Leave it to the theme, it knows how to deal with screen sizes</p>
-                    <a href="#" class="btn btn-lg hero-button">LEARN MORE</a>
-                </div>
             </div>
             <div class="item">
                 <img src="{{ asset('img/sliders/slide-3.jpg') }}" class="img-responsive" alt="Slider Image">
-                <div class="carousel-caption">
-                    <h3 class="hero-heading">EASY TO CUSTOMIZE</h3>
-                </div>
             </div>
         </div>
     </div>
@@ -36,7 +28,9 @@
         @foreach($ofertas as $paquete)
         <div class="col-md-3 col-sm-4">
             <div class="product-item">
-                <a href="{{ route('detallePaquete', [$paquete->id, str_slug($paquete->paq_nombre)]) }}" title="{{ $paquete->paq_nombre }}"><img src="{{ $paquete->paq_imagen_principal }}" class="img-responsive center-block" alt="Product Item"></a>
+                <a href="{{ route('detallePaquete', [$paquete->id, str_slug($paquete->paq_nombre)]) }}" title="{{ $paquete->paq_nombre }}">
+                    <img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" class="img-responsive center-block" alt="{{ $paquete->paq_nombre }}">
+                </a>
                 <div class="info">
                     <h3 class="title">
                         <i class="fa fa-plane fa-lg"></i>
@@ -54,11 +48,15 @@
     <div class="container">
         <h2 class="section-heading"><i class="fa fa-globe"></i> PAQUETES INTERNACIONALES</h2>
         <div class="row">
+        @if ($internacionales->isEmpty())
             <div class="portfolio-container">
                 @foreach($internacionales as $paquete)
                     @include('partials.list-paquete')
                 @endforeach
             </div>
+        @else
+        <div class="alert text-center"><i class="fa fa-warning fa-lg"></i> No hay Paquetes disponibles por el momento</div>
+        @endif
         </div>
     </div>
 </section>

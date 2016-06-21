@@ -11,6 +11,7 @@ use App\Paquete;
 use App\PaqueteImagen;
 use App\Country;
 use Image;
+use File;
 
 class AdminController extends Controller
 {
@@ -99,8 +100,18 @@ class AdminController extends Controller
         if ($imageEdited) {
             File::delete($this->path_paquetes . $paquete->paq_imagen_principal);
             File::delete($this->path_paquetes . substr($paquete->paq_imagen_principal, 6));
+
             $imagen_id = PaqueteImagen::where('paquete_id', $id)->pluck('id')->first();
-            PaqueteImagen::find($imagen_id)->update(['imagen' => $imageName, 'imagen_chica' => $thumb_imageName]);
+            if ($imagen_id) {
+                PaqueteImagen::find($imagen_id)->update(['imagen' => $imageName, 'imagen_chica' => $thumb_imageName]);
+            } else {
+                PaqueteImagen::create([
+                    'paquete_id' => $id,
+                    'imagen' => $imageName,
+                    'imagen_chica' => $thumb_imageName,
+                    'seleccionado' => 'S'
+                ]);
+            }
         }
 
         $paquete->fill($params);

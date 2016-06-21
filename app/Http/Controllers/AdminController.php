@@ -10,6 +10,7 @@ use App\Categoria;
 use App\Paquete;
 use App\PaqueteImagen;
 use App\Country;
+use Image;
 
 class AdminController extends Controller
 {

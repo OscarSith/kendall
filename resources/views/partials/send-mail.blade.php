@@ -10,7 +10,7 @@
 		<ul style="list-style-type: none;padding-left:0">
 			<li>{{ $correo }}</li>
 			<li>
-				<blockquote>{{ nl2br($mensaje) }}</blockquote>
+				<blockquote>{!! nl2br($mensaje) !!}</blockquote>
 			</li>
 		</ul>
 	</div>

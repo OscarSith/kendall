@@ -1,6 +1,6 @@
 <div class="col-sm-4 col-md-3">
 	<div class="thumbnail">
-		<img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" alt="{{ $paquete->paq_nombre }}">
+		<div style="background-image: url('{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}');" class="paquete-image"></div>
 		<div class="caption">
 			<h4><i class="fa fa-plane fa-fw"></i>{{ $paquete->paq_nombre }}</h4>
 			<p style="min-height: 70px;">

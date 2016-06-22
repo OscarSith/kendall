@@ -95,3 +95,6 @@
   height: 180px;
   background-size: cover
 }
+.thumbnail .caption h4 {
+  height: 40px;
+}

@@ -36,7 +36,6 @@ Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'admin'], function ($
     $route->delete('/eliminar-imagen/{id}', 'ImagenController@destroy')->name('deleteImagen');
 
     $route->get('categoria', 'CategoriaController@index')->name('categoria');
-
     $route->get('logout', 'Auth\AuthController@getLogout')->name('salir');
 });
 

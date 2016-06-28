@@ -137,7 +137,7 @@
 								Teléfono: (51-1) 469-3815<br />
 								Celular: 975451600<br>
 								RPM: *268353<br>
-								E-mail: <a href="#" class="kendall-color">administrador@kendallperutravel.com</a>
+								E-mail: <a href="#" class="kendall-color">ventas@kendallperutravel.com</a>
 							</address>
 						</div>
 					</div>

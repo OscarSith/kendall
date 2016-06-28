@@ -106,6 +106,17 @@ class HomeController extends Controller
         return view('countries', compact('countries', 'currentUri'));
     }
 
+    public function sendNotificacion(Request $request, $paquete_id)
+    {
+        $paquete = Paquete::find($paquete_id, ['paq_nombre', 'paq_titulo']);
+
+        $params = array_merge($paquete->toArray(), $request->all());
+        Mail::send('partials.send-for-pricing', $params, function($message) {
+            $message->to(env('TO_ADDRESS'), env('TO_NAME'))->subject('Cotizacion enviada desde kendallperutravel.com');
+        });
+        return redirect()->back()->with('success_message', 'Su mensaje ha sido enviado con exito.');
+    }
+
     private function getCurrentUri()
     {
         return Route::current()->uri();

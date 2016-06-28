@@ -3,6 +3,7 @@
 @section('content')
 <div id="wrapper_detail_paquete" class="container">
 	<div class="row">
+		@include('partials.display_messages')
 		<div class="col-sm-8">
 			<h2 class="page-header text-left">
 				<i class="fa fa-certificate"></i> {{ $paquete->paq_nombre}}
@@ -66,7 +67,7 @@
 				<div class="form-group">
 					{!! Form::textarea('mensaje', null, ['placeholder' => 'Mensaje...', 'id' => 'edit-message', 'class' => 'form-control']) !!}
 				</div>
-				<button type="button" class="btn btn-block btn-lg btn-success"><i class="fa fa-envelope"></i> Enviar</button>
+				<button class="btn btn-block btn-lg btn-success"><i class="fa fa-envelope"></i> Enviar</button>
 			{!! Form::close() !!}
 		</aside>
 	</div>

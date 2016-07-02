@@ -38,7 +38,10 @@
 				<div class="container">
 					<ul class="list-inline top-nav">
 						<li><span><i class="fa fa-phone-square"></i> 975451600 / (51-1) 469-3815 / RPM: *268353</span></li>
-						<li><i class="fa fa-envelope"></i> <a href=":mailito">ventas@kendallperutravel.com</a></li>
+						<li>
+							<i class="fa fa-envelope"></i>
+							<a href=":mailito" class="fsize1-1"><strong>ventas@kendallperutravel.com</strong></a>
+						</li>
 						<li class="social-icons">
 							<a href="http://www.facebook.com/kendallperutravel" target="_blank" class="facebook-bg"><i class="fa fa-facebook"></i></a>
 						</li>
@@ -129,7 +132,7 @@
 							</form>
 						</div>
 						<div class="social-connect">
-							<address>
+							<address class="fsize1-1">
 								<strong>
 									Calle Fortaleza 120, Coop. Chancas de Andahuaylas<br/>Santa Anita - Lima 43
 								</strong>
@@ -137,7 +140,7 @@
 								Teléfono: (51-1) 469-3815<br />
 								Celular: 975451600<br>
 								RPM: *268353<br>
-								E-mail: <a href="#" class="kendall-color">ventas@kendallperutravel.com</a>
+								<strong>E-mail: <a href="#" class="kendall-color">ventas@kendallperutravel.com</a></strong>
 							</address>
 						</div>
 					</div>

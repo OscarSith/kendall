@@ -4,6 +4,15 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+            @if ($errors->any())
+            <div class="alert alert-warning">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <form class="form-inline">
@@ -61,7 +70,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Agregar</button>
+                <button class="btn btn-primary">Agregar</button>
             </div>
             {!! Form::close() !!}
         </div>

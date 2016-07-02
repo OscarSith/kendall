@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use App\Http\Requests\CountryRequest;
 use App\Country;
 use App\Paquete;
 
@@ -23,7 +21,7 @@ class CountryController extends Controller
 		return view('admin.paquetes-country', compact('paquetes', 'name', 'country_id'));
 	}
 
-	public function store(Request $request)
+	public function store(CountryRequest $request)
 	{
 		$file = $request->file('co_imagen');
 		$params = $request->except(['_token']);

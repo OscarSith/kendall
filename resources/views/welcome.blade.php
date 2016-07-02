@@ -6,9 +6,6 @@
         <div class="carousel-inner" role="listbox">
             <div class="item active">
                 <img src="{{ asset('img/sliders/slide-1.jpg') }}" class="img-responsive" alt="Slider Image">
-                <div class="carousel-caption">
-                    <h3 class="hero-heading">CLEAN &amp; ELEGANT DESIGN</h3>
-                </div>
             </div>
             <div class="item">
                 <img src="{{ asset('img/sliders/slide-2.jpg') }}" class="img-responsive" alt="Slider Image">

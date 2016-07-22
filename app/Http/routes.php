@@ -40,6 +40,7 @@ Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'admin'], function ($
 
     // Promociones
     $route->get('promociones', 'AdminController@promo')->name('promociones');
+    $route->delete('delete-promo/{id}', 'AdminController@deletePromo')->name('deletePackagePromo');
 });
 
 

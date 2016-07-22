@@ -145,6 +145,15 @@ class AdminController extends Controller
         return view('admin.promo', compact('promociones'));
     }
 
+    public function deletePromo($id)
+    {
+        $paquete = Paquete::find($id);
+        $paquete->paq_estado = 9;
+        $paquete->save();
+
+        return redirect()->back()->with('success_message', 'Paquete eliminado');
+    }
+
     private function categorias()
     {
     	return array_merge([0 => 'Seleccione categoria'], Categoria::where('estado', 1)->get(['id', 'nombre'])->lists('nombre', 'id')->all());

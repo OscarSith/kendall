@@ -8,6 +8,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Administrar Ofertas o Promociones &nbsp; &nbsp; <a href="{{ route('formPaquete', [str_slug('no-city'), 0]) }}?tipo=oferta" class="btn btn-primary">Agregar Oferta</a></div>
 				<div class="panel-body">
+					@include('partials.display_messages')
 					@if (!$promociones->isEmpty())
 					@foreach ($promociones as $promocion)
 						<div class="col-sm-4 col-md-3">
@@ -18,6 +19,10 @@
 								</div>
 								<div>
 									<a class="btn btn-primary" href="{{ route('formEditPaquete', [str_slug('no-city'), $promocion->paq_pais, $promocion->id] ) }}?tipo=O">Editar</a>
+									{{ Form::open(['route' => ['deletePackagePromo', $promocion->id], 'method' => 'delete', 'class' => 'pull-right']) }}
+									<button class="btn btn-danger">Eliminar</button>
+									{{ Form::close() }}
+									<div class="clearfix"></div>
 								</div>
 							</div>
 						</div>

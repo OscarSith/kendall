@@ -21,6 +21,7 @@ class CreatePaquetesTable extends Migration
             $table->string('paq_imagen_principal');
             $table->tinyInteger('paq_estado')->default(1);
             $table->integer('paq_pais')->unsigned();
+            $table->char('paq_tipo')->default('P');
             $table->timestamps();
         });
     }

@@ -19,7 +19,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $ofertas = Paquete::actives()->latest()->take(8)->get($this->fields);
+        $ofertas = Paquete::getByCountry(null, 'O')->latest()->take(8)->get($this->fields);
         $ofertas = $ofertas->sortBy($this->fields[1]);
 
         $nacionales = Paquete::actives()->getByCategoria(1, $this->fields);

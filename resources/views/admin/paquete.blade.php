@@ -12,16 +12,27 @@
 					<?php $accion = strtolower($accion) ?>
 					@if ($accion == 'nuevo')
 					{!! Form::open(array('route' => 'addPaquete', 'method' => 'post', 'class' => 'form-horizontal', 'files' => true)) !!}
+						@if (!is_object($country_id))
 						{!! Form::hidden('paq_pais', $country_id) !!}
+						@endif
 					@else
 					{!! Form::model($paquete, array('route' => ['editPaquete', $paquete->id], 'method' => 'put', 'class' => 'form-horizontal', 'files' => true)) !!}
 						{!! Form::hidden('paq_pais') !!}
 					@endif
 						@include('partials.display_messages')
+						{!! Form::hidden('paq_tipo', $tipo) !!}
 						<div class="form-group">
 							<label class="control-label col-sm-2">País</label>
 							<div class="col-sm-4">
+								@if (is_object($country_id))
+								<select name="paq_pais" class="form-control">
+									@foreach ($country_id as $country)
+									<option value="{{ $country->id }}">{{ $country->co_nombre }}</option>
+									@endforeach
+								</select>
+								@else
 								<input type="text" name="country_slug" value="{{ $country }}" class="form-control" readonly>
+								@endif
 							</div>
 						</div>
 						<div class="form-group">

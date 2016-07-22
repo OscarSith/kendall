@@ -32,7 +32,7 @@
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
-	<div class="wrapper" style="padding-top: 196px;">
+	<div class="wrapper" style="padding-top: 194px;">
 		<nav class="navbar navbar-default navbar-fixed-top shrinkable" role="navigation">
 			<div class="topbar">
 				<div class="container">

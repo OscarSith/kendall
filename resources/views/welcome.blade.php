@@ -19,6 +19,7 @@
 @stop
 
 @section('content')
+@if (!$ofertas->isEmpty())
 <section class="container product-grid">
     <h2 class="heading-center">PROMOCIONES DE LA SEMANA</h2>
     <div class="row">
@@ -40,6 +41,7 @@
         @endforeach
     </div>
 </section>
+@endif
 <!-- CAROUSEL -->
 <section class="recent-works slick-carousel">
     <div class="container">

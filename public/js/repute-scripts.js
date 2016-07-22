@@ -112,7 +112,7 @@ $(document).ready( function() {
 	/*---------------------------*/
 
 	if($('.navbar-fixed-top.shrinkable').length > 0) {
-		$('.wrapper').css('padding-top', 97);
+		$('.wrapper').css('padding-top', 194);
 
 		$(window).scroll(function() {
 			if($(document).scrollTop() > 300) {

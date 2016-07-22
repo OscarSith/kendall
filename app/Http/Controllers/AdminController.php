@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Categoria;
@@ -29,11 +28,16 @@ class AdminController extends Controller
     	return view('admin.home', compact('countries', 'categorias', 'catId'));
     }
 
-    public function showPaquete($country, $country_id)
+    public function showPaquete(Request $request, $country, $country_id = null)
     {
     	$accion = 'Nuevo';
+        $tipo = $request->has('tipo') ? 'O' : 'P';
 
-    	return view('admin.paquete', compact('categorias', 'accion', 'country', 'country_id'));
+        if ($country_id == 0) {
+            $country_id = Country::all();
+        }
+
+    	return view('admin.paquete', compact('accion', 'country', 'country_id', 'tipo'));
     }
 
     public function storePaquete(Request $request)
@@ -57,15 +61,25 @@ class AdminController extends Controller
 			PaqueteImagen::create($imageParams);
 		});
 
+        if ($params['paq_tipo'] == 'O') {
+            $params['country_slug'] = Country::where('id', $params['paq_pais'])->pluck('co_nombre_slug')->first();
+            return redirect()->route('promociones')->with('success_message', 'Promocion Agregada');
+        }
+
     	return redirect()->route('getCountries', [$params['country_slug']])->with('success_message', 'Paquete agregado');
     }
 
-    public function edit($country, $country_id, $id)
+    public function edit(Request $request, $country, $country_id, $id)
     {
     	$paquete = Paquete::find($id);
     	$accion = 'Editar';
+        $tipo = $request->has('tipo') ? 'O' : 'P';
 
-    	return view('admin.paquete', compact('paquete', 'accion', 'country', 'country_id'));
+        if ($tipo == 'O') {
+            $country = Country::where('id', $country_id)->pluck('co_nombre')->first();
+        }
+
+    	return view('admin.paquete', compact('paquete', 'accion', 'country', 'country_id', 'tipo'));
     }
 
     public function update(Request $request, $id)
@@ -117,7 +131,18 @@ class AdminController extends Controller
         $paquete->fill($params);
         $paquete->save();
 
-    	return redirect()->route('getCountries', [$params['country_slug']])->with('success_message', 'Paquete ' . $params['paq_nombre'] . ' actualizado con exito.');
+        $success_message = 'Paquete ' . $params['paq_nombre'] . ' actualizado con exito.';
+
+        if ($params['paq_tipo'] == 'O') {
+            return redirect()->route('promociones')->with('success_message', $success_message);
+        }
+    	return redirect()->route('getCountries', [$params['country_slug']])->with('success_message', $success_message);
+    }
+
+    public function promo()
+    {
+        $promociones = Paquete::getByCountry(null, 'O')->get(['id', 'paq_nombre', 'paq_titulo', 'paq_descripcion', 'paq_precio', 'paq_imagen_principal', 'paq_pais']);
+        return view('admin.promo', compact('promociones'));
     }
 
     private function categorias()

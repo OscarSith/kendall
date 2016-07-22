@@ -16,6 +16,7 @@ class Paquete extends Model
     	'paq_pais',
     	'paq_imagen_principal',
     	'paq_estado',
+        'paq_tipo'
     ];
 
     public function scopeActives($q)
@@ -30,5 +31,13 @@ class Paquete extends Model
                  ->where('categorias.id', $categoria_id)
                  ->take(8)
                  ->get($fields);
+    }
+
+    public function scopeGetByCountry($q, $country_id = null, $tipo = 'P')
+    {
+        if ($country_id == null) {
+            return $q->actives()->where('paq_tipo', $tipo);
+        }
+        return $q->actives()->where('paq_pais', $country_id)->where('paq_tipo', $tipo);
     }
 }

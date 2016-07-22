@@ -50,6 +50,14 @@
           background-position: 50% 50%;
           height: 180px
         }
+        .no-padding-sides {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+        .no-padding-sides h5 {
+            height: 30px;
+            overflow: hidden;
+        }
     </style>
 </head>
 <body id="app-layout">
@@ -74,6 +82,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ route('dashboard') }}">Inicio</a></li>
                     <li><a href="{{ route('categoria') }}">Categoria</a></li>
+                    <li><a href="{{ route('promociones') }}">Promociones - Ofertas</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

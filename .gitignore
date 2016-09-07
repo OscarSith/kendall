@@ -18,3 +18,4 @@ storage/
 .env
 .env.example
 *.docx
+.DS_Store

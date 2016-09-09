@@ -37,11 +37,7 @@
 			<div class="topbar">
 				<div class="container">
 					<ul class="list-inline top-nav">
-						<li><span><i class="fa fa-phone-square"></i> 975451600 / (51-1) 469-3815 / RPM: *268353</span></li>
-						<li>
-							<i class="fa fa-envelope"></i>
-							<a href=":mailito" class="fsize1-1"><strong>ventas@kendallperutravel.com</strong></a>
-						</li>
+						<li>SIGUENOS: </li>
 						<li class="social-icons">
 							<a href="http://www.facebook.com/kendallperutravel" target="_blank" class="facebook-bg"><i class="fa fa-facebook"></i></a>
 						</li>
@@ -55,15 +51,25 @@
 						<span class="sr-only">Toggle Navigation</span>
 						<i class="fa fa-bars"></i>
 					</button>
-					<a href="{{ url('/') }}" class="navbar-brand navbar-logo">
+					<a href="/" class="navbar-brand navbar-logo">
 						<img src="{{ asset('img/logo.png') }}" alt="Logo kendall Travel Perú">
 					</a>
 				</div>
 				<!-- MAIN NAVIGATION -->
 				<div id="main-nav" class="navbar-collapse collapse navbar-mega-menu">
+					<div class="pull-right header-data">
+						<ul class="list-unstyled">
+							<li><i class="fa fa-mobile fa-lg"></i> 975451600 / (51-1) 469-3815</li>
+							<li><i class="fa fa-phone-square"></i> RPM: *268353</li>
+							<li>
+								<i class="fa fa-envelope"></i>
+								<a href=":mailito" class="fsize1-1"><strong>ventas@kendallperutravel.com</strong></a>
+							</li>
+						</ul>
+					</div>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="{{ $currentUri == '/' ? 'active' : '' }}">
-							<a href="{{ url('/') }}">INICIO</a>
+							<a href="/">INICIO</a>
 						</li>
 						<li class="{{ $currentUri == 'paquetes' ? 'active' : '' }} dropdown">
 							<a href="{{ url('paquetes') }}" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PAQUETES</a>
@@ -94,9 +100,12 @@
 								</ul>
 							</div>
 						</li>
-						<!-- <li class="{{ $currentUri == 'nosotros' ? 'active' : '' }}">
+						<li class="{{ $currentUri == 'nosotros' ? 'active' : '' }}">
+							<a href="#">OFERTAS</a>
+						</li>
+						<li class="{{ $currentUri == 'nosotros' ? 'active' : '' }}">
 							<a href="{{ url('nosotros') }}">NOSOTROS</a>
-						</li> -->
+						</li>
 						<li class="{{ $currentUri == 'contacto' ? 'active' : '' }}">
 							<a href="{{ url('contacto') }}">CONTACTO</a>
 						</li>
@@ -146,8 +155,25 @@
 					</div>
 				</div>
 			</div>
-			<div class="text-center copyright">
-				&copy; Todo los derechos reservados {{ Carbon\Carbon::now()->year }}
+			<div class="copyright">
+				<div class="container">
+					<div class="col-sm-4">
+						Kendall Perú Travel - Agencia de Viajes &copy; Todo los derechos reservados {{ Carbon\Carbon::now()->year }}
+					</div>
+					<div class="col-sm-4 text-center">
+						<a href="http://www.facebook.com/kendallperutravel" target="_blank" class="fa-stack fa-lg">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-facebook fa-stack-1x" style="color: #344f98"></i>
+						</a>
+						<a href="http://www.facebook.com/kendallperutravel" target="_blank" class="fa-stack fa-lg">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-twitter fa-stack-1x" style="color: #138bee"></i>
+						</a>
+					</div>
+					<div class="col-sm-4 text-right">
+						<p class="fa-lg"><i class="fa fa-book"></i> Libro de reclamaciones</p>
+					</div>
+				</div>
 			</div>
 		</footer>
 	</div>

@@ -1,8 +1,23 @@
-#main-nav .nav > li {
-  border-bottom: 3px solid transparent;
+.navbar-default {
+  border-bottom: 5px solid #31944B;
+}
+.navbar-nav {
+  background-color: #69c581;
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover {
+  color: #fff;
+  background-color: #31944B;
+}
+.header-data {
+  font-size: 1.2em;
+  color: #333;
+  margin-top: 10px;
+}
+.header-data i {
   color: #31944B;
+}
+.header-data a {
+  color: #333;
 }
 #main-nav .nav > li.active {
   border-bottom-color: #31944B

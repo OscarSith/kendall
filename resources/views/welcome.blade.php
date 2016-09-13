@@ -25,9 +25,9 @@
     <div class="row">
         @foreach($ofertas as $paquete)
         <div class="col-md-3 col-sm-4">
-            <div class="product-item">
+            <div class="thumbnail product-item">
                 <div class="destacado">
-                    DESTACADO
+                    PROMOCIÓN
                     <span></span>
                 </div>
                 <a href="{{ route('detallePaquete', [$paquete->id, str_slug($paquete->paq_nombre)]) }}" title="{{ $paquete->paq_nombre }}">

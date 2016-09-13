@@ -51,11 +51,6 @@ hr {
   border-color: #92B85B;
 }
 
-/* wrapper */
-.wrapper {
-  background: #F0F0F0;
-}
-
 .full-width-section {
   padding: 100px 0;
   background-color: #fff;
@@ -3615,8 +3610,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   margin-top: -22px;
   bottom: inherit;
   width: 45px;
-  height: 45px;
+  height: 52px;
   background: #777;
+  border:none;
+  z-index: 9;
 }
 .carousel-control:hover {
   background: #6a6a6a;
@@ -4557,7 +4554,7 @@ div[class*="col-"] > .form-group {
   border-radius: 50%;
   width: 12px;
   height: 12px;
-  background-color: #fff;
+  background-color: #9a9a9a;
 }
 .slick-dots li button:before {
   font-family: initial;

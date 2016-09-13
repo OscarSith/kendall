@@ -32,59 +32,59 @@ $(document).ready( function() {
 	/* HERO UNIT
 	/*---------------------------*/
 
-	if($('#carousel-hero-animated').length > 0) {
+	// if($('#carousel-hero-animated').length > 0) {
 
-		var animatedCarousel = $('#carousel-hero-animated');
+	// 	var animatedCarousel = $('#carousel-hero-animated');
 
-		animatedCarousel.carousel({
-			interval: 4000
-		});
+	// 	animatedCarousel.carousel({
+	// 		interval: 4000
+	// 	});
 
-		function doAnimations(elems) {
-			var animEndEv = 'webkitAnimationEnd animationend';
+	// 	function doAnimations(elems) {
+	// 		var animEndEv = 'webkitAnimationEnd animationend';
 
-			elems.each( function() {
-				var thisElem = $(this),
-					animationType = thisElem.data('animation');
+	// 		elems.each( function() {
+	// 			var thisElem = $(this),
+	// 				animationType = thisElem.data('animation');
 
-				thisElem.addClass(animationType).one(animEndEv, function() {
-					thisElem.removeClass(animationType);
-				});
-			});
-		}
+	// 			thisElem.addClass(animationType).one(animEndEv, function() {
+	// 				thisElem.removeClass(animationType);
+	// 			});
+	// 		});
+	// 	}
 
-		var firstAnimatingElems = animatedCarousel.find('.item:first')
-								.find('[data-animation ^= "animated"]');
+	// 	var firstAnimatingElems = animatedCarousel.find('.item:first')
+	// 							.find('[data-animation ^= "animated"]');
 
-		doAnimations(firstAnimatingElems);
+	// 	doAnimations(firstAnimatingElems);
 
-		animatedCarousel.on( 'slide.bs.carousel', function(e) {
-			var animatingElems = $(e.relatedTarget).find('[data-animation ^= "animated"]');
-			doAnimations(animatingElems);
-		});
+	// 	animatedCarousel.on( 'slide.bs.carousel', function(e) {
+	// 		var animatingElems = $(e.relatedTarget).find('[data-animation ^= "animated"]');
+	// 		doAnimations(animatingElems);
+	// 	});
 
-		// for skipped slide, before animation has ended
-		$('.carousel-control, .carousel-indicators li').on('click', function() {
-			var animatedItems = animatedCarousel.find('.item')
-								.find('[data-animation ^= "animated"]');
+	// 	// for skipped slide, before animation has ended
+	// 	$('.carousel-control, .carousel-indicators li').on('click', function() {
+	// 		var animatedItems = animatedCarousel.find('.item')
+	// 							.find('[data-animation ^= "animated"]');
 
-			animatedItems.each( function() {
-				var animationType = $(this).data('animation');
-				$(this).removeClass(animationType);
-			})
-		});
+	// 		animatedItems.each( function() {
+	// 			var animationType = $(this).data('animation');
+	// 			$(this).removeClass(animationType);
+	// 		})
+	// 	});
 
-		// adjust slide min-height
-		var items = animatedCarousel.find('.item');
-		var itemMaxHeight = 0;
+	// 	// adjust slide min-height
+	// 	var items = animatedCarousel.find('.item');
+	// 	var itemMaxHeight = 0;
 
-		items.each( function() {
-			if( itemMaxHeight < $(this).height() )
-				itemMaxHeight = $(this).height();
-		})
+	// 	items.each( function() {
+	// 		if( itemMaxHeight < $(this).height() )
+	// 			itemMaxHeight = $(this).height();
+	// 	})
 
-		items.css( 'min-height', itemMaxHeight );
-	}
+	// 	items.css( 'min-height', itemMaxHeight );
+	// }
 
 	// scrolling down for fullscreen hero unit
 	if($('.scroll-down').length > 0) {
@@ -171,12 +171,12 @@ $(document).ready( function() {
 			]
 		});
 
-		$('.testimonial.slick-carousel .testimonial-container').slick({
-			speed: 500,
-			fade: true,
-			prevArrow: '<button type="button" data-role="none" class="btn slick-prev">Previous</button>',
-			nextArrow: '<button type="button" data-role="none" class="btn slick-next">Next</button>',
-		});
+		// $('.testimonial.slick-carousel .testimonial-container').slick({
+		// 	speed: 500,
+		// 	fade: true,
+		// 	prevArrow: '<button type="button" data-role="none" class="btn slick-prev">Previous</button>',
+		// 	nextArrow: '<button type="button" data-role="none" class="btn slick-next">Next</button>',
+		// });
 
 		$('#carousel-hero .carousel-inner').slick({
 			speed: 800,
@@ -184,8 +184,8 @@ $(document).ready( function() {
 			fade: true,
 			autoplay: true,
 			autoplaySpeed: 2500,
-			prevArrow: '<button type="button" data-role="none" class="carousel-control left slick-prev">Previous</button>',
-			nextArrow: '<button type="button" data-role="none" class="carousel-control right slick-next">Next</button>',
+			prevArrow: '<button type="button" data-role="none" class="carousel-control left"><i class="fa fa-angle-left fa-2x"></i></button>',
+			nextArrow: '<button type="button" data-role="none" class="carousel-control right"><i class="fa fa-angle-right fa-2x"></i></button>',
 		});
 	}
 

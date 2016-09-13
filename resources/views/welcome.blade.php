@@ -26,6 +26,10 @@
         @foreach($ofertas as $paquete)
         <div class="col-md-3 col-sm-4">
             <div class="product-item">
+                <div class="destacado">
+                    DESTACADO
+                    <span></span>
+                </div>
                 <a href="{{ route('detallePaquete', [$paquete->id, str_slug($paquete->paq_nombre)]) }}" title="{{ $paquete->paq_nombre }}">
                     <img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" class="img-responsive center-block" alt="{{ $paquete->paq_nombre }}">
                 </a>

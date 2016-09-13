@@ -51,8 +51,7 @@
   color: #b61a79
 }
 .media-wrapper img, .product-item img {
-  border: 3px solid #A5A5A5;
-  border-radius: 8px
+  border: 1px solid #A5A5A5;
 }
 .product-item:hover .fa-plane {
   color: #b61a79;
@@ -116,9 +115,31 @@
   height: 180px;
   background-size: cover
 }
+.thumbnail:hover {
+    box-shadow: 0 0 5px #999;
+}
 .thumbnail .caption h4 {
   height: 40px;
 }
 .fsize1-1 {
   font-size: 1.1em
+}
+.destacado {
+  position: absolute;
+  background-color: #f00;
+  padding: 4px 10px;
+  color: #fff;
+  text-transform: uppercase;
+  top: 15px;
+  left: -1px;
+}
+.destacado span {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0px 6px 10px 0px;
+  border-color: transparent #990000 transparent transparent;
+  top: 100%;
+  left: 0px;
+  position: absolute;
 }

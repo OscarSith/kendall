@@ -100,7 +100,7 @@
 								</ul>
 							</div>
 						</li>
-						<li class="{{ $currentUri == 'nosotros' ? 'active' : '' }}">
+						<li class="{{ $currentUri == 'ofertas' ? 'active' : '' }}">
 							<a href="#">OFERTAS</a>
 						</li>
 						<li class="{{ $currentUri == 'nosotros' ? 'active' : '' }}">

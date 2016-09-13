@@ -1,12 +1,18 @@
 .navbar-default {
-  border-bottom: 5px solid #31944B;
+  border-bottom: 5px solid #900;
 }
-.navbar-nav {
-  background-color: #69c581;
+.navbar-default .navbar-nav > li {
+  background-color: #f00;
 }
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover {
+.navbar-default .navbar-nav > li > a {
   color: #fff;
-  background-color: #31944B;
+}
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  background-color: #900;
+  color: #fff;
 }
 .header-data {
   font-size: 1.2em;

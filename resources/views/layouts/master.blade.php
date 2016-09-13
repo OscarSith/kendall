@@ -165,7 +165,7 @@
 							<i class="fa fa-circle fa-stack-2x"></i>
 							<i class="fa fa-facebook fa-stack-1x" style="color: #344f98"></i>
 						</a>
-						<a href="http://www.facebook.com/kendallperutravel" target="_blank" class="fa-stack fa-lg">
+						<a href="#" target="_blank" class="fa-stack fa-lg">
 							<i class="fa fa-circle fa-stack-2x"></i>
 							<i class="fa fa-twitter fa-stack-1x" style="color: #138bee"></i>
 						</a>

@@ -143,3 +143,6 @@
   left: 0px;
   position: absolute;
 }
+.btn-danger {
+  background-color: #f00;
+}

@@ -9,7 +9,7 @@
 				<strong>Desde <i class="fa fa-dollar fa-fw"></i> {{ $paquete->paq_precio }}</strong>
 			</p>
 			<div>
-				<a href="{{ route('detallePaquete', [$paquete->id, str_slug($paquete->paq_nombre)]) }}" class="btn btn-primary" role="button">Ver Detalles</a>
+				<a href="{{ route('detallePaquete', [$paquete->id, str_slug($paquete->paq_nombre)]) }}" class="btn btn-danger" role="button">Ver Detalles</a>
 			</div>
 		</div>
 	</div>

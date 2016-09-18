@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\NewsletterRequest;
 use App\PaqueteImagen;
 use App\Paquete;
 use App\Country;
 use App\Categoria;
+use App\Newsletter;
 use Mail;
 use Route;
 
@@ -115,6 +117,13 @@ class HomeController extends Controller
             $message->to(env('TO_ADDRESS'), env('TO_NAME'))->subject('Cotizacion enviada desde kendallperutravel.com');
         });
         return redirect()->back()->with('success_message', 'Su mensaje ha sido enviado con exito.');
+    }
+
+    public function newsletter(NewsletterRequest $request)
+    {
+        Newsletter::create($request->all());
+
+        return response()->json(['result' => true, 'message' => 'Email guardado, gracias por su preferencia']);
     }
 
     private function getCurrentUri()

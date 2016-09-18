@@ -32,7 +32,7 @@
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
-	<div class="wrapper" style="padding-top: 194px;">
+	<div class="wrapper">
 		<nav class="navbar navbar-default navbar-fixed-top shrinkable" role="navigation">
 			<div class="topbar">
 				<div class="container">
@@ -59,8 +59,8 @@
 				<div id="main-nav" class="navbar-collapse collapse navbar-mega-menu">
 					<div class="pull-right header-data">
 						<ul class="list-unstyled">
-							<li><i class="fa fa-mobile fa-lg"></i> 975451600 / (51-1) 469-3815</li>
-							<li><i class="fa fa-phone-square"></i> RPM: *268353</li>
+							<li><i class="fa fa-phone-square"></i> (01) 469-3815</li>
+							<li><i class="fa fa-mobile fa-lg"></i> 997974626</li>
 							<li>
 								<i class="fa fa-envelope"></i>
 								<a href=":mailito" class="fsize1-1"><strong>ventas@kendallperutravel.com</strong></a>
@@ -70,6 +70,12 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li class="{{ $currentUri == '/' ? 'active' : '' }}">
 							<a href="/">INICIO</a>
+						</li>
+						<li class="{{ $currentUri == 'nosotros' ? 'active' : '' }}">
+							<a href="{{ url('nosotros') }}">NOSOTROS</a>
+						</li>
+						<li class="{{ $currentUri == 'circuito' ? 'active' : '' }}">
+							<a href="#">CIRCUITOS</a>
 						</li>
 						<li class="{{ $currentUri == 'paquetes' ? 'active' : '' }} dropdown">
 							<a href="{{ url('paquetes') }}" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PAQUETES</a>
@@ -102,9 +108,6 @@
 						</li>
 						<li class="{{ $currentUri == 'ofertas' ? 'active' : '' }}">
 							<a href="#">OFERTAS</a>
-						</li>
-						<li class="{{ $currentUri == 'nosotros' ? 'active' : '' }}">
-							<a href="{{ url('nosotros') }}">NOSOTROS</a>
 						</li>
 						<li class="{{ $currentUri == 'contacto' ? 'active' : '' }}">
 							<a href="{{ url('contacto') }}">CONTACTO</a>

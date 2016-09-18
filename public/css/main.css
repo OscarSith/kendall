@@ -3058,7 +3058,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .navbar-default {
-  background-color: #D8EDF3;
   border: none;
 }
 .navbar-default .navbar-toggle {
@@ -3118,9 +3117,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .topbar {
-  background-color: #999;
-  padding-bottom: 8px;
-  padding-top: 8px;
+  background-color: #777;
+  padding-bottom: 4px;
+  padding-top: 4px;
   text-align: right;
 }
 .topbar .top-nav {
@@ -3614,6 +3613,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   background: #777;
   border:none;
   z-index: 9;
+  opacity: .7;
 }
 .carousel-control:hover {
   background: #6a6a6a;
@@ -3666,10 +3666,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   bottom: 0;
 }
 .hero-unit-slider .carousel-control {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 1);
 }
 .hero-unit-slider .carousel-control:hover {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 1);
 }
 @media screen and (min-width: 1200px) and (max-width: 1440px) {
   .hero-unit-slider .carousel-caption {
@@ -4794,8 +4794,8 @@ div[class*="col-"] > .form-group {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
-  padding: 3px 8px;
-  font-size: 18px;
+  padding: 0px 10px;
+  font-size: 17px;
   color: #fff;
   display: inline-block;
 }
@@ -4875,23 +4875,13 @@ div[class*="col-"] > .form-group {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
   padding: 5px;
-  border: none;
-  font-size: 12px;
-  background: transparent;
-  color: #fff;
   font-weight: 600;
+  margin-top: 10px;
 }
 .newsletter-form .alert.active {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
-}
-.newsletter-form .alert.alert-danger {
-  color: #DF6967;
-}
-.newsletter-form .alert.alert-success {
-  color: #69C76A;
 }
 .newsletter-form .alert a {
   color: #fff;

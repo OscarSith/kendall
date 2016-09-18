@@ -112,7 +112,7 @@ $(document).ready( function() {
 	/*---------------------------*/
 
 	if($('.navbar-fixed-top.shrinkable').length > 0) {
-		$('.wrapper').css('padding-top', 194);
+		$('.wrapper').css('padding-top', 186);
 
 		$(window).scroll(function() {
 			if($(document).scrollTop() > 300) {
@@ -378,7 +378,7 @@ $(document).ready( function() {
 
 	$newsletter = $('.newsletter-form');
 	$newsletter.find('.btn').click( function() {
-		$url = 'php/mailchimp.php';
+		$url = 'newsletter';
 
 		$attr = $newsletter.attr('action');
 		if (typeof $attr !== typeof undefined && $attr !== false) {
@@ -408,7 +408,7 @@ $(document).ready( function() {
 
 				var className = '';
 
-				if( data.result == true ){
+				if( data.result == true ) {
 					className = 'alert-success';
 				}else {
 					className = 'alert-danger';
@@ -418,14 +418,25 @@ $(document).ready( function() {
 				.removeClass( 'alert-danger alert-success' )
 				.addClass( 'alert active ' + className )
 				.slideDown(300);
-
-				$btn.removeClass('loading');
-				$btn.removeAttr('disabled');
+				$newsletter.trigger('reset');
 			},
 			error: function( XMLHttpRequest, textStatus, errorThrown ){
 				console.log("AJAX ERROR: \n" + XMLHttpRequest.responseText + "\n" + textStatus);
+				var message = '';
+				if (XMLHttpRequest.responseJSON.email.length) {
+					XMLHttpRequest.responseJSON.email.forEach(function(error) {
+						message += error + '<br>';
+					});
+				}
+				newsletter.find('.alert').html( message )
+				.removeClass( 'alert-danger alert-success' )
+				.addClass( 'alert active alert-danger' )
+				.slideDown(300);
+			},
+			complete: function() {
+				$btn.removeClass('loading');
+				$btn.removeAttr('disabled');
 			}
-
 		});
 	}
 

@@ -3270,11 +3270,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   top: -136px;
 }
 .navbar-fixed-top.shrink-active .navbar-logo {
-  margin-top: 68px;
+  margin-top: 80px;
   padding-bottom: 0;
 }
 .navbar-fixed-top.shrink-active .navbar-brand > img {
-  width: 130px;
+  width: 106px;
 }
 .navbar-fixed-top .navbar-nav {
   border-radius: 6px 6px 0 0;

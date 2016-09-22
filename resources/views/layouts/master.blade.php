@@ -33,6 +33,7 @@
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
 	<div class="wrapper">
+		@include('partials.color_picker')
 		<nav class="navbar navbar-default navbar-fixed-top shrinkable" role="navigation">
 			<div class="topbar">
 				<div class="container">
@@ -185,6 +186,7 @@
 	<script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
 	<script src="{{ asset('js/slick.min.js') }}"></script>
 	<script src="{{ asset('js/jquery.bootstrap-autohidingnavbar.min.js') }}"></script>
+	<script src="{{ asset('js/bootstrap-colorpicker.min.js') }}"></script>
 	<script src="{{ asset('js/repute-scripts.js') }}"></script>
 	@yield('script-contact')
 </body>

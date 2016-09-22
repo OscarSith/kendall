@@ -19,9 +19,6 @@
   color: #333;
   margin-top: 10px;
 }
-.header-data i {
-  color: #31944B;
-}
 .header-data a {
   color: #333;
 }
@@ -47,14 +44,11 @@
   margin-bottom: 30px;
   margin-left: -2px;
 }
-.kendall-color {
-  color: #b61a79
-}
 .media-wrapper img, .product-item img {
   border: 1px solid #A5A5A5;
 }
-.product-item:hover .fa-plane {
-  color: #b61a79;
+.product-item:hover .fa-plane, .header-data i, .kendall-color {
+  color: #D7087D;
 }
 .fa-certificate {
   color: #92B85B

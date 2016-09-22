@@ -8,6 +8,7 @@ module.exports = function(grunt) {
 						'public/css/font-awesome.min.css',
 						'public/css/main.css',
 						'public/css/my-custom-styles.css',
+						'public/css/bootstrap-colorpicker.min.css'
 					]
 				}
 			}

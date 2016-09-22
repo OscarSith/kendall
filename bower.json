@@ -20,5 +20,8 @@
   ],
   "dependencies": {
     "slick-carousel": "^1.5.9"
+  },
+  "devDependencies": {
+    "bootstrap-colorpicker": "^2.3.5"
   }
 }

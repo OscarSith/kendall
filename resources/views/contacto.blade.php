@@ -61,7 +61,7 @@
 @endsection
 
 @section('script-contact')
-	<script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDSUsoZ6pJu4bQg3fzsCU0zMH1w1N7SZ1c" type="text/javascript"></script>
 	<script>
 		google_api_map_init();
 		function google_api_map_init(){

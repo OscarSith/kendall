@@ -33,7 +33,6 @@
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
 	<div class="wrapper">
-		@include('partials.color_picker')
 		<nav class="navbar navbar-default navbar-fixed-top shrinkable" role="navigation">
 			<div class="topbar">
 				<div class="container">

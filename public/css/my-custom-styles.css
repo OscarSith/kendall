@@ -1,8 +1,8 @@
 .navbar-default {
-  border-bottom: 5px solid #900;
+  border-bottom: 5px solid #850835;
 }
 .navbar-default .navbar-nav > li {
-  background-color: #f00;
+  background-color: #8a2956;
 }
 .navbar-default .navbar-nav > li > a {
   color: #fff;
@@ -11,7 +11,7 @@
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  background-color: #900;
+  background-color: #850835;
   color: #fff;
 }
 .header-data {
@@ -26,7 +26,7 @@
   border-bottom-color: #31944B
 }
 #wrapper_detail_paquete, #wrapper_paquetes, #nosotros_wrapper, .mt30 {
-  padding-top: 30px
+  padding-top: 46px
 }
 .google-map-api {
   background: #fff;

@@ -48,7 +48,7 @@ button:hover {
 }
 
 hr {
-  border-color: #92B85B;
+  border-color: #850835;
 }
 
 .full-width-section {
@@ -3091,10 +3091,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   background: url('../img/corner.png') no-repeat 2px 0px;
 }
 .navbar-default .navbar-nav > li:first-child a {
-  background-color: #f00;
+  background-color: #8a2956;
 }
 .navbar-default .navbar-nav > li.active:first-child a {
-  background-color: #900;
+  background-color: #850835;
 }
 .navbar-default .navbar-nav > li.active:first-child{
   background-image: url('../img/corner-on.png') !important;
@@ -3117,7 +3117,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .topbar {
-  background-color: #777;
+  background-color: #786e6e;
   padding-bottom: 4px;
   padding-top: 4px;
   text-align: right;

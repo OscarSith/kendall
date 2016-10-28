@@ -12,6 +12,7 @@ use App\Paquete;
 use App\Country;
 use App\Categoria;
 use App\Newsletter;
+use App\Circuito;
 use Mail;
 use Route;
 
@@ -124,6 +125,24 @@ class HomeController extends Controller
         Newsletter::create($request->all());
 
         return response()->json(['result' => true, 'message' => 'Email guardado, gracias por su preferencia']);
+    }
+
+    public function ofertas()
+    {
+        $ofertas = Paquete::getByCountry(null, 'O')->latest()->take(8)->get($this->fields);
+        $ofertas = $ofertas->sortBy($this->fields[1]);
+
+        $currentUri = $this->getCurrentUri();
+
+        return view('ofertas', compact('ofertas', 'currentUri'));
+    }
+
+    public function circuitos()
+    {
+        $circuitos = Circuito::paginate(16, ['id', 'flyer_name', 'flyer_img', 'flyer_img_thumb', 'flyer_estado']);
+        $currentUri = $this->getCurrentUri();
+
+        return view('circuito', compact('currentUri', 'circuitos'));
     }
 
     private function getCurrentUri()

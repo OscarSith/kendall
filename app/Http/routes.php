@@ -41,12 +41,19 @@ Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'admin'], function ($
     // Promociones
     $route->get('promociones', 'AdminController@promo')->name('promociones');
     $route->delete('delete-promo/{id}', 'AdminController@deletePromo')->name('deletePackagePromo');
+
+    // FLyers
+    $route->get('circuitos', 'CirtuitoController@index')->name('circuitos');
+    $route->post('circuito', 'CirtuitoController@store')->name('circuito');
+    $route->post('remove-flyer/{id}', 'CirtuitoController@destroy')->name('remove-flyer');
 });
 
 
 Route::get('/', 'HomeController@index');
 Route::get('contacto', 'HomeController@contacto');
 Route::get('nosotros', 'HomeController@nosotros');
+Route::get('circuitos', 'HomeController@circuitos');
+Route::get('ofertas', 'HomeController@ofertas');
 Route::get('{country}', 'HomeController@paquetesByCountry')->name('paquetesByCountry');
 Route::get('paises/{categoria}', 'HomeController@countriesByCategoria')->name('countriesByCategoria');
 Route::get('detalle-paquete/{id}-{paq_nombre}', 'HomeController@detallePaquete')->name('detallePaquete');

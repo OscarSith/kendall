@@ -240,25 +240,25 @@ $(function() {
 		}
 	}
 
-	$('#cp3').colorpicker({
-		color: '#777',
-		format: 'rgba'
-	}).on('changeColor', function (e) {
-		$('.topbar').css('background-color', e.color.toHex());
-	});
+	// $('#cp3').colorpicker({
+	// 	color: '#777',
+	// 	format: 'rgba'
+	// }).on('changeColor', function (e) {
+	// 	$('.topbar').css('background-color', e.color.toHex());
+	// });
 
-	$('#cp1').colorpicker({
-		color: '#f00',
-		format: 'rgba'
-	}).on('changeColor', function (e) {
-		$('.navbar-default .navbar-nav>li:not(:first)').css('background-color', e.color.toHex());
-	});
-	$('#cp2').colorpicker({
-		color: '#900',
-		format: 'rgba'
-	}).on('changeColor', function (e) {
-		var color = e.color.toHex();
-		$('.navbar-default .navbar-nav>li:first a').css('background-color', color);
-		$('.navbar-default').css('border-bottom-color', color);
-	});
+	// $('#cp1').colorpicker({
+	// 	color: '#f00',
+	// 	format: 'rgba'
+	// }).on('changeColor', function (e) {
+	// 	$('.navbar-default .navbar-nav>li:not(:first)').css('background-color', e.color.toHex());
+	// });
+	// $('#cp2').colorpicker({
+	// 	color: '#900',
+	// 	format: 'rgba'
+	// }).on('changeColor', function (e) {
+	// 	var color = e.color.toHex();
+	// 	$('.navbar-default .navbar-nav>li:first a').css('background-color', color);
+	// 	$('.navbar-default').css('border-bottom-color', color);
+	// });
 });

@@ -58,6 +58,10 @@
             height: 30px;
             overflow: hidden;
         }
+        #list-flyers .content-img {
+            height: 290px;
+            overflow: hidden;
+        }
     </style>
 </head>
 <body id="app-layout">
@@ -83,6 +87,7 @@
                     <li><a href="{{ route('dashboard') }}">Inicio</a></li>
                     <li><a href="{{ route('categoria') }}">Categoria</a></li>
                     <li><a href="{{ route('promociones') }}">Promociones - Ofertas</a></li>
+                    <li><a href="{{ route('circuitos') }}">Circuitos</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

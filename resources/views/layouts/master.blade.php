@@ -74,8 +74,8 @@
 						<li class="{{ $currentUri == 'nosotros' ? 'active' : '' }}">
 							<a href="{{ url('nosotros') }}">NOSOTROS</a>
 						</li>
-						<li class="{{ $currentUri == 'circuito' ? 'active' : '' }}">
-							<a href="#">CIRCUITOS</a>
+						<li class="{{ $currentUri == 'circuitos' ? 'active' : '' }}">
+							<a href="{{ url('circuitos') }}">CIRCUITOS</a>
 						</li>
 						<li class="{{ $currentUri == 'paquetes' ? 'active' : '' }} dropdown">
 							<a href="{{ url('paquetes') }}" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PAQUETES</a>
@@ -107,7 +107,7 @@
 							</div>
 						</li>
 						<li class="{{ $currentUri == 'ofertas' ? 'active' : '' }}">
-							<a href="#">OFERTAS</a>
+							<a href="{{ url('ofertas') }}">OFERTAS</a>
 						</li>
 						<li class="{{ $currentUri == 'contacto' ? 'active' : '' }}">
 							<a href="{{ url('contacto') }}">CONTACTO</a>

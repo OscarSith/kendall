@@ -17,13 +17,12 @@
 					<address>
 						<p>
 							<strong>
-								Calle Fortaleza 120, Coop. Chancas de Andahuaylas<br/>Santa Anita - Lima 43
+								Calle Fortaleza 120, Coop. Chancas de Andahuaylas<br>Santa Anita - Lima 43
 							</strong>
-							<br />
-							Teléfono: (51-1) 469-3815<br />
-							Celular: 975451600<br />
-							RPM.: *268353<br>
-							E-mail: <a href="#" class="kendall-color">administrador@kendallperutravel.com</a>
+							<br>
+							Teléfono: (01) 469-3815<br>
+							Celular: 997974626<br>
+							E-mail: <a href="#" class="kendall-color">ventas@kendallperutravel.com</a>
 						</p>
 					</address>
 				</div>

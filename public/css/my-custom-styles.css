@@ -39,6 +39,10 @@
   height: 100%;
   width: 100%;
 }
+#form-contact address {
+  line-height: 1.5;
+  font-size: 1.1em;
+}
 #form-contact address img {
   height: 100px;
   margin-bottom: 30px;
@@ -139,4 +143,7 @@
 }
 .btn-danger {
   background-color: #f00;
+}
+#flyers .thumbnail {
+  cursor: pointer;
 }

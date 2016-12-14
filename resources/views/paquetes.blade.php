@@ -15,7 +15,7 @@
                         	<img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" alt="Item Thumbnail" class="img-responsive center-block">
                     	</a>
                     </div>
-                    <h4><i class="fa fa-plane kendall-color"></i> {{ $paquete->paq_nombre }}</h4>
+                    <h4>{{ $paquete->paq_nombre }}</h4>
 				</div>
 				@endforeach
 			</div>
@@ -32,7 +32,7 @@
                         	<img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" alt="Item Thumbnail" class="img-responsive center-block">
                     	</a>
                     </div>
-                    <h4><i class="fa fa-plane kendall-color"></i> {{ $paquete->paq_nombre }}</h4>
+                    <h4>{{ $paquete->paq_nombre }}</h4>
 				</div>
 				@endforeach
 			</div>

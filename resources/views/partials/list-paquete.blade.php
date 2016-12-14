@@ -2,7 +2,7 @@
 	<div class="thumbnail">
 		<div style="background-image: url('{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}');" class="paquete-image"></div>
 		<div class="caption">
-			<h4><i class="fa fa-plane fa-fw"></i>{{ $paquete->paq_nombre }}</h4>
+			<h4>{{ $paquete->paq_nombre }}</h4>
 			<p style="min-height: 70px;">
 				{{ $paquete->paq_titulo }}
 				<br>

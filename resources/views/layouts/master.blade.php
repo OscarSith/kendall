@@ -59,8 +59,8 @@
 				<div id="main-nav" class="navbar-collapse collapse navbar-mega-menu">
 					<div class="pull-right header-data">
 						<ul class="list-unstyled">
-							<li><i class="fa fa-phone-square"></i> (01) 469-3815</li>
-							<li><i class="fa fa-mobile fa-lg"></i> 997974626</li>
+							<li><i class="fa fa-phone-square"></i> (01) 469-3815 / <i class="fa fa-mobile fa-lg"></i> 997974626</li>
+							<li><i class="fa fa-whatsapp"></i> 997974626</li>
 							<li>
 								<i class="fa fa-envelope"></i>
 								<a href=":mailito" class="fsize1-1"><strong>ventas@kendallperutravel.com</strong></a>
@@ -149,8 +149,8 @@
 									Calle Fortaleza 120, Coop. Chancas de Andahuaylas<br>Santa Anita - Lima 43
 								</strong>
 								<br>
-								Teléfono: (01) 469-3815<br>
-								Celular: 997974626<br>
+								Teléfono: (01) 469-3815 / Cel: 997974626<br>
+								<i class="fa fa-whatsapp"></i> 997974626<br>
 								<strong>E-mail: <a href="#" class="kendall-color">ventas@kendallperutravel.com</a></strong>
 							</address>
 						</div>

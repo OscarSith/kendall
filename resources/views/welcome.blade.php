@@ -35,7 +35,6 @@
                 </a>
                 <div class="info">
                     <h3 class="title">
-                        <i class="fa fa-plane fa-lg"></i>
                         {{ $paquete->paq_nombre }}
                     </h3>
                     <div class="price"><strong><i class="fa fa-dollar"></i> {{ $paquete->paq_precio }}</strong></div>
@@ -65,7 +64,7 @@
 </section>
 <section class="recent-works slick-carousel">
     <div class="container">
-        <h2 class="section-heading"><i class="fa fa-location-arrow"></i> PAQUETES NACIONALES</h2>
+        <h2 class="section-heading"><i class="fa fa-globe"></i> PAQUETES NACIONALES</h2>
         <div class="row">
         @if (!$nacionales->isEmpty())
             <div class="portfolio-container">

@@ -264,7 +264,7 @@ footer {
 footer a {
   color: #fff;
 }
-footer a:hover, footer a:focus {
+footer .copyright a:hover, footer .copyright a:focus {
   color: #fff;
   text-decoration: underline;
 }

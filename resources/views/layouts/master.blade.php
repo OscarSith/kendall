@@ -173,7 +173,11 @@
 						</a>
 					</div>
 					<div class="col-sm-4 text-right">
-						<p class="fa-lg"><i class="fa fa-book"></i> Libro de reclamaciones</p>
+						<p class="fa-lg">
+							<a href="{{ url('contacto') }}">
+								<i class="fa fa-book"></i> Libro de reclamaciones
+							</a>
+						</p>
 					</div>
 				</div>
 			</div>

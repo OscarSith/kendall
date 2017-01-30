@@ -48,7 +48,7 @@
 			var img_name = $img.data('name');
 			var $imgBig = $('#img-big-flyer');
 
-			$imgBig.prop('src', 'http://localhost/okaperu/kendall/public/img/flyers/' + img_src).prop('alt', img_name);
+			$imgBig.prop('src', '{{ asset('img/flyers/') }}/' + img_src).prop('alt', img_name);
 		}
 	</script>
 @endsection

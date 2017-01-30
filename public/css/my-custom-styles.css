@@ -153,3 +153,19 @@
 .copyright {
   color: #fff;
 }
+#modal-flyer .modal-content {
+  background-color: transparent !important;
+  box-shadow: none;
+  border: none;
+}
+#modal-flyer .modal-header {
+  border: inherit !important;
+}
+#modal-flyer .modal-header .close {
+  color: #fff;
+  opacity: 1;
+  font-size: 3em;
+}
+#modal-flyer .modal-body img {
+  box-shadow: 0 0 20px #000;
+}

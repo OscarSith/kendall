@@ -3086,7 +3086,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   padding-bottom: 10px;
   padding-top: 10px;
 }
-.navbar-default .navbar-nav > li:first-child{
+.navbar-default .navbar-nav > li:first-child {
   padding-left: 28px;
   background: url('../img/corner.png') no-repeat 2px 0px;
 }
@@ -3142,7 +3142,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 @media screen and (max-width: 768px) {
   .topbar {
     text-align: center;
-    margin-bottom: 10px;
   }
   .topbar .searchbox {
     display: none;
@@ -3270,17 +3269,20 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   top: -136px;
 }
 .navbar-fixed-top.shrink-active .navbar-logo {
-  margin-top: 80px;
+  margin-top: 104px;
   padding-bottom: 0;
 }
 .navbar-fixed-top.shrink-active .navbar-brand > img {
   width: 106px;
 }
+.navbar-fixed-top.shrink-active .navbar-toggle {
+  margin-top: 115px;
+}
 .navbar-fixed-top .navbar-nav {
   border-radius: 6px 6px 0 0;
   margin-right: -10px;
   margin-top: 11px;
-  clear: right;
+  clear: both;
 }
 
 .fullscreen-slider .navbar-fixed-top {

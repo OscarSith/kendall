@@ -38,6 +38,6 @@ class Paquete extends Model
         if ($country_id == null) {
             return $q->actives()->where('paq_tipo', $tipo);
         }
-        return $q->actives()->where('paq_pais', $country_id)->where('paq_tipo', $tipo);
+        return $q->where('paq_pais', $country_id)->where('paq_tipo', $tipo);
     }
 }

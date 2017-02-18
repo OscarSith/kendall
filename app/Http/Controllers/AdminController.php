@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use App\Categoria;
 use App\Paquete;
 use App\PaqueteImagen;
@@ -157,5 +155,23 @@ class AdminController extends Controller
     private function categorias()
     {
     	return array_merge([0 => 'Seleccione categoria'], Categoria::where('estado', 1)->get(['id', 'nombre'])->lists('nombre', 'id')->all());
+    }
+
+    public function changeState(Request $request, $id) {
+
+        $paquete = Paquete::find($id);
+        $estado = $request->get('paq_estado');
+        $message = '';
+
+        if ($paquete) {
+
+            $paquete->paq_estado = $estado;
+
+            $paquete->save();
+
+            $message = $estado == "1" ? 'Activado' : 'Inactivado';
+        }
+
+        return redirect()->back()->with('success_message', 'Paquete ' . $message);
     }
 }

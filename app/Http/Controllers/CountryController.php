@@ -13,7 +13,7 @@ class CountryController extends Controller
 	public function index($country)
 	{
 		$country = Country::where('co_nombre_slug', $country)->first(['id', 'co_nombre']);
-		$paquetes = Paquete::getByCountry($country->id)->get(['id', 'paq_nombre', 'paq_titulo', 'paq_precio', 'paq_imagen_principal']);
+		$paquetes = Paquete::getByCountry($country->id)->get(['id', 'paq_nombre', 'paq_titulo', 'paq_precio', 'paq_imagen_principal', 'paq_estado']);
 
 		$name = $country->co_nombre;
 		$country_id = $country->id;

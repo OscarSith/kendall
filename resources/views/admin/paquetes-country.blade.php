@@ -7,7 +7,7 @@
 		@include('partials.display_messages')
 		@foreach($paquetes as $paquete)
 		<div class="col-sm-4 col-md-3">
-			<div class="thumbnail">
+			<div class="thumbnail {{ !$paquete->paq_estado ? 'inactivo' : '' }}">
 				<img src="{{ asset('img/paquetes/' . $paquete->paq_imagen_principal) }}" alt="{{ $paquete->paq_nombre }}">
 				<div class="caption">
 					<h4><i class="fa fa-plane fa-fw"></i>{{ $paquete->paq_nombre }}</h4>
@@ -19,12 +19,12 @@
 					<div>
 						<a href="{{ route('formEditPaquete', [str_slug($name), $country_id, $paquete->id]) }}" class="btn btn-primary" role="button">Editar</a>
 						{{ Form::open(['route' => ['changeStatusPaquete', $paquete->id], 'method' => 'put', 'class' => 'pull-right']) }}
-							@if (!$paquete->paq_estado)
+							@if ($paquete->paq_estado == 1)
 								{{ Form::hidden('paq_estado', 0) }}
-								<button class="btn btn-warning" role="button">Inactivar</button>
+								<button class="btn btn-warning pull-right" role="button">Inactivar</button>
 							@else
 								{{ Form::hidden('paq_estado', 1) }}
-								<button class="btn btn-success" role="button">Activar</button>
+								<button class="btn btn-success pull-right" role="button">Activar</button>
 							@endif
 						{{ Form::close() }}
 					</div>

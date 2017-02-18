@@ -57,7 +57,7 @@
 				</div>
 				<!-- MAIN NAVIGATION -->
 				<div id="main-nav" class="navbar-collapse collapse navbar-mega-menu">
-					<div class="pull-right header-data">
+					<div class="header-data">
 						<ul class="list-unstyled">
 							<li><i class="fa fa-phone-square"></i> (01) 469-3815 / <i class="fa fa-mobile fa-lg"></i> 997974626</li>
 							<li><i class="fa fa-whatsapp"></i> 997974626</li>

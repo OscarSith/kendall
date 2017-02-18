@@ -85,7 +85,7 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ route('dashboard') }}">Inicio</a></li>
-                    <li><a href="{{ route('categoria') }}">Categoria</a></li>
+                    {{--<li><a href="{{ route('categoria') }}">Categoria</a></li>--}}
                     <li><a href="{{ route('promociones') }}">Promociones - Ofertas</a></li>
                     <li><a href="{{ route('circuitos') }}">Circuitos</a></li>
                 </ul>

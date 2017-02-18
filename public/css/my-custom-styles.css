@@ -169,3 +169,18 @@
 #modal-flyer .modal-body img {
   box-shadow: 0 0 20px #000;
 }
+.shrinkable .header-data {
+  float: right;
+}
+
+@media (max-width: 768px) {
+  .navbar-default .navbar-nav > li:first-child {
+    padding-left: 0;
+    background-image: none;
+  }
+
+  .shrinkable .header-data {
+    float: left;
+    padding-left: 15px;
+  }
+}

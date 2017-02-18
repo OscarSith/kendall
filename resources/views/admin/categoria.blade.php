@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="pull-left" style="margin-top: 6px">Categorias</h3>
-                    <button class="btn btn-sm pull-right" data-toggle="modal" data-target="#modal-categoria">Nuevo</button>
+                    {{--<button class="btn btn-sm pull-right" data-toggle="modal" data-target="#modal-categoria">Nuevo</button>--}}
                     <div class="clearfix"></div>
                 </div>
                 <div class="panel-body">

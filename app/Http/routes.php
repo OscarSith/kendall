@@ -49,6 +49,7 @@ Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'admin'], function ($
 
     // Newsletters
     $route->get('newsletters', 'AdminController@newsletters')->name('newsletters');
+    $route->get('export-newsletters', 'AdminController@exportNewsletters')->name('exportNewsletters');
 });
 
 

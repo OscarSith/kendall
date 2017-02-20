@@ -10,6 +10,7 @@ use App\Country;
 use App\Newsletter;
 use Image;
 use File;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
 {
@@ -180,5 +181,20 @@ class AdminController extends Controller
         $suscriptores = Newsletter::paginate(30);
 
         return view('admin.newsletter', compact('suscriptores'));
+    }
+
+
+    public function exportNewsletters() {
+        $suscriptores = Newsletter::all(['email', 'created_at']);
+
+        return Excel::create('newsletters', function ($excel) use ($suscriptores) {
+
+            $excel->sheet('Page 1', function ($sheet) use ($suscriptores) {
+
+               $sheet->fromModel($suscriptores);
+
+            });
+
+        })->export('xls');
     }
 }

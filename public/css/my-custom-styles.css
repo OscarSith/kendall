@@ -183,4 +183,12 @@
     float: left;
     padding-left: 15px;
   }
+
+  .navbar-fixed-top .navbar-nav {
+    clear: left;
+  }
+
+  .navbar-fixed-top.shrink-active .navbar-logo {
+    margin-top: 104px;
+  }
 }

@@ -3269,7 +3269,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   top: -136px;
 }
 .navbar-fixed-top.shrink-active .navbar-logo {
-  margin-top: 104px;
+  margin-top: 80px;
   padding-bottom: 0;
 }
 .navbar-fixed-top.shrink-active .navbar-brand > img {
@@ -3282,7 +3282,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   border-radius: 6px 6px 0 0;
   margin-right: -10px;
   margin-top: 11px;
-  clear: both;
+  clear: right;
 }
 
 .fullscreen-slider .navbar-fixed-top {

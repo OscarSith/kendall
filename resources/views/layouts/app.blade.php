@@ -88,6 +88,7 @@
                     {{--<li><a href="{{ route('categoria') }}">Categoria</a></li>--}}
                     <li><a href="{{ route('promociones') }}">Promociones - Ofertas</a></li>
                     <li><a href="{{ route('circuitos') }}">Circuitos</a></li>
+                    <li><a href="{{ route('newsletters') }}">Suscriptores</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

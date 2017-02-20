@@ -7,6 +7,7 @@ use App\Categoria;
 use App\Paquete;
 use App\PaqueteImagen;
 use App\Country;
+use App\Newsletter;
 use Image;
 use File;
 
@@ -173,5 +174,11 @@ class AdminController extends Controller
         }
 
         return redirect()->back()->with('success_message', 'Paquete ' . $message);
+    }
+
+    public function newsletters() {
+        $suscriptores = Newsletter::paginate(30);
+
+        return view('admin.newsletter', compact('suscriptores'));
     }
 }

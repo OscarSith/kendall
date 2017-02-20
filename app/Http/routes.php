@@ -46,6 +46,9 @@ Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'admin'], function ($
     $route->get('circuitos', 'CirtuitoController@index')->name('circuitos');
     $route->post('circuito', 'CirtuitoController@store')->name('circuito');
     $route->post('remove-flyer/{id}', 'CirtuitoController@destroy')->name('remove-flyer');
+
+    // Newsletters
+    $route->get('newsletters', 'AdminController@newsletters')->name('newsletters');
 });
 
 

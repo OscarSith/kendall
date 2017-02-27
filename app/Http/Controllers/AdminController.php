@@ -42,6 +42,7 @@ class AdminController extends Controller
 
     public function storePaquete(Request $request)
     {
+        dd($request->all());
     	$file = $request->file('paq_imagen_principal');
     	$params = $request->except(['_token']);
 

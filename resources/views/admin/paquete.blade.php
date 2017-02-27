@@ -75,7 +75,7 @@
 						<div class="form-group">
 							{!! Form::label('paq_descripcion', 'Descripción', ['class' => 'control-label col-sm-2']) !!}
 							<div class="col-sm-10">
-								{!! Form::textarea('paq_descripcion', null, ['class' => 'form-control', 'required']) !!}
+								{!! Form::textarea('paq_descripcion') !!}
 							</div>
 						</div>
 						<div class="col-sm-10 col-sm-offset-2">
@@ -90,16 +90,24 @@
 @endsection
 
 @section('textarea')
-<script src="{{ asset('js/wysihtml5x-toolbar.min.js') }}"></script>
-<script src="{{ asset('js/handlebars.runtime.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap3-wysihtml5.min.js') }}"></script>
+<script src="{{ asset('js/tinymce.min.js') }}"></script>
 <script type="text/javascript">
-	var options = {
-		toolbar: {
-			"fa": true,
-			"image": false
-		}
-	};
-	$('#paq_descripcion').wysihtml5(options);
+    tinymce.DOM.addClass(tinymce.DOM.select('table'), 'table table-bordered');
+    tinymce.init({
+		selector: '#paq_descripcion',
+        height: 400,
+		plugins: 'preview table lists textcolor code',
+        toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | forecolor | preview code',
+        content_css: '/css/tinymce-custom.css',
+        init_instance_callback: function (editor) {
+            editor.on('BeforeSetContent', function (e) {
+                if (e.content.match('table')) {
+                    e.content = '<div class="table-responsive"><table class="mce-item-table table table-bordered">' + $(e.content).html() + '</table></table>';
+				} else {
+                    e.content = e.content + '';
+				}
+            });
+        }
+	});
 </script>
 @endsection

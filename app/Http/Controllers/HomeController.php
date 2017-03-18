@@ -7,14 +7,17 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\NewsletterRequest;
+use App\Http\Requests\LibroReclamacionRequest;
 use App\PaqueteImagen;
 use App\Paquete;
 use App\Country;
 use App\Categoria;
 use App\Newsletter;
 use App\Circuito;
+use App\LibroReclamacion;
 use Mail;
 use Route;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -148,5 +151,54 @@ class HomeController extends Controller
     private function getCurrentUri()
     {
         return Route::current()->uri();
+    }
+
+    public function libro() {
+        $dias = [];
+        $anios = [];
+
+        $currentYear = (new \DateTime())->format('Y');
+        $maxYear = 2018;
+
+        for ($i = 1; $i <= 31; $i++) {
+            array_push($dias, $i);
+        }
+
+        $meses = [
+            ['value' => '01', 'data' => 'Enero'],
+            ['value' => '02', 'data' => 'Febrero'],
+            ['value' => '03', 'data' => 'Marzo'],
+            ['value' => '04', 'data' => 'Abril'],
+            ['value' => '05', 'data' => 'Mayo'],
+            ['value' => '06', 'data' => 'Junio'],
+            ['value' => '07', 'data' => 'Julio'],
+            ['value' => '08', 'data' => 'Agosto'],
+            ['value' => '09', 'data' => 'Septiembre'],
+            ['value' => '10', 'data' => 'Octubre'],
+            ['value' => '11', 'data' => 'Noviembre'],
+            ['value' => '12', 'data' => 'Diciembre']
+        ];
+
+        for ($j = $currentYear; $j <= $maxYear; $j++) {
+            array_push($anios, $j);
+        }
+
+        return view('hojaReclamacion', compact('dias', 'meses', 'anios'));
+    }
+
+    public function addLibroReclamacion(LibroReclamacionRequest $request) {
+
+        $params = $request->all();
+        $nro = LibroReclamacion::all(['id'])->count();
+        $params['fecha'] = $params['anio'] .'-'. $params['mes'] .'-'. $params['dia'];
+        $params['nro'] = str_pad(($nro + 1) . '-' .Carbon::today()->year, 15, '0', STR_PAD_LEFT);
+
+        $libroReclamacion = new LibroReclamacion();
+
+        $libroReclamacion->fill($params);
+
+        $libroReclamacion->save();
+
+        return redirect()->back()->with('success_message', 'Libro de reclamacion agregado, nos comunicaremos con usted a la brevedad posible');
     }
 }

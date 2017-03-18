@@ -11,11 +11,6 @@
 |
 */
 
-Route::group(['middleware' => ['web']], function ($route) {
-    $route->get('/login', 'Auth\AuthController@showLoginForm');
-    $route->post('login', 'Auth\AuthController@login');
-});
-
 Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'admin'], function ($route) {
     $route->get('/', 'AdminController@index')->name('dashboard');
 
@@ -52,15 +47,23 @@ Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'admin'], function ($
     $route->get('export-newsletters', 'AdminController@exportNewsletters')->name('exportNewsletters');
 });
 
+Route::group(['middleware' => 'web'], function ($route) {
+    $route->get('/login', 'Auth\AuthController@showLoginForm');
+    $route->post('login', 'Auth\AuthController@login');
 
-Route::get('/', 'HomeController@index');
-Route::get('contacto', 'HomeController@contacto');
-Route::get('nosotros', 'HomeController@nosotros');
-Route::get('circuitos', 'HomeController@circuitos');
-Route::get('ofertas', 'HomeController@ofertas');
-Route::get('{country}', 'HomeController@paquetesByCountry')->name('paquetesByCountry');
-Route::get('paises/{categoria}', 'HomeController@countriesByCategoria')->name('countriesByCategoria');
-Route::get('detalle-paquete/{id}-{paq_nombre}', 'HomeController@detallePaquete')->name('detallePaquete');
-Route::post('cotizar-paquete-{id}', 'HomeController@sendNotificacion')->name('sendNotification');
-Route::post('enviar-mensaje', 'HomeController@sendMessage')->name('send-message');
-Route::post('newsletter', 'HomeController@newsletter');
+    $route->get('/', 'HomeController@index');
+    $route->get('contacto', 'HomeController@contacto');
+    $route->get('nosotros', 'HomeController@nosotros');
+    $route->get('circuitos', 'HomeController@circuitos');
+    $route->get('ofertas', 'HomeController@ofertas');
+    $route->get('libroreclamaciones', 'HomeController@libro');
+    // Libro Reclamaciones
+    $route->post('libroreclamaciones/agregar', 'HomeController@addLibroReclamacion')->name('agregarReclamacion');
+
+    $route->get('{country}', 'HomeController@paquetesByCountry')->name('paquetesByCountry');
+    $route->get('paises/{categoria}', 'HomeController@countriesByCategoria')->name('countriesByCategoria');
+    $route->get('detalle-paquete/{id}-{paq_nombre}', 'HomeController@detallePaquete')->name('detallePaquete');
+    $route->post('cotizar-paquete-{id}', 'HomeController@sendNotificacion')->name('sendNotification');
+    $route->post('enviar-mensaje', 'HomeController@sendMessage')->name('send-message');
+    $route->post('newsletter', 'HomeController@newsletter');
+});

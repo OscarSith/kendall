@@ -174,7 +174,7 @@
 					</div>
 					<div class="col-sm-4 text-right">
 						<p class="fa-lg">
-							<a href="{{ url('contacto') }}">
+							<a href="{{ url('libroreclamaciones') }}">
 								<i class="fa fa-book"></i> Libro de reclamaciones
 							</a>
 						</p>

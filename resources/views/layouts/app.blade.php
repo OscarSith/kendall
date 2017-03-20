@@ -61,6 +61,9 @@
             height: 290px;
             overflow: hidden;
         }
+        .vbottom {
+            vertical-align: bottom;
+        }
     </style>
 </head>
 <body id="app-layout">
@@ -88,6 +91,7 @@
                     <li><a href="{{ route('promociones') }}">Promociones - Ofertas</a></li>
                     <li><a href="{{ route('circuitos') }}">Circuitos</a></li>
                     <li><a href="{{ route('newsletters') }}">Suscriptores</a></li>
+                    <li><a href="{{ route('libroReclamacion') }}">Reclamaciones</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

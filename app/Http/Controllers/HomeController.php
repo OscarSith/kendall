@@ -156,6 +156,7 @@ class HomeController extends Controller
     public function libro() {
         $dias = [];
         $anios = [];
+        $currentUri = $this->getCurrentUri();
 
         $currentYear = (new \DateTime())->format('Y');
         $maxYear = 2018;
@@ -183,7 +184,7 @@ class HomeController extends Controller
             array_push($anios, $j);
         }
 
-        return view('hojaReclamacion', compact('dias', 'meses', 'anios'));
+        return view('hojaReclamacion', compact('dias', 'meses', 'anios', 'currentUri'));
     }
 
     public function addLibroReclamacion(LibroReclamacionRequest $request) {

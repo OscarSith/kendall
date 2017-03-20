@@ -45,6 +45,14 @@ Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'admin'], function ($
     // Newsletters
     $route->get('newsletters', 'AdminController@newsletters')->name('newsletters');
     $route->get('export-newsletters', 'AdminController@exportNewsletters')->name('exportNewsletters');
+
+    // Libro Reclamaciones
+    $route->get('reclamaciones', 'LibroReclamacionController@index')->name('libroReclamacion');
+    $route->get('reclamaciones-pdf/{id}', 'LibroReclamacionController@show')->name('libroReclamacionPdf');
+    $route->get('reclamaciones-pdf-aprovar/{id}', 'LibroReclamacionController@update')->name('libroReclamacionAprovar');
+    $route->get('reclamaciones-pdf-desaprovar/{id}', 'LibroReclamacionController@destroy')->name('libroReclamacionDesaprovar');
+
+    $route->get('reclamaciones-test', 'LibroReclamacionController@create')->name('libroReclamacionTest');
 });
 
 Route::group(['middleware' => 'web'], function ($route) {

@@ -25,6 +25,7 @@ class CreateLibroReclamacionesTable extends Migration
             $table->string('dni_reclamante', 15);
             $table->string('telefono_reclamante');
             $table->string('email_reclamante');
+            $table->string('menor_reclamante');
             $table->string('tipo', 10);
             $table->decimal('monto_reclamado', 10, 2);
             $table->string('descripcion');

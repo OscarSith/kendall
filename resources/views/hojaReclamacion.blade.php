@@ -49,23 +49,17 @@
             <div class="row">
                 <div class="col-sm-9">
                     <div class="form-group">
-                        <div class="col-sm-12">
-                            {!! Form::text('nombre', null, ['class' => 'form-control', 'placeholder' => "NOMBRE DE LA PERSONA NATURAL O RAZÓN SOCIAL DE LA PERSONA JURÍDICA"]) !!}
-                        </div>
+                        {!! Form::text('nombre', null, ['class' => 'form-control', 'placeholder' => "NOMBRE DE LA PERSONA NATURAL O RAZÓN SOCIAL DE LA PERSONA JURÍDICA"]) !!}
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="form-group">
-                        <div class="col-sm-12">
-                            {!! Form::text('ruc', null, ['class' => "form-control", 'placeholder' => "RUC DEL PROVEEDOR", 'maxlength' => 11]) !!}
-                        </div>
+                        {!! Form::text('ruc', null, ['class' => "form-control", 'placeholder' => "RUC DEL PROVEEDOR", 'maxlength' => 11]) !!}
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <div class="form-group">
-                        <div class="col-sm-12">
-                            {!! Form::text('direccion', null, ['class' => "form-control", 'placeholder' => "DOMICILIO DEL ESTABLECIMIENTO DONDE SE COLOCA EL LIBRO DE RECLAMACIONES / CÓDIGO DE IDENTIFICACIÓN"]) !!}
-                        </div>
+                        {!! Form::text('direccion', null, ['class' => "form-control", 'placeholder' => "DOMICILIO DEL ESTABLECIMIENTO DONDE SE COLOCA EL LIBRO DE RECLAMACIONES / CÓDIGO DE IDENTIFICACIÓN"]) !!}
                     </div>
                 </div>
             </div>
@@ -79,16 +73,12 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
-                        <div class="col-sm-12">
-                            {!! Form::text('nombre_reclamante', null, ['class' => "form-control", 'placeholder' => "Nombre"]) !!}
-                        </div>
+                        {!! Form::text('nombre_reclamante', null, ['class' => "form-control", 'placeholder' => "Nombre"]) !!}
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <div class="form-group">
-                        <div class="col-sm-12">
-                            {!! Form::text('domicilio_reclamante', null, ['class' => "form-control", 'placeholder' => "Domicilio"]) !!}
-                        </div>
+                        {!! Form::text('domicilio_reclamante', null, ['class' => "form-control", 'placeholder' => "Domicilio"]) !!}
                     </div>
                 </div>
                 <div class="form-group">
@@ -106,9 +96,7 @@
                 </div>
                 <div class="col-sm-12">
                     <div class="form-group">
-                        <div class="col-sm-12">
-                            {!! Form::text('menor_reclamante', null, ['class' => "form-control", 'placeholder' => "PADRE O MADRE: [PARA EL CASO DE MENORES DE EDAD]"]) !!}
-                        </div>
+                        {!! Form::text('menor_reclamante', null, ['class' => "form-control", 'placeholder' => "PADRE O MADRE: [PARA EL CASO DE MENORES DE EDAD]"]) !!}
                     </div>
                 </div>
             </div>
@@ -140,14 +128,10 @@
                 </div>
                 <div class="col-sm-10">
                     <div class="form-group">
-                        <div class="col-sm-12">
-                            {!! Form::text('monto_reclamado', null, ['class' => "form-control", 'placeholder' => "MONTO RECLAMADO"]) !!}
-                        </div>
+                        {!! Form::text('monto_reclamado', null, ['class' => "form-control", 'placeholder' => "MONTO RECLAMADO"]) !!}
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-12">
-                            {!! Form::text('descripcion', null, ['class' => "form-control", 'placeholder' => "DESCRIPCIÓN:"]) !!}
-                        </div>
+                        {!! Form::text('descripcion', null, ['class' => "form-control", 'placeholder' => "DESCRIPCIÓN:"]) !!}
                     </div>
                 </div>
             </div>
@@ -191,9 +175,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
-                        <div class="col-sm-12">
-                            {!! Form::textarea('detalle', null, ['rows' => "6", 'placeholder' => "DETALLE:", 'class' => "form-control"]) !!}
-                        </div>
+                        {!! Form::textarea('detalle', null, ['rows' => "6", 'placeholder' => "DETALLE:", 'class' => "form-control"]) !!}
                     </div>
                 </div>
             </div>
@@ -201,9 +183,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="form-group">
-                        <div class="col-sm-12">
-                            {!! Form::textarea('periodo', null, ['rows' => "4", 'placeholder' => "PERIODO:", 'class' => "form-control"]) !!}
-                        </div>
+                        {!! Form::textarea('periodo', null, ['rows' => "4", 'placeholder' => "PERIODO:", 'class' => "form-control"]) !!}
                     </div>
                 </div>
             </div>

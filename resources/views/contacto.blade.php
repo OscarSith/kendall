@@ -60,11 +60,10 @@
 @endsection
 
 @section('script-contact')
-	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDSUsoZ6pJu4bQg3fzsCU0zMH1w1N7SZ1c" type="text/javascript"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBHHCObQCSGcNzC32eQJx1giTH7OLZM0kA" type="text/javascript"></script>
 	<script>
 		google_api_map_init();
 		function google_api_map_init(){
-			var map;
 			var coordData = new google.maps.LatLng(parseFloat(-12.0414954), parseFloat(-76.9666921));
 			var marker;
 
@@ -74,7 +73,7 @@
 					scrollwheel: false,
 					styles: [ { "stylers": [ { "hue": "" }, { "saturation": 0 }, { "gamma": 1 } ] } ],
 					zoom: 17
-				}
+				};
 				var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 				marker = new google.maps.Marker({
 					map: map,

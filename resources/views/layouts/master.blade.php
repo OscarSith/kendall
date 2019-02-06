@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Responsive Multipurpose Bootstrap Theme">
 	<meta name="author" content="The Develovers">
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/main.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ env('STATIC_URI') }}css/main.min.css">
 	<!-- IE 9 Fallback-->
 	<!--[if IE 9]>
 		<link href="assets/css/ie.css" rel="stylesheet">
@@ -14,10 +14,10 @@
 	<!-- GOOGLE FONTS -->
 	<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700' rel='stylesheet' type='text/css'> -->
 	<!-- FAVICONS -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('img/ico/repute144x144.png') }}">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('img/ico/repute114x114.png') }}">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('img/ico/repute72x72.png') }}">
-	<link rel="apple-touch-icon-precomposed" href="{{ asset('assets/ico/repute57x57.png') }}">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ env('STATIC_URI') }}img/repute144x144.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ env('STATIC_URI') }}img/repute114x114.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ env('STATIC_URI') }}img/repute72x72.png">
+	<link rel="apple-touch-icon-precomposed" href="{{ env('STATIC_URI') }}img/repute57x57.png">
 	<link rel="shortcut icon" href="{{ asset('favicon.png') }}">
 </head>
 
@@ -52,7 +52,7 @@
 						<i class="fa fa-bars"></i>
 					</button>
 					<a href="/" class="navbar-brand navbar-logo">
-						<img src="{{ asset('img/logo.png') }}" alt="Logo kendall Travel Perú">
+						<img src="{{ env('STATIC_URI') }}img/logo.png" alt="Logo kendall Travel Perú">
 					</a>
 				</div>
 				<!-- MAIN NAVIGATION -->
@@ -183,12 +183,12 @@
 			</div>
 		</footer>
 	</div>
-	<script src="{{ asset('js/jquery.2.min.js') }}"></script>
-	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-	<script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
-	<script src="{{ asset('js/slick.min.js') }}"></script>
-	<script src="{{ asset('js/jquery.bootstrap-autohidingnavbar.min.js') }}"></script>
-	<script src="{{ asset('js/repute-scripts.js') }}"></script>
+	<script src="{{ env('STATIC_URI') }}js/jquery.2.min.js"></script>
+	<script src="{{ env('STATIC_URI') }}js/bootstrap.min.js"></script>
+	<script src="{{ env('STATIC_URI') }}js/jquery.stellar.min.js"></script>
+	<script src="{{ env('STATIC_URI') }}js/slick.min.js"></script>
+	<script src="{{ env('STATIC_URI') }}js/jquery.bootstrap-autohidingnavbar.min.js"></script>
+	<script src="{{ env('STATIC_URI') }}js/repute-scripts.js"></script>
 	@yield('script-contact')
 </body>
 </html>
